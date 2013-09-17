@@ -1,0 +1,17 @@
+<?php
+$this->headTitle($title);
+$this->headScript()->prependFile($this->basePath() . '/js/requests.js');
+?>
+<h2><?php echo $this->escapeHTML($title)?></h2>
+
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span8">
+                <h2>Update products list</h2>
+        </div>
+        <div class="span2">
+            <div class="btn btn-success" id="products_list" data-loading-text="Loading...">Update</div>
+        </div>
+    </div>
+</div>

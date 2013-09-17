@@ -20,6 +20,10 @@ class ProductsController extends AbstractActionController
         );
     }
     public function updateAction(){
+        $request = $this->getRequest();
+        if($request->isPost()){
+            var_dump($request);
+        }
 
     }
 }
