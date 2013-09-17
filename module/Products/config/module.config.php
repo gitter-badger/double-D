@@ -28,18 +28,4 @@ return array(
             'products' => __DIR__ . '/../view',
         ),
     ),
-//    'router' => array(
-//        'routes' => array(
-//            'products'=>array(
-//                'type'=>'simple',
-//                'options'=>array(
-//                    'route'=>'/products',
-//                    'defaults'=>array(
-//                        'controller'=>'Products\Controller\Products',
-//                        'action' =>'index',
-//                    )
-//                )
-//            )
-//        )
-//    ),
 );

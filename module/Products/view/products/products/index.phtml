@@ -1,2 +1,4 @@
 <?php
-echo "Products page";
+$this->headTitle($title);
+echo $this->headScript()->prependFile($this->basePath() . '/js/requests.js');
+?>
