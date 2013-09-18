@@ -10,10 +10,10 @@ return array(
             'products' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/products[/][:action][/:id]',
+                    'route'    => '/products[/][:action][/:do]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
+                        'do'     => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                     'defaults' => array(
                         'controller' => 'Products\Controller\Products',

@@ -15,15 +15,39 @@ class ProductsController extends AbstractActionController
         );
     }
     public function requestsAction(){
-        return array(
-            "page"=>"true"
-        );
+        $request = $this->getRequest();
+        $do = $this->params()->fromRoute("do");
+        if($request->isPost()&& isset($do)){
+            $pu = new ProductsUpdate();
+            switch($do){
+                case "getProductsPage":
+                    try{
+                        $page = $pu->getProducts();
+                    }catch (\Exeption $ex){
+                        $page = 'error with getting page';
+                    }
+                    return array(
+                        'data' => $page
+                    );
+                    break;
+                case "saveProducts":
+                    $data = $request->getPost();
+                    var_dump($data);
+                    return array(
+                        'data' =>"true"
+                    );
+                    break;
+            }
+
+        }else{
+            return array(
+                'data' => "false"
+            );
+        }
     }
     public function updateAction(){
-        $request = $this->getRequest();
-        if($request->isPost()){
-            var_dump($request);
-        }
+
+
 
     }
 }

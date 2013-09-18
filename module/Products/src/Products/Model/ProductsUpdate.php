@@ -17,4 +17,8 @@ class ProductsUpdate
         curl_close($ch);
         return $response;
     }
+
+    public function saveProducts($data){
+
+    }
 }
