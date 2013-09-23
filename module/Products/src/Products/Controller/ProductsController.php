@@ -3,16 +3,19 @@ namespace Products\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Products\Model\Products;
 use Products\Model\ProductsUpdate;
 
 class ProductsController extends AbstractActionController
 {
+    protected $productsTable;
 
     public function indexAction()
     {
         return array(
-            "title"=>"Update Products",
+            'title' => "Products page",
         );
+
     }
     public function requestsAction(){
         $request = $this->getRequest();
@@ -32,22 +35,32 @@ class ProductsController extends AbstractActionController
                     break;
                 case "saveProducts":
                     $data = $request->getPost();
-                    var_dump($data);
+                    $this->getProductsTable()->saveProducts($data['data']);
                     return array(
                         'data' =>"true"
                     );
                     break;
+                case "getProductsList":
+                    $data = $request->getPost();
+                    return array(
+                        'data' =>json_encode($this->getProductsTable()->fetchAll())
+                    );
+                    break;
             }
-
         }else{
-            return array(
-                'data' => "false"
-            );
+            return $this->redirect()->toRoute("products");
         }
     }
     public function updateAction(){
 
-
-
     }
+    public function getProductsTable()
+    {
+        if (!$this->productsTable) {
+            $sm = $this->getServiceLocator();
+            $this->productsTable = $sm->get('Products\Model\ProductsTable');
+        }
+        return $this->productsTable;
+    }
+
 }
