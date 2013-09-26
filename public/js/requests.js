@@ -74,7 +74,7 @@ function UpdateData(){
         th.p_data = data_arr;
         th.products = [];
         $("#p_done").html("started getting pages");
-        th.getPage(99);      //default should be 0
+        th.getPage(0);      //default should be 0
     }
     this.getPage= function(page){
         $.ajax({
@@ -125,8 +125,8 @@ function UpdateData(){
                 obj.list_id = list_id;
                 obj.list_type = list_type;
 //                obj.price_type = $(this).find(".productDetails .price #comparizonContainer span").html().trim();
-                $(this).find(".price div").remove();
-                obj.price = $(this).find(".productDetails .price").html().trim().replace(/&nbsp;/g,"").replace(/PLN/g,"").replace(/,/g, ".");
+                $(this).find(".price.regularPrice div").remove();
+                obj.price = $(this).find(".productDetails .price.regularPrice").html().trim().replace(/&nbsp;/g,"").replace(/PLN/g,"").replace(/,/g, ".");
                 console.log($.isNumeric(obj.price), obj.price);
                 obj.price = $.isNumeric(obj.price)?obj.price:0;         // check if number;
                 obj.more_info = $(this).find(".moreInfo span:not(:empty)").html().trim();
@@ -134,7 +134,7 @@ function UpdateData(){
                 if(ru_item.length>0){
                     obj.title =ru_item.find(".productDetails .productTitle").html().trim()
                     obj.desp = ru_item.find(".productDetails .productDesp").html().trim();
-                    obj.moreInfo = ru_item.find(".moreInfo span:not(:empty)").html().trim();
+                    obj.more_info = ru_item.find(".moreInfo span:not(:empty)").html().trim();
                 }
                 data_obj.push(obj)
             })
