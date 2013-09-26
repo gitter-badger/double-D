@@ -74,7 +74,7 @@ function UpdateData(){
         th.p_data = data_arr;
         th.products = [];
         $("#p_done").html("started getting pages");
-        th.getPage(0);
+        th.getPage(99);      //default should be 0
     }
     this.getPage= function(page){
         $.ajax({
@@ -94,7 +94,7 @@ function UpdateData(){
                 th.p_progress.css("width",progress+"%");
                 $("#p_done").html("step 1/2: getting pages("+page+"/"+th.p_data.length+")");
                 if(page<th.p_data.length
-                    && page<10           //remove this line when finished
+//                    && page<100           //remove this line when finished
                     ){
                     setTimeout(function(){
                         th.getPage(page);
@@ -145,6 +145,9 @@ function UpdateData(){
     }
     this.saveProducts = function(item){
         console.log(th.products[item]);
+        if(th.products[item].length==0){
+            th.saveProducts(++item);
+        }
         $.ajax({
             method:"post",
             url:"/products/requests/saveProducts",
