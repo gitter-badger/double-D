@@ -10,9 +10,10 @@ class ProductsUpdate
     protected $url = "http://www.ikea.com/ru/ru/catalog/allproducts/";
 //    protected $url = "http://www.ikea.com/ru/catalog/allproducts/alphabetical/";
 
-    public function getProducts(){
+    public function getPage($url = null){
+        $url = $url?$url:$this->url;
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->url);
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Host: www.ikea.com'));
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

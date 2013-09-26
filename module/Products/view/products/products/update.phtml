@@ -2,16 +2,24 @@
 $this->headTitle($title);
 $this->headScript()->prependFile($this->basePath() . '/js/requests.js');
 ?>
-<h2><?php echo $this->escapeHTML($title)?></h2>
+<h2><?php echo $this->escapeHTML($title) ?></h2>
+<style type="text/css">
+    #list_done{
+    }
+</style>
 
+<h2>Update products list</h2>
 
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span8">
-                <h2>Update products list</h2>
-        </div>
-        <div class="span2">
-            <div class="btn btn-success" id="products_list" data-loading-text="Loading...">Update</div>
-        </div>
+<div class="btn btn-success" id="products_list" data-loading-text="Loading...">Update</div>
+<div class="label" id="list_done"> Done!</div>
+
+<h2>Update products, page by page</h2>
+<div class="btn btn-success" id="products" data-loading-text="Loading...">Start</div>
+<div class="label" id="p_done"> Done!</div>
+
+<div class="progress progress-striped active" style="margin-top: 10px">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="0"
+         aria-valuemax="100" style="width: 0%" id="p_progress">
+        <span class="sr-only">40% Complete (success)</span>
     </div>
 </div>

@@ -25,7 +25,7 @@ class ProductsController extends AbstractActionController
             switch($do){
                 case "getProductsPage":
                     try{
-                        $page = $pu->getProducts();
+                        $page = $pu->getPage();
                     }catch (\Exeption $ex){
                         $page = 'error with getting page';
                     }
@@ -33,17 +33,38 @@ class ProductsController extends AbstractActionController
                         'data' => $page
                     );
                     break;
-                case "saveProducts":
+                case "saveProductsList":
                     $data = $request->getPost();
-                    $this->getProductsTable()->saveProducts($data['data']);
+                    $this->getProductsTable()->saveProductsList($data['data']);
                     return array(
                         'data' =>"true"
                     );
                     break;
+                case "saveProducts":
+                    $post = $request->getPost();
+                    $this->getProductsTable()->saveProducts($post['data']);
+                    break;
                 case "getProductsList":
-                    $data = $request->getPost();
                     return array(
                         'data' =>json_encode($this->getProductsTable()->fetchAll())
+                    );
+                    break;
+                case "getPage":
+                    $post=$request->getPost();
+                    $pl_url = "http://www.ikea.com/pl/pl/catalog/categories/departments/$post[type]/$post[id]/";
+                    $ru_url = "http://www.ikea.com/ru/ru/catalog/categories/departments/$post[type]/$post[id]/";
+                    $data = new \stdClass();
+                    $data->id = $post['id'];
+                    $data->type = $post['type'];
+
+                    try{
+                        $data->page_pl=$pu->getPage($pl_url);
+                        $data->page_ru=$pu->getPage($ru_url);
+                    }catch (\Exeption $ex){
+                        $page_pl= "error with getting page";
+                    }
+                    return array(
+                        'data'=> json_encode($data)
                     );
                     break;
             }

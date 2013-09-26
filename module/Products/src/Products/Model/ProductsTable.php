@@ -23,8 +23,8 @@ class ProductsTable
         return $data;
     }
 
-    public function saveProducts($data){
-        $insert ="insert into products(id, header, type, value,active) values";
+    public function saveProductsList($data){
+        $insert ="replace into products_list(id, header, type, value,active) values";
         $id_array= array();
         foreach($data as $row){
             if(in_array($row['id'], $id_array)){
@@ -37,6 +37,24 @@ class ProductsTable
             }
             $insert.="($row[id], '$row[header]', '$row[type]', '$row[value]','1')";
         }
+        $adapter = $this->tableGateway->getAdapter();
+        $adapter->query($insert, $adapter::QUERY_MODE_EXECUTE);
+    }
+    public function saveProducts($data){
+        $insert ="replace into products(id, list_id, list_type, price, more_info, desp, href, title, active) values";
+        $id_array= array();
+        foreach($data as $row){
+            if(in_array($row['id'], $id_array)){
+                continue;
+            }else{
+                $id_array[]=$row['id'];
+            }
+            if($row['id']!=$data[0]['id']){
+                $insert.=",";
+            }
+            $insert.="('$row[id]', '$row[list_id]', '$row[list_type]', '$row[price]', '$row[more_info]','$row[desp]', '$row[href]','$row[title]','1')";
+        }
+        var_dump($insert);
         $adapter = $this->tableGateway->getAdapter();
         $adapter->query($insert, $adapter::QUERY_MODE_EXECUTE);
     }

@@ -7,7 +7,6 @@
  */
 function ProductsListCtrl($scope, $http){
     $http.post('/products/requests/getProductsList').success(function(data) {
-        console.log(data);
         $scope.products = data;
     });
 }
