@@ -47,9 +47,10 @@ div.container a.brand {
 }
 .products-list .panel-heading{
     font-weight: bold;
+    padding: 5px;
 }
 .products-list .list-group-item{
-    padding: 5px;
+    padding: 2px;
 }
 .products-list .panel-body{
     padding: 5px;
