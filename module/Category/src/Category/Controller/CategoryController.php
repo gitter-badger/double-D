@@ -10,13 +10,20 @@ class CategoryController extends AbstractActionController
     protected $CategoryTable;
     public function indexAction()
     {
-        $list_type = (int) $this->params()->fromRoute('list_type', 0);
-        $list_id = (int) $this->params()->fromRoute('list_id', 0);
-        if (!$list_type) {
+        $list_type = $this->params()->fromRoute('list_type');
+        $list_id = (int) $this->params()->fromRoute('list_id');
+        if (!$list_type || !$list_id) {
             return $this->redirect()->toRoute('products');
         }
         return array(
-            'title'=>"Test"
+            'title'=>"Test",
+            'list_type'=>$list_type,
+            'list_id'=>$list_id
+        );
+    }
+    public function addAction(){
+        return array(
+            "test"=>"test"
         );
     }
 

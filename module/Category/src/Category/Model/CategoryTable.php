@@ -12,9 +12,9 @@ class CategoryTable
         $this->tableGateway = $tableGateway;
     }
 
-    public function fetchAll()
+    public function getList($list_type,$list_id)
     {
-        $resultSet = $this->tableGateway->select();
+        $resultSet = $this->tableGateway->select(array('list_type'=>$list_type,'list_id'=>$list_id));
         return $resultSet;
     }
 }
