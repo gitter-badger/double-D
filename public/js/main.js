@@ -16,10 +16,11 @@ function ProductsCtrl($scope, $http){
     $scope.init = function(list_type, list_id){
         $scope.list_type=list_type;
         $scope.list_id=list_id;
-        $http.post("/category/"+$scope.list_type+"/"+$scope.list_id).success(function(data){
-            $scope.data=data;
-        })
+        $http.post("/category/requests/"+$scope.list_type+"/"+$scope.list_id).success(function(data){
+            $scope.data= data;
+        });
     }
+
 
 
 }

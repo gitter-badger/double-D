@@ -58,3 +58,31 @@ div.container a.brand {
 .products-list .list-group{
     margin-bottom: 5px;
 }
+
+.products .thumbnails{
+    list-style: none;
+    text-align: center;
+}
+.products .thumbnails img{
+    height: 240px;
+}
+.products .thumbnails li{
+    display: inline-block;
+    width: 250px;
+    margin: 10px;
+    vertical-align: top;
+    overflow: hidden;
+}
+.products .thumbnails li:hover{
+    cursor: pointer;
+}
+.products .thumbnails li .thumbnail:hover{
+    border-color: #22bb66;
+}
+.products .thumbnails h5{
+    height: 30px;
+}
+.products .thumbnails h4.price{
+    text-align: right;
+    padding: 0 10px;
+}

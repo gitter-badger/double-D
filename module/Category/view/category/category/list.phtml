@@ -1,0 +1,16 @@
+<?php
+$this->headTitle($title);
+
+?>
+<div class="products" ng-controller="ProductsCtrl" ng-init='init("<?php echo $this->escapeHtml($list_type);?>",<?php echo $this->escapeHtml($list_id);?>)'>
+    <ul class="thumbnails" >
+        <li class="span4" ng-repeat="item in data">
+            <div class="thumbnail">
+                <img src="http://www.ikea.com/PIAimages/16032_PE100309_S3.jpg" alt="">
+                <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
+                <h4 class="price">{{item.price}} грн</h4>
+<!--                <p>Thumbnail caption...({{item.more_info}})</p>-->
+            </div>
+        </li>
+    </ul>
+</div>

@@ -15,6 +15,11 @@ class CategoryTable
     public function getList($list_type,$list_id)
     {
         $resultSet = $this->tableGateway->select(array('list_type'=>$list_type,'list_id'=>$list_id));
-        return $resultSet;
+        $data = array();
+        foreach ($resultSet as $row) {
+            $data[]=$row;
+        }
+
+        return $data;
     }
 }
