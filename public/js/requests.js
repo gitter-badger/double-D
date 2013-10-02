@@ -94,7 +94,7 @@ function UpdateData(){
                 th.p_progress.css("width",progress+"%");
                 $("#p_done").html("step 1/2: getting pages("+page+"/"+th.p_data.length+")");
                 if(page<th.p_data.length
-//                    && page<100           //remove this line when finished
+                    && page<5           //remove this line when finished
                     ){
                     setTimeout(function(){
                         th.getPage(page);
@@ -127,7 +127,6 @@ function UpdateData(){
 //                obj.price_type = $(this).find(".productDetails .price #comparizonContainer span").html().trim();
                 $(this).find(".price.regularPrice div").remove();
                 obj.price = $(this).find(".productDetails .price.regularPrice").html().trim().replace(/&nbsp;/g,"").replace(/PLN/g,"").replace(/,/g, ".");
-                console.log($.isNumeric(obj.price), obj.price);
                 obj.price = $.isNumeric(obj.price)?obj.price:0;         // check if number;
                 obj.more_info = $(this).find(".moreInfo span:not(:empty)").html().trim();
                 var ru_item = page_ru.find(".image a[href='"+($(this).find(".image a").attr("href").replace("pl/pl", "ru/ru"))+"']").closest(".threeColumn.product");

@@ -14,6 +14,7 @@ class Category
     public $more_info;
     public $desp;
     public $href;
+    public $img;
     public $title;
     public $active;
     protected $inputFilter;
@@ -27,6 +28,7 @@ class Category
         $this->more_info  = (!empty($data['more_info'])) ? $data['more_info'] : null;
         $this->desp  = (!empty($data['desp'])) ? $data['desp'] : null;
         $this->href  = (!empty($data['href'])) ? $data['href'] : null;
+        $this->img  = (!empty($data['img'])) ? $data['img'] : null;
         $this->title  = (!empty($data['title'])) ? $data['title'] : null;
         $this->active  = (!empty($data['active'])) ? $data['active'] : false;
     }
