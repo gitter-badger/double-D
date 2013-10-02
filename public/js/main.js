@@ -11,6 +11,7 @@ function ProductsListCtrl($scope, $http){
     });
 }
 function ProductsCtrl($scope, $http){
+    $scope.isCollapsed=true;
     $scope.title="gfTest";
     $scope.data = null;
     $scope.init = function(list_type, list_id){
@@ -20,7 +21,7 @@ function ProductsCtrl($scope, $http){
             $scope.data= data;
         });
     }
-
-
-
+    $scope.showInfo= function($event, info){
+      info=true;
+    }
 }

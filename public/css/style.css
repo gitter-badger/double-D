@@ -61,26 +61,41 @@ div.container a.brand {
 
 .products .thumbnails{
     list-style: none;
-    text-align: center;
+    text-align: justify;
 }
 .products .thumbnails img{
     height: 240px;
+}
+.products .thumbnails li:hover{
+    margin-bottom: -100%;
+    z-index: 1;
+    cursor: pointer;
 }
 .products .thumbnails li{
     display: inline-block;
     width: 250px;
     margin: 10px;
     vertical-align: top;
-    overflow: hidden;
+    position: relative;
 }
-.products .thumbnails li:hover{
-    cursor: pointer;
+.products .thumbnails li .info{
+    text-align: justify;
+    padding: 12px;
+    /*display: none;*/
+}
+.products .thumbnails li .thumbnail{
+    /*width: 250px;*/
+    /*margin:0px auto;*/
 }
 .products .thumbnails li .thumbnail:hover{
     border-color: #22bb66;
+    box-shadow: 0 0 6px rgba(34,187,102,0.6);
+    border-radius: 0;
+    /*width: 300px;*/
 }
 .products .thumbnails h5{
     height: 30px;
+    text-align: center;
 }
 .products .thumbnails h4.price{
     text-align: right;
