@@ -18,7 +18,7 @@ class CategoryTable
         $data = array();
         foreach ($resultSet as $row) {
             $row->price*=2.64*1.3;
-            $row->price=intval($row->price);
+            $row->price=ceil($row->price);
             $data[]=$row;
         }
 
