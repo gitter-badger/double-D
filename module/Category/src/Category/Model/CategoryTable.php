@@ -17,6 +17,8 @@ class CategoryTable
         $resultSet = $this->tableGateway->select(array('list_type'=>$list_type,'list_id'=>$list_id));
         $data = array();
         foreach ($resultSet as $row) {
+            $row->price*=2.64*1.3;
+            $row->price=intval($row->price);
             $data[]=$row;
         }
 

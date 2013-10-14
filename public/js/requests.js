@@ -94,7 +94,7 @@ function UpdateData(){
                 th.p_progress.css("width",progress+"%");
                 $("#p_done").html("step 1/2: getting pages("+page+"/"+th.p_data.length+")");
                 if(page<th.p_data.length
-                    && page<5           //remove this line when finished
+//                    && page<5           //remove this line when finished
                     ){
                     setTimeout(function(){
                         th.getPage(page);
