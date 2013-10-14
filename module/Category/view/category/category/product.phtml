@@ -1,0 +1,31 @@
+<?php
+$img = str_replace("S3", "S4", $this->data->img);
+//$img = str_replace("S3.jpg", "S4.jpg", $this->data->img);
+?>
+
+<h2><?php echo $this->data->title ?></h2>
+<div class="product_content">
+    <div>
+        <img src="<?php echo $img; ?>" alt="..." class="img-thumbnail">
+    </div>
+    <div class="product_about">
+        <div class="info">
+            <h4>Описание:</h4>
+            <p><?php echo $this->data->desp?></p>
+            <p><?php echo $this->data->more_info?></p>
+        </div>
+        <div class="links">
+            <h4>Страница производителя:</h4>
+            <div>Страница на польском сайте <a target="_blank" href="http://www.ikea.com/pl/pl/catalog/products/<?php echo $this->data->id ?>/">здесь</a></div>
+            <div>Страница на русском сайте <a target="_blank" href="http://www.ikea.com/ru/ru/catalog/products/<?php echo $this->data->id ?>/">здесь</a>(может не существовать)</div>
+        </div>
+        <div class="price_block">
+            <h4>Купить:</h4>
+            <h1 class="price"><?php echo $this->data->price ?> грн</h1>
+            <input type="number" class="nums form-control" min="1" value="1">
+            <button class="btn btn-info"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
+
+        </div>
+    </div>
+
+</div>

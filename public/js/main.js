@@ -19,9 +19,13 @@ function ProductsCtrl($scope, $http){
         $scope.list_id=list_id;
         $http.post("/category/requests/"+$scope.list_type+"/"+$scope.list_id).success(function(data){
             $scope.data= data;
+            console.log(data);
         });
     }
-    $scope.showInfo= function($event, info){
-      info=true;
+//    $scope.showInfo= function($event, info){
+//      info=true;
+//    }
+    $scope.buy = function(item){
+        console.log(item);
     }
 }

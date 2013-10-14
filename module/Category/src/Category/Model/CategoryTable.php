@@ -24,4 +24,12 @@ class CategoryTable
 
         return $data;
     }
+    public function getProduct($id){
+        $result = $this->tableGateway->select(array('id'=>$id));
+        $rw="asdf";
+        foreach($result as $row){
+            $rw= $row;
+        }
+        return $rw;
+    }
 }

@@ -10,11 +10,11 @@ class CategoryController extends AbstractActionController
     protected $CategoryTable;
     public function listAction()
     {
-        $list_type = $this->params()->fromRoute('list_type');
-        $list_id = (int) $this->params()->fromRoute('list_id');
-//        if (!$list_type || !$list_id) {
-//            return $this->redirect()->toRoute('products');
-//        }
+        $list_type = $this->params()->fromRoute('type');
+        $list_id = (int) $this->params()->fromRoute('id');
+        if (!$list_type || !$list_id) {
+            return $this->redirect()->toRoute('products');
+        }
         return array(
             'title'=>"Test",
             'list_type'=>$list_type,
@@ -23,11 +23,19 @@ class CategoryController extends AbstractActionController
         );
     }
     public function requestsAction(){
-        $list_type = $this->params()->fromRoute('list_type');
-        $list_id = (int) $this->params()->fromRoute('list_id');
+        $list_type = $this->params()->fromRoute('type');
+        $list_id = (int) $this->params()->fromRoute('id');
         $data = $this->getCategoryTable()->getList($list_type,$list_id);
         return array(
             'data'=>json_encode($data)
+        );
+    }
+
+    public function productAction(){
+        $id = $this->params()->fromRoute('type');
+        $data = $this->getCategoryTable()->getProduct($id);
+        return array(
+            "data"=>$data,
         );
     }
 

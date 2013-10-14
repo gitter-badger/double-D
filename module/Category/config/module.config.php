@@ -10,11 +10,9 @@ return array(
             'category' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/category[/][/:action][/:list_type][/:list_id]',
+                    'route'    => '/category[/][/:action][/:type][/:id][/]',
                     'constraints' => array(
                         'action'=> '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'list_type'=> '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'list_id'   => '[0-9]+',
                     ),
                     'defaults' => array(
                         'controller' => 'Category\Controller\Category',

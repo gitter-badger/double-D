@@ -7,13 +7,16 @@ $this->headTitle($title);
     <ul class="thumbnails">
         <li class="span4" ng-repeat="item in data">
             <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
-                <img src="{{item.img}}" alt="">
-                <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
-                <h4 class="price">{{item.price}} грн</h4>
-
+                <a ng-href="/category/product/{{item.id}}">
+                    <img src="{{item.img}}" alt="">
+                    <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
+                    <h4 class="price">{{item.price}} грн</h4>
+                </a>
                 <div class="info check-element animate-show" ng-show="info">
                     <p>{{item.more_info}}</p>
-                    <button class="btn btn-mini btn-success" type="button">Buy</button>
+                    <button style="font-weight: bold" class="btn btn-mini btn-info" type="button" ng-click="buy(item)">
+                        <i class="glyphicon glyphicon-shopping-cart"></i> Buy
+                    </button>
                 </div>
             </div>
         </li>

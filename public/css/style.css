@@ -95,9 +95,34 @@ div.container a.brand {
 }
 .products .thumbnails h5{
     height: 30px;
+    color: #333;;
     text-align: center;
 }
 .products .thumbnails h4.price{
     text-align: right;
     padding: 0 10px;
+    color: #333;
+}
+.products .thumbnails a:hover h5{
+    text-decoration: underline;
+}
+.products .thumbnails a:hover{
+    text-decoration: none;
+}
+.product_content >div img{
+    margin-right: 20px;
+}
+.product_content >div{
+    display: inline-block;
+    vertical-align: top;
+}
+.product_about >div{
+    margin-bottom: 20px;
+}
+.product_about .price{
+    font-weight: bold;
+}
+.price_block .nums{
+    display: inline-block;
+    width: 100px;
 }
