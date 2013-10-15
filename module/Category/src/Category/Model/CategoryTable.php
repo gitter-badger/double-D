@@ -17,8 +17,7 @@ class CategoryTable
         $resultSet = $this->tableGateway->select(array('list_type'=>$list_type,'list_id'=>$list_id));
         $data = array();
         foreach ($resultSet as $row) {
-            $row->price*=2.64*1.3;
-            $row->price=ceil($row->price);
+            $row->price=$this->calculatePrice($row->price);
             $data[]=$row;
         }
 
@@ -26,10 +25,14 @@ class CategoryTable
     }
     public function getProduct($id){
         $result = $this->tableGateway->select(array('id'=>$id));
-        $rw="asdf";
         foreach($result as $row){
             $rw= $row;
+            $rw->price = $this->calculatePrice($rw->price);
         }
         return $rw;
+    }
+    public function calculatePrice($price){
+        $price*=2.64*1.3;
+        return ceil($price);
     }
 }

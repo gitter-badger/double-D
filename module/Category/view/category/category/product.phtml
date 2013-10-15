@@ -4,7 +4,7 @@ $img = str_replace("S3", "S4", $this->data->img);
 ?>
 
 <h2><?php echo $this->data->title ?></h2>
-<div class="product_content">
+<div class="product_content" ng-controller="ProductCtrl" ng-init='init(<?php echo json_encode($this->data); ?>)'>
     <div>
         <img src="<?php echo $img; ?>" alt="..." class="img-thumbnail">
     </div>
@@ -21,9 +21,9 @@ $img = str_replace("S3", "S4", $this->data->img);
         </div>
         <div class="price_block">
             <h4>Купить:</h4>
-            <h1 class="price"><?php echo $this->data->price ?> грн</h1>
-            <input type="number" class="nums form-control" min="1" value="1">
-            <button class="btn btn-info"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
+            <h1 class="price">{{price()}} грн</h1>
+            <input type="number" ng-model="number" class="nums form-control" min=1 max=99 value="1">
+            <button class="btn btn-info" ng-click="buy()"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
 
         </div>
     </div>

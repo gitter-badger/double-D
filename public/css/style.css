@@ -126,3 +126,7 @@ div.container a.brand {
     display: inline-block;
     width: 100px;
 }
+.product_content .img-thumbnail{
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
