@@ -88,8 +88,8 @@ div.container a.brand {
     /*margin:0px auto;*/
 }
 .products .thumbnails li .thumbnail:hover{
-    border-color: #22bb66;
-    box-shadow: 0 0 6px rgba(34,187,102,0.6);
+    border-color: #5bc0de;
+    box-shadow: 0 0 6px rgba(42,171,210,0.6);
     border-radius: 0;
     /*width: 300px;*/
 }
@@ -129,4 +129,11 @@ div.container a.brand {
 .product_content .img-thumbnail{
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+.nav li a.shopping-cart{
+    padding: 7px 2px;
+}
+.shopping-cart .glyphicon-shopping-cart{
+    color: #ffffff;
+    font-size: 28px;
 }

@@ -1,11 +1,6 @@
-/**
- * Created with JetBrains PhpStorm.
- * User: gfspock
- * Date: 23.09.13
- * Time: 15:18
- * To change this template use File | Settings | File Templates.
- */
+
 function ProductsListCtrl($scope, $http){
+    $scope.storage=new LocalStorage();
     $http.post('/products/requests/getProductsList').success(function(data) {
         $scope.products = data;
     });
@@ -15,22 +10,32 @@ function ProductsCtrl($scope, $http){
     $scope.title="gfTest";
     $scope.data = null;
     $scope.storage=new LocalStorage();
+    $scope.cart_number++;
 
-    $scope.init = function(list_type, list_id){
+    $scope.init = function(list_type, list_id, cart_number){
         $scope.list_type=list_type;
         $scope.list_id=list_id;
         $http.post("/category/requests/"+$scope.list_type+"/"+$scope.list_id).success(function(data){
             $scope.data= data;
-            console.log(data);
         });
     }
 
     $scope.buy = function(item){
         $scope.storage.addToCart(item, 1);
+        item.added = true;
+
+    }
+    $scope.added = function(item){
+        if(item.added){
+            return "добавлено в корзину"
+        }else{
+            return "";
+        }
     }
 }
 function ProductCtrl($scope){
     $scope.number=1;
+    $scope.added="";
     $scope.storage=new LocalStorage();
     $scope.init= function(data){
         $scope.data= data;
@@ -41,32 +46,16 @@ function ProductCtrl($scope){
     $scope.buy = function(){
         if($scope.price()){
             $scope.storage.addToCart($scope.data, $scope.number);
+            $scope.added="добавлено в корзину";
         }
     }
 }
 
-
 function LocalStorage() {
     var th = this;
-    this.addToCart= function(data, number){
-        var cart = th.get("shopping_cart");
-        if(!cart){
-            cart= [];
-        }
-        var exist=false;
-        $(cart).each(function(){
-            if(this.item.id == data.id){
-                this.number+=number;
-                exist = true;
-                return;
-            }
-        })
-        if(!exist)
-        {
-            cart.push({item:data, number: number});
-        }
-        console.log(cart);
-        th.set("shopping_cart",cart);
+
+    this.init = function(){
+        $("#cart_number").html(th.getNumbers());
     }
     this.set = function (name, value) {
         if (!th.check()) {
@@ -95,4 +84,34 @@ function LocalStorage() {
             return false;
         }
     }
+    this.getNumbers = function(){
+        var data = th.get("shopping_cart");
+        var number = 0
+        $(data).each(function(){
+            number+=this.number;
+        })
+        $("#cart_number").html(number);
+        return number;
+    }
+    this.addToCart= function(data, number){
+        var cart = th.get("shopping_cart");
+        if(!cart){
+            cart= [];
+        }
+        var exist=false;
+        $(cart).each(function(){
+            if(this.item.id == data.id){
+                this.number+=number;
+                exist = true;
+                return;
+            }
+        })
+        if(!exist)
+        {
+            cart.push({item:data, number: number});
+        }
+        th.set("shopping_cart",cart);
+        th.getNumbers();
+    }
+    this.init();
 }
