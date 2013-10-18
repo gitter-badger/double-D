@@ -2,8 +2,16 @@
 $this->headTitle($title);
 
 ?>
+
 <div class="products" ng-controller="ProductsCtrl"
      ng-init='init("<?php echo $this->escapeHtml($list_type); ?>",<?php echo $this->escapeHtml($list_id); ?>)'>
+    <h1>{{header}}</h1>
+    <ol class="breadcrumb">
+        <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch on="isActive(item.id)" >
+            <a href="" ng-switch-when="" ng-click="init(item.type,item.id,item.id)">{{item.value}}</a>
+            <span ng-switch-when="active">{{item.value}}</span>
+        </li>
+    </ol>
     <ul class="thumbnails">
         <li class="span4" ng-repeat="item in data">
             <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">

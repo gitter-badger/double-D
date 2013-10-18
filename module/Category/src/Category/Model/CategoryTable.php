@@ -35,4 +35,14 @@ class CategoryTable
         $price*=2.64*1.3;
         return ceil($price);
     }
+    public function getNavigation($type, $id){
+        $query = "select * from products_list where header=(select header from products_list where id=$id)";
+        $adapter = $this->tableGateway->getAdapter();
+        $resultSet = $adapter->query($query, $adapter::QUERY_MODE_EXECUTE);
+        $data = array();
+        foreach ($resultSet as $row) {
+            $data[]=$row;
+        }
+        return $data;
+    }
 }
