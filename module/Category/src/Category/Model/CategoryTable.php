@@ -45,4 +45,16 @@ class CategoryTable
         }
         return $data;
     }
+    public function getShortNavigation($type, $id){
+        $query = "select * from products_list where id=$id";
+        $adapter = $this->tableGateway->getAdapter();
+        $resultSet = $adapter->query($query, $adapter::QUERY_MODE_EXECUTE);
+        $data="";
+        foreach ($resultSet as $row) {
+            $data=$row;
+        }
+        return $data;
+    }
+
+
 }

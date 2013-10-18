@@ -3,8 +3,14 @@ $img = str_replace("S3", "S4", $this->data->img);
 //$img = str_replace("S3.jpg", "S4.jpg", $this->data->img);
 ?>
 
-<h2><?php echo $this->data->title ?></h2>
+
 <div class="product_content" ng-controller="ProductCtrl" ng-init='init(<?php echo json_encode($this->data); ?>)'>
+    <ol class="breadcrumb">
+        <li><a href="/products">{{navigation.header}}</a></li>
+        <li><a href="/category/list/{{navigation.type}}/{{navigation.id}}">{{navigation.value}}</a></li>
+        <li class="active"><span >{{data.title}}</span></li>
+    </ol>
+    <h2><?php echo $this->data->title ?></h2>
     <div>
         <img src="<?php echo $img; ?>" alt="..." class="img-thumbnail">
     </div>

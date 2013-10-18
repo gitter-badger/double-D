@@ -27,12 +27,17 @@ class CategoryController extends AbstractActionController
         $list_id = (int) $this->params()->fromRoute('id');
         $request = $this->getRequest();
         $post = json_decode($request->getContent());
+        $data = array();
+
         switch($post->action){
             case "getProducts":
                 $data = $this->getCategoryTable()->getList($list_type,$list_id);
                 break;
             case "getNavigation":
                 $data = $this->getCategoryTable()->getNavigation($list_type, $list_id);
+                break;
+            case "getShortNavigation":
+                $data = $this->getCategoryTable()->getShortNavigation($list_type, $list_id);
                 break;
         }
 
