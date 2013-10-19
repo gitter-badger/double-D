@@ -137,3 +137,27 @@ div.container a.brand {
     color: #ffffff;
     font-size: 28px;
 }
+.card_product >div{
+    display: inline-block;
+    vertical-align: top;
+}
+.card_product .cart-img{
+    cursor: pointer;
+    margin-right: 10px;
+    height: 60px;
+}
+.cart_table .table td input[type="number"]{
+    width: 88px;
+}
+.card_product .cart-info a{
+    color: #333;
+}
+.cart_table .table td .price{
+    padding-left: 10px;
+}
+.cart_table .table td{
+    vertical-align: middle;
+}
+.my-modal .modal-body{
+    text-align: center;
+}

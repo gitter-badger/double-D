@@ -88,6 +88,33 @@ function ProductCtrl($scope, $http) {
     }
 }
 
+function ShoppingCart($scope, $http){
+    $scope.storage = new LocalStorage();
+    $scope.data = $scope.storage.get("shopping_cart")
+    console.log($scope.data);
+    $scope.img=function(img){
+        return img.replace("_S3","_S2");
+    }
+    $scope.remove = function(item, $event){
+        var index = $scope.data.indexOf(item);
+        $scope.data.splice(index,1)
+        $scope.storage.set("shopping_cart",$scope.data)
+        $scope.storage.getNumbers();
+    }
+    $scope.numChange= function(item){
+        console.log(item.number);
+        if(item.number){
+            $scope.storage.set("shopping_cart",$scope.data)
+            $scope.storage.getNumbers();
+        }
+    }
+    $scope.showImg=function(img){
+        console.log(img);
+        $("#big_img").attr("src",img.replace("_S3","_S4"));
+        $('#myModal').modal('show')
+    }
+}
+
 function LocalStorage() {
     var th = this;
 

@@ -6,6 +6,7 @@ return array(
         'Album',
         'Products',
         'Category',
+        'Store',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
