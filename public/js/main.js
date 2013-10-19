@@ -91,7 +91,7 @@ function ProductCtrl($scope, $http) {
 function ShoppingCart($scope, $http){
     $scope.storage = new LocalStorage();
     $scope.data = $scope.storage.get("shopping_cart")
-    console.log($scope.data);
+
     $scope.img=function(img){
         return img.replace("_S3","_S2");
     }
@@ -108,10 +108,17 @@ function ShoppingCart($scope, $http){
             $scope.storage.getNumbers();
         }
     }
-    $scope.showImg=function(img){
-        console.log(img);
-        $("#big_img").attr("src",img.replace("_S3","_S4"));
+    $scope.showImg=function(item){
+        $("#big_img").attr("src",item.img.replace("_S3","_S4"));
+        $('#myModal .modal-title').html(item.title)
         $('#myModal').modal('show')
+    }
+    $scope.price = function(){
+        var price = 0
+        angular.forEach($scope.data, function(value,key){
+            price+=value.number*value.item.price;
+        })
+        return price;
     }
 }
 
