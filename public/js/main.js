@@ -102,7 +102,6 @@ function ShoppingCart($scope, $http){
         $scope.storage.getNumbers();
     }
     $scope.numChange= function(item){
-        console.log(item.number);
         if(item.number){
             $scope.storage.set("shopping_cart",$scope.data)
             $scope.storage.getNumbers();
@@ -119,6 +118,20 @@ function ShoppingCart($scope, $http){
             price+=value.number*value.item.price;
         })
         return price;
+    }
+}
+function UserCtrl($scope, $http){
+    if(localStorage.getItem('self_info')){
+        $scope.user = angular.fromJson(localStorage.getItem('self_info'));
+    }
+    $scope.submit = function(){
+        $scope.send();
+    }
+    $scope.send = function(){
+        $http.post("/store/do/setUser", $scope.user).success(function (data) {
+            console.log(data);
+            localStorage.setItem('self_info', angular.toJson(data));
+        });
     }
 }
 

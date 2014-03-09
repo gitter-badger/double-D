@@ -130,13 +130,8 @@ div.container a.brand {
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
-.nav li a.shopping-cart{
-    padding: 7px 2px;
-}
-.shopping-cart .glyphicon-shopping-cart{
-    color: #ffffff;
-    font-size: 28px;
-}
+
+
 .card_product >div{
     display: inline-block;
     vertical-align: top;
@@ -164,4 +159,23 @@ div.container a.brand {
 .sum{
     text-align: right;
     padding: 0px 20px;
+}
+footer{
+    position: absolute;
+    bottom:0;
+}
+.my-navbar .navbar-nav>li>a,
+.my-navbar .navbar-brand{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.my-navbar.navbar{
+    min-height: 40px;
+}
+.my-navbar .nav li a.shopping-cart{
+    padding: 5px 2px;
+}
+.shopping-cart .glyphicon-shopping-cart{
+    color: #ffffff;
+    font-size: 23px;
 }

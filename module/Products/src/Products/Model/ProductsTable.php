@@ -55,6 +55,7 @@ class ProductsTable
             $insert.="('$row[id]', '$row[list_id]', '$row[list_type]', '$row[price]', '$row[more_info]','$row[desp]', '$row[href]', '$row[img]','$row[title]','1')";
         }
         $adapter = $this->tableGateway->getAdapter();
+        echo $insert;
         $adapter->query($insert, $adapter::QUERY_MODE_EXECUTE);
     }
 }

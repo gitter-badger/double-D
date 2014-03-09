@@ -7,40 +7,52 @@ use Store\Model\Store;
 
 class StoreController extends AbstractActionController
 {
-//    protected $CategoryTable;
+    protected $storeTable;
     public function indexAction()
     {
-//        $list_type = $this->params()->fromRoute('type');
-//        $list_id = (int) $this->params()->fromRoute('id');
-//        if (!$list_type || !$list_id) {
-//            return $this->redirect()->toRoute('products');
-//        }
         return array(
-            'title'=>"Test",
+            'title' => "Test",
         );
     }
-    public function requestsAction(){
-        $list_type = $this->params()->fromRoute('type');
-        $list_id = (int) $this->params()->fromRoute('id');
+
+    public function doAction()
+    {
         $request = $this->getRequest();
+        $do = $this->params()->fromRoute("method");
         $post = json_decode($request->getContent());
         $data = array();
-
-        switch($post->action){
-            case "getProducts":
-                $data = $this->getCategoryTable()->getList($list_type,$list_id);
-                break;
-            case "getNavigation":
-                $data = $this->getCategoryTable()->getNavigation($list_type, $list_id);
-                break;
-            case "getShortNavigation":
-                $data = $this->getCategoryTable()->getShortNavigation($list_type, $list_id);
-                break;
-        }
+        if ($request->isPost()) {
+            switch ($do) {
+                case "setUser":
+                    if (
+                        isset($post->email) &&
+                        isset($post->fullName) &&
+                        isset($post->phone) &&
+                        isset($post->location)
+                    ) {
+                        $data = $this->getStoreTable()->saveUser($post);
+                    }else{
+                        $data = "false";
+                    }
+                    break;
+            }
+        };
 
         return array(
-            'data'=>json_encode($data)
+            'data' => json_encode($data)
         );
+    }
+
+    public function userAction()
+    {
+    }
+    public function getStoreTable()
+    {
+        if (!$this->storeTable) {
+            $sm = $this->getServiceLocator();
+            $this->storeTable = $sm->get('Store\Model\StoreTable');
+        }
+        return $this->storeTable;
     }
 
 }

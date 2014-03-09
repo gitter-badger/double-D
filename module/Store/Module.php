@@ -2,9 +2,9 @@
 namespace Store;
 
 use Store\Model\Store;
+use Store\Model\StoreTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
-
 
 class Module
 {
@@ -27,22 +27,22 @@ class Module
         return include __DIR__ . '/config/module.config.php';
     }
 
-//    public function getServiceConfig()
-//    {
-//        return array(
-//            'factories' => array(
-//                'Category\Model\CategoryTable' =>  function($sm) {
-//                    $tableGateway = $sm->get('CategoryTableGateway');
-//                    $table = new CategoryTable($tableGateway);
-//                    return $table;
-//                },
-//                'CategoryTableGateway' => function ($sm) {
-//                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-//                    $resultSetPrototype = new ResultSet();
-//                    $resultSetPrototype->setArrayObjectPrototype(new Category());
-//                    return new TableGateway('products', $dbAdapter, null, $resultSetPrototype);
-//                },
-//            ),
-//        );
-//    }
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'Store\Model\StoreTable' =>  function($sm) {
+                    $tableGateway = $sm->get('StoreTableGateway');
+                    $table = new StoreTable($tableGateway);
+                    return $table;
+                },
+                'StoreTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new Store());
+                    return new TableGateway('users', $dbAdapter, null, $resultSetPrototype);
+                },
+            ),
+        );
+    }
 }
