@@ -90,7 +90,7 @@ function ProductCtrl($scope, $http) {
 
 function ShoppingCart($scope, $http){
     $scope.storage = new LocalStorage();
-    $scope.data = $scope.storage.get("shopping_cart")
+    $scope.data = $scope.storage.get("shopping_cart");
 
     $scope.img=function(img){
         return img.replace("_S3","_S2");
@@ -100,6 +100,7 @@ function ShoppingCart($scope, $http){
         $scope.data.splice(index,1)
         $scope.storage.set("shopping_cart",$scope.data)
         $scope.storage.getNumbers();
+        $scope.checkData();
     }
     $scope.numChange= function(item){
         if(item.number){
@@ -119,10 +120,17 @@ function ShoppingCart($scope, $http){
         })
         return price;
     }
-}
-function UserCtrl($scope, $http){
-    if(localStorage.getItem('self_info')){
-        $scope.user = angular.fromJson(localStorage.getItem('self_info'));
+
+    $scope.checkData= function(){
+        if($scope.data.length){
+            $('.btn-order').prop('disabled', false);
+        }else{
+            $('.btn-order').prop('disabled', true);
+        }
+    }
+
+    $scope.selfInfo=function(){
+        $('#selfInfo').modal('show');
     }
     $scope.submit = function(){
         $scope.send();
@@ -131,8 +139,17 @@ function UserCtrl($scope, $http){
         $http.post("/store/do/setUser", $scope.user).success(function (data) {
             console.log(data);
             localStorage.setItem('self_info', angular.toJson(data));
+            $('#selfInfo').modal('hide');
         });
     }
+
+    $(function(){
+        $scope.checkData();
+        if(localStorage.getItem('self_info')){
+            $scope.user = angular.fromJson(localStorage.getItem('self_info'));
+        }
+    });
+
 }
 
 function LocalStorage() {

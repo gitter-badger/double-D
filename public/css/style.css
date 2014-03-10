@@ -1,6 +1,7 @@
 body {
     padding-top: 60px;
     padding-bottom: 40px;
+    overflow-y: scroll;
 }
 
 .zf-green {
@@ -158,7 +159,7 @@ div.container a.brand {
 }
 .sum{
     text-align: right;
-    padding: 0px 20px;
+    padding: 5px 150px;
 }
 footer{
     position: absolute;
@@ -179,3 +180,4 @@ footer{
     color: #ffffff;
     font-size: 23px;
 }
+

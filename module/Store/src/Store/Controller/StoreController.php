@@ -42,10 +42,6 @@ class StoreController extends AbstractActionController
             'data' => json_encode($data)
         );
     }
-
-    public function userAction()
-    {
-    }
     public function getStoreTable()
     {
         if (!$this->storeTable) {
