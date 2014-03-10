@@ -4,6 +4,8 @@ namespace Store\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Store\Model\Store;
+use Zend\Validator\NotEmpty;
+use Zend\Validator\EmailAddress;
 
 class StoreController extends AbstractActionController
 {
@@ -21,18 +23,22 @@ class StoreController extends AbstractActionController
         $do = $this->params()->fromRoute("method");
         $post = json_decode($request->getContent());
         $data = array();
+        $error= new \stdClass();
         if ($request->isPost()) {
             switch ($do) {
                 case "setUser":
+                    $emailValidator = new EmailAddress();
+                    $validator = new NotEmpty();
                     if (
-                        isset($post->email) &&
-                        isset($post->fullName) &&
-                        isset($post->phone) &&
-                        isset($post->location)
+                        $emailValidator->isValid($post->email) &&
+                        $validator->isValid($post->fullName) &&
+                        $validator->isValid($post->phone) &&
+                        $validator->isValid($post->location)
                     ) {
                         $data = $this->getStoreTable()->saveUser($post);
                     }else{
-                        $data = "false";
+                        $data = new \stdClass();
+                        $data->error =true;
                     }
                     break;
             }

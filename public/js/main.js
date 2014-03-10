@@ -133,15 +133,19 @@ function ShoppingCart($scope, $http){
         $('#selfInfo').modal('show');
     }
     $scope.submit = function(){
-        $scope.send();
+        $scope.setUser();
     }
-    $scope.send = function(){
+    $scope.setUser = function(){
         $http.post("/store/do/setUser", $scope.user).success(function (data) {
-            console.log(data);
-            localStorage.setItem('self_info', angular.toJson(data));
-            $('#selfInfo').modal('hide');
+            if(data.error){
+            }else{
+//                localStorage.setItem('self_info', angular.toJson(data));
+//                $('#selfInfo').modal('hide');
+            }
+
         });
     }
+    $
 
     $(function(){
         $scope.checkData();
