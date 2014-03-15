@@ -18,4 +18,9 @@ class ProfileController extends AbstractActionController
             "title"=>"login"
         );
     }
+    public function aboutAction(){
+        return array(
+            "title"=>"login"
+        );
+    }
 }

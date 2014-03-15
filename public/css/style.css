@@ -191,5 +191,20 @@ footer{
 }
 .user-form textarea{
     resize:none;
-
+}
+.main-carousel.carousel .carousel-caption{
+    padding-top:10px;
+    padding-bottom: 10px;
+    bottom:0;
+    text-shadow: 0 1px 5px rgba(0,0,0,1);
+}
+.main-carousel.carousel .carousel-indicators{
+    bottom: -25px;
+    margin-bottom: 0;
+}
+.main-carousel.carousel .carousel-indicators li.active{
+    background-color: #3c3c3c;
+}
+.main-carousel.carousel .carousel-indicators li{
+    border-color: #3c3c3c;
 }
