@@ -6,7 +6,7 @@
 
 // qa-machine:
 $dbase="dikea";
-$host="127.6.222.3";
+$host="127.6.222.2";
 
 $dsn = sprintf(
     'mysql:dbname='.$dbase.';host='.$host
