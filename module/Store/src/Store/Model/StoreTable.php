@@ -4,6 +4,7 @@ namespace Store\Model;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Sql;
 use \Zend\Db\Adapter\AdapterInterface;
+use Zend\Db\ResultSet\ResultSet;
 
 class StoreTable
 {
@@ -11,38 +12,38 @@ class StoreTable
 
     public function __construct(TableGateway $tableGateway){
         $this->tableGateway = $tableGateway;
+        $adapter =$this->tableGateway->getAdapter();
+        $this->cartListGateway=new TableGateway('cart_list', $adapter, null, new ResultSet());
     }
 
-    public function saveUser($data){
-        $data->type="user";
-        if (!isset($data->id)) {
-            $resp = $this->tableGateway->insert((array)$data);
-            if($resp){
-                $data->id = $this->tableGateway->lastInsertValue;
-            }
-        } else {
-            $id = (int)$data->id;
-            $user= $this->getUser($id);
-            if ($user) {
-                $this->tableGateway->update((array)$data, array('id' => $id));
-            } else {
-                throw new \Exception('Album id does not exist');
-            }
+    public function saveCart($data){
+        $resp = $this->tableGateway->insert((array)$data);
+        if($resp){
+            $resp = $this->tableGateway->lastInsertValue;
         }
-        unset($data->type);
-        unset($data->password);
-        return $data;
+        return $resp;
     }
-    public function getUser($id)
-    {
-        $id  = (int) $id;
-        $rowset = $this->tableGateway->select(array('id' => $id));
-        $row = $rowset->current();
-        if (!$row) {
-            throw new \Exception("Could not find row $id");
+    public function setCartList($data){
+        $resp = array();
+        for($i =0; $i< count($data->data); $i++){
+            $array= array(
+                'cartId' => $data->cartId,
+                'price' => $data->data[$i]->item->price,
+                'productId' => $data->data[$i]->item->id,
+                'number' => $data->data[$i]->number,
+            );
+            $resp[]=array(
+                'id'=>$data->data[$i]->item->id,
+                'status'=>$this->insertCart($array)
+            );
         }
-        return $row;
+        return $resp;
     }
+
+    public function insertCart($data){
+        return $this->cartListGateway->insert($data);
+    }
+
 }
 
 

@@ -102,6 +102,12 @@ function ShoppingCart($scope, $http){
         $scope.storage.getNumbers();
         $scope.checkData();
     }
+    $scope.removeAll=function(){
+        $scope.data=[];
+        $scope.storage.set("shopping_cart",$scope.data)
+        $scope.storage.getNumbers();
+        $scope.checkData();
+    }
     $scope.numChange= function(item){
         if(item.number){
             $scope.storage.set("shopping_cart",$scope.data)
@@ -117,7 +123,7 @@ function ShoppingCart($scope, $http){
         var price = 0
         angular.forEach($scope.data, function(value,key){
             price+=value.number*value.item.price;
-        })
+        });
         return price;
     }
 
@@ -136,16 +142,30 @@ function ShoppingCart($scope, $http){
         $scope.setUser();
     }
     $scope.setUser = function(){
-        $http.post("/store/do/setUser", $scope.user).success(function (data) {
+        $http.post("/store/do/setCart", $scope.user).success(function (data) {
             if(data.error){
             }else{
-//                localStorage.setItem('self_info', angular.toJson(data));
-//                $('#selfInfo').modal('hide');
+//                $scope.user=data; // todo: remove it in future.
+                localStorage.setItem('self_info', angular.toJson($scope.user));
+                $('#selfInfo').modal('hide');
+                $scope.sendCartData(data);
             }
 
         });
     }
-    $
+    $scope.sendCartData= function(id){
+        console.log($scope.data);
+        $http.post('/store/do/setCartList', {
+            cartId : id,
+            user:$scope.user,
+            data:$scope.data
+        }).success(function(data){
+            angular.forEach(data,function(item){
+
+                $scope.removeAll();
+            })
+        });
+    }
 
     $(function(){
         $scope.checkData();

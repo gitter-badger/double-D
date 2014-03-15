@@ -26,7 +26,7 @@ class StoreController extends AbstractActionController
         $error= new \stdClass();
         if ($request->isPost()) {
             switch ($do) {
-                case "setUser":
+                case "setCart":
                     $emailValidator = new EmailAddress();
                     $validator = new NotEmpty();
                     if (
@@ -35,17 +35,22 @@ class StoreController extends AbstractActionController
                         $validator->isValid($post->phone) &&
                         $validator->isValid($post->location)
                     ) {
-                        $data = $this->getStoreTable()->saveUser($post);
+                        $data = $this->getStoreTable()->saveCart($post);
                     }else{
                         $data = new \stdClass();
                         $data->error =true;
+                        $data = json_encode($data);
                     }
+                    break;
+                case "setCartList":
+                    $data = $this->getStoreTable()->setCartList($post);
+                    $data = json_encode($data);
                     break;
             }
         };
 
         return array(
-            'data' => json_encode($data)
+            'data' => $data
         );
     }
     public function getStoreTable()
