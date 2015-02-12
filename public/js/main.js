@@ -239,3 +239,6 @@ function LocalStorage() {
     }
     this.init();
 }
+function tabCtrl() {
+
+}
