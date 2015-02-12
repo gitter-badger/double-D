@@ -240,7 +240,7 @@ function LocalStorage() {
     this.init();
 }
 function tabCtrl($scope) {
-      $scope.tab=1;
+    $scope.tab=1;
     $scope.setTabValue=function(val)
     {
         $scope.tab=val;
