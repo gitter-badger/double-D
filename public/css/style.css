@@ -170,6 +170,9 @@ footer{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.navbar-brand{
+    cursor: pointer;
+}
 .my-navbar.navbar{
     min-height: 40px;
 }
