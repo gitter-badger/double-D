@@ -1,8 +1,8 @@
 function ProductsListCtrl($scope, $http) {
     $scope.storage = new LocalStorage();
-    $http.get('/products/requests/getProductsList').success(function (data) {
+    $http.post('/products/requests/getProductsList').success(function (data) {
        $scope.products = data;
-        console.log("good request!");
+        console.log("good request! "+$scope.products.length+"");
     });
     //$.ajax({
     //    url: 'products/requests/getProductsList',
