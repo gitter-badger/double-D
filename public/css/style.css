@@ -208,3 +208,8 @@ footer{
 .main-carousel.carousel .carousel-indicators li{
     border-color: #3c3c3c;
 }
+.aboutUs
+{
+    width: 90%;
+    margin: 0 auto;
+}
