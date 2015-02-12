@@ -31,17 +31,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" ng-click="setTabValue(1)" ng-class="getTabValue()==1?'active':''">&nbsp;DIKEA</a>
+                <div ng-class="{active-header:getTabValue()==1}"><a class="navbar-brand" href="#"
+                                                                    ng-click="setTabValue(1)">&nbsp;DIKEA</a></div>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" ng-click="setTabValue(2)" ng-class="getTabValue()==2?'active':''">Все товари</a></li>
-                    <li><a href="#" ng-click="setTabValue(3)" ng-class="getTabValue()==3?'active':''">О нас</a></li>
+                    <li ng-class="{active:getTabValue()==2}"><a href="#" ng-click="setTabValue(2)">Все товари</a>
+                    </li>
+                    <li ng-class="{active:getTabValue()==3}"><a href="#" ng-click="setTabValue(3)">О нас</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!--                        <li><a href="--><!--">Войти</a></li>-->
-                    <li><a class="shopping-cart" href="#" ng-click="setTabValue(4)" ng-class="getTabValue()==4?'active':''"><i class="glyphicon glyphicon-shopping-cart"
-                                                                              id="cart_number"></i></a></li>
+                    <li><a class="shopping-cart" href="#" ng-click="setTabValue(4)"
+                           ng-class="{active:getTabValue()==4}"><i class="glyphicon glyphicon-shopping-cart"
+                                                                          id="cart_number"></i></a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->

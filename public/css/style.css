@@ -217,6 +217,6 @@ footer{
     width: 90%;
     margin: 0 auto;
 }
-a.active{
+.active-header{
     color:#ffff00;
 }
