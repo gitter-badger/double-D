@@ -1,8 +1,20 @@
 function ProductsListCtrl($scope, $http) {
     $scope.storage = new LocalStorage();
-    $http.post('/products/requests/getProductsList').success(function (data) {
-        $scope.products = data;
+    $http.get('/products/requests/getProductsList').success(function (data) {
+       $scope.products = data;
+        console.log("good request!");
     });
+    //$.ajax({
+    //    url: 'products/requests/getProductsList',
+    //    success: function (data) {
+    //        $scope.products=data;
+    //        console.log("good request!");
+    //    },
+    //    error:function()
+    //    {
+    //        console.log("bad request!");
+    //    }
+    //});
 }
 function ProductsCtrl($scope, $http, $location) {
     $scope.isCollapsed = true;
