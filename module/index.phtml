@@ -1,0 +1,328 @@
+<div class="tabs" ng-controller="tabCtrl">
+    <nav class="navbar navbar-inverse navbar-fixed-top my-navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand" ng-click="setTabValue(1)">&nbsp;DIKEA</span>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active:getTabValue()==2}"><a href="#" ng-click="setTabValue(2)">Все товари</a>
+                    </li>
+                    <li ng-class="{active:getTabValue()==3}"><a href="#" ng-click="setTabValue(3)">О нас</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--                        <li><a href="--><!--">Войти</a></li>-->
+                    <li><a class="shopping-cart" href="#" ng-click="setTabValue(4)"
+                           ng-class="{active:getTabValue()==4}"><i class="glyphicon glyphicon-shopping-cart"
+                                                                          id="cart_number"></i></a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <!--tab1-->
+    <div class="tab1" ng-show="getTabValue()==1">
+        <div class="container">
+            <div id="main-carousel" class="carousel slide main-carousel" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#main-carousel" data-slide-to="1"></li>
+                    <li data-target="#main-carousel" data-slide-to="2"></li>
+                    <li data-target="#main-carousel" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="http://www.ikea.com/ms/pl_PL/img/vitality/sypialnia_luty/ziewamy_1060x415_v1.jpg"
+                             alt="picture 1">
+
+                        <div class="carousel-caption">
+                            <h2>Some text </h2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img
+                                src="http://www.ikea.com/ms/pl_PL/img/vitality/homepage/seo_image/materace__fizjoterapeuci_1060x415.jpg"
+                                alt="picture 1">
+
+                        <div class="carousel-caption">
+                            <h2>Some text for second picture</h2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="http://www.ikea.com/ms/pl_PL/img/vitality/homepage/upleva_1060x415.jpg"
+                             alt="picture 1">
+
+                        <div class="carousel-caption">
+                            <h2>Lorem ipsum</h2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="http://www.ikea.com/ms/pl_PL/img/vitality/homepage/transport_materaca_z_domu_1060x415.jpg"
+                             alt="picture 1">
+
+                        <div class="carousel-caption">
+                            <div class="carousel-caption">
+                                <h2>1 000 000 $</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#main-carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#main-carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+
+            <h1>Lorem ipsum</h1>
+
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et
+                dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                clita
+                kasd
+                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur
+                sadipscing
+                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                voluptua. At
+                vero
+                eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum
+                dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                ea
+                rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                eu
+                feugiat
+                nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+                delenit
+                augue
+                duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam
+                nonummy
+                nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            <hr>
+            <footer style="height: 100px">
+                <!--                <p>&copy; 2005 - --><!-- by Zend Technologies Ltd. --><!--</p>-->
+            </footer>
+        </div>
+        <!-- /container -->
+    </div>
+    <!--tab2-->
+    <div class="tab2" ng-show="getTabValue()==2">
+        <div class="products" ng-controller="ProductsCtrl"
+             ng-init='init("<?php echo $this->escapeHtml($list_type); ?>",<?php echo $this->escapeHtml($list_id); ?>)'>
+            <h1>{{header}}</h1>
+            <ol class="breadcrumb">
+                <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch
+                    on="isActive(item.id)">
+                    <a href="" ng-switch-when="" ng-click="init(item.type,item.id,item.id)">{{item.value}}</a>
+                    <span ng-switch-when="active">{{item.value}}</span>
+                </li>
+            </ol>
+            <ul class="thumbnails">
+                <li class="span4" ng-repeat="item in data">
+                    <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
+                        <a ng-href="/category/product/{{item.id}}">
+                            <img src="{{item.img}}" alt="">
+                            <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
+                            <h4 class="price">{{item.price}} грн</h4>
+                        </a>
+
+                        <div class="info check-element animate-show" ng-show="info">
+                            <p>{{item.more_info}}</p>
+                            <button style="font-weight: bold" class="btn btn-mini btn-info" type="button"
+                                    ng-click="buy(item)">
+                                <i class="glyphicon glyphicon-shopping-cart"></i> Buy
+                            </button>
+                            <em>{{added(item)}}</em>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--tab3-->
+    <div class="tab3" ng-show="getTabValue()==3">
+        <div class="aboutUs">
+            <h1>О нас</h1>
+
+            <p style="font-size: 1.2em">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+            <p style="font-size: 1.2em">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+            <p style="font-size: 1.2em">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+            <p style="font-size: 1.2em">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+    </div>
+    <!--tab4-->
+    <div class="tab4" ng-show="getTabValue()==4">
+        <div class="cart">
+            <h1> Корзина покупок</h1>
+
+            <div class="cart_table" data-ng-controller="ShoppingCart">
+                <div class="modal my-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img id="big_img" src="">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                                <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal my-modal fade" id="selfInfo" tabindex="-1" role="dialog"
+                     aria-labelledby="selfInfoLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Мои данные:</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div style="margin: 0 auto; max-width: 500px; text-align: left">
+                                    <form role="form" class="user-form">
+                                        <div class="form-group">
+                                            <label for="email">Електронная почта</label>
+                                            <input type="email" ng-model="user.email" name="email" class="form-control"
+                                                   id="email"
+                                                   placeholder="введите электронную почту" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fullName ">Имя, фамилия:</label>
+                                            <input type="text" ng-model="user.fullName" name="fullName"
+                                                   class="form-control"
+                                                   id="fullName" placeholder="Имя, фамилия" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">контактный телефон:</label>
+                                            <input type="text" ng-model="user.phone" name="phone" class="form-control"
+                                                   id="phone"
+                                                   placeholder="контактный телефон" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Адрес доставки:</label>
+                                <textarea name="location" ng-model="user.location" class="form-control" id="location"
+                                          placeholder="Адрес доставки" maxlength="400" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="otherInfo">Ваши пожелания:</label>
+                                <textarea name="otherInfo" ng-model="user.otherInfo" class="form-control" id="otherInfo"
+                                          placeholder="Ваши пожелания" maxlength="400"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success pull-right" ng-click="submit()">Зделать
+                                    заказ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-hover">
+                    <tr>
+                        <th>#</th>
+                        <th>Товар</th>
+                        <th>Количество</th>
+                        <th>Общая цена</th>
+                        <th></th>
+                    </tr>
+                    <tr data-ng-repeat="product in data">
+                        <td>{{$index+1}}</td>
+                        <td>
+                            <div>
+                                <div class="card_product">
+                                    <div>
+                                        <img class="img-thumbnail cart-img" src="{{img(product.item.img)}}"
+                                             data-ng-click="showImg(product.item)">
+                                    </div>
+                                    <div class="cart-info">
+                                        <a ng-href="/category/product/{{product.item.id}}">
+                                            <div><strong>{{product.item.title}}</strong></div>
+                                            <div><em>{{product.item.desp}}</em></div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" min=1 max=99 ng-model="product.number"
+                                   ng-change="numChange(product)">
+                        </td>
+                        <td><strong class="price">{{product.number*product.item.price}} грн</strong></td>
+                        <td>
+                            <button class="btn btn-danger btn-xs" data-ng-click="remove(product, $event)"><span
+                                    class="glyphicon glyphicon-remove"></span></button>
+                        </td>
+                    </tr>
+                </table>
+                <button type="button" class="btn btn-info pull-right btn-order" ng-click="selfInfo()">Оформить заказ
+                </button>
+                <h3 class="sum">Сумма: {{price()}} грн </h3>
+            </div>
+        </div>
+    </div>
+</div>
