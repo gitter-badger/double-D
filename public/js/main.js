@@ -143,8 +143,10 @@ function ProductCtrl($scope, $http) {
 
 function ShoppingCart($scope, $http){
     $scope.storage = new LocalStorage();
-    $scope.data = $scope.storage.get("shopping_cart");
-
+    $scope.init=function()
+    {
+        $scope.data = $scope.storage.get("shopping_cart");
+    }
     $scope.img=function(img){
         return img.replace("_S3","_S2");
     }
@@ -226,7 +228,9 @@ function ShoppingCart($scope, $http){
             $scope.user = angular.fromJson(localStorage.getItem('self_info'));
         }
     });
-
+    $(".glyphicon-shopping-cart").click(function(){
+        $scope.init();
+    })
 }
 
 function LocalStorage() {
