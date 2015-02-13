@@ -227,3 +227,16 @@ footer{
 {
     cursor: pointer;
 }
+.toAll
+{
+    width: 70px;
+    height: 70px;
+    color: white;
+    opacity: 0.5;
+    background-color: #000000;
+    padding-top: 17px;
+    position: fixed;
+    margin-top: 2em;
+    left: 1em;
+    border-radius: 2px;
+}

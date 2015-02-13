@@ -140,6 +140,7 @@
                 </div>
             </div>
             <div class="products" ng-show="getTabValue()==2">
+            <a href="#" ng-click="setTabValue(1)" class="toAll">Назад к категориям</a>
                 <h1>{{header}}</h1>
                 <ol class="breadcrumb">
                     <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch
