@@ -227,6 +227,10 @@ footer{
 {
     cursor: pointer;
 }
+.list-group-item:hover
+{
+    background: #bbbbbb;
+}
 .toAll
 {
     width: 70px;
@@ -240,3 +244,4 @@ footer{
     left: 1em;
     border-radius: 2px;
 }
+
