@@ -36,7 +36,7 @@ function ProductsListCtrl($scope, $http) {
     }
 
     $scope.buy = function (item) {
-        $scope.storage.addToCart(item, 1); //todo:пофіксити баг,не додає в кошик
+        $scope.storage.addToCart(item, 1); 
         item.added = true;
 
     }
