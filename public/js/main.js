@@ -1,9 +1,11 @@
 function ProductsListCtrl($scope, $http) {
     $scope.storage = new LocalStorage();
-    $http.post('/products/requests/getProductsList').success(function (data) {
-       $scope.products = data;
-        console.log("good request! "+$scope.products.length+"");
-    });
+    $scope.makeRequest=function() {
+        $http.post('/products/requests/getProductsList').success(function (data) {
+            $scope.products = data;
+            console.log("good request! " + $scope.products.length + "");
+        });
+    }
     $scope.init = function (type, id) {
         $scope.list_type = type;
         $scope.list_id = id;
@@ -56,6 +58,9 @@ function ProductsListCtrl($scope, $http) {
     {
         return $scope.tab;
     }
+    $(".allprd").click(function(){
+        $scope.makeRequest();
+    })
 }
 //function ProductsCtrl($scope, $http, $location) {
 //    $scope.isCollapsed = true;

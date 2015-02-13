@@ -35,7 +35,7 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{active:getTabValue()==2}"><a href="#" ng-click="setTabValue(2)">Все товари</a>
+                    <li ng-class="{active:getTabValue()==2}"><a href="#" ng-click="setTabValue(2)" class="allprd">Все товари</a>
                     </li>
                     <li ng-class="{active:getTabValue()==3}"><a href="#" ng-click="setTabValue(3)">О нас</a></li>
                 </ul>
@@ -157,7 +157,7 @@
                 <div class="panel-body">
                     <div class="list-group">
                         <div class="list-group-item" ng-repeat="item in product"
-                             ng-click="setTabValue(2);init(item.type,item.id)">{{item.value}}
+                             ng-click="setTabValue(2);init(item.type,item.id);makeRequest();">{{item.value}}
                         </div>
                     </div>
                 </div>

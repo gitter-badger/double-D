@@ -12,7 +12,7 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{active:getTabValue()==2}"><a href="#" ng-click="setTabValue(2)">Все товари</a>
+                    <li ng-class="{active:getTabValue()==2}"><a href="#" ng-click="setTabValue(2)" class="allprd">Все товари</a>
                     </li>
                     <li ng-class="{active:getTabValue()==3}"><a href="#" ng-click="setTabValue(3)">О нас</a></li>
                 </ul>
@@ -145,7 +145,7 @@
                 <ol class="breadcrumb">
                     <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch
                         on="isActive(item.id)">
-                        <a href="" ng-switch-when="" ng-click="init(item.type,item.id,item.id)">{{item.value}}</a>
+                        <a href="" ng-switch-when="" ng-click="init(item.type,item.id,item.id);makeRequest();">{{item.value}}</a>
                         <span ng-switch-when="active">{{item.value}}</span>
                     </li>
                 </ol>
