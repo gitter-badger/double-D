@@ -184,7 +184,7 @@ function ShoppingCart($scope, $http){
     }
 
     $scope.checkData= function(){
-        if($scope.data.length){
+        if(($scope.data)&&($scope.data.length)){
             $('.btn-order').prop('disabled', false);
         }else{
             $('.btn-order').prop('disabled', true);
