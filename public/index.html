@@ -150,43 +150,50 @@
         <!-- /container -->
     </div>
     <!--tab2-->
-    <div class="tab2" ng-show="getTabValue()==2" ng-init="pg=1">
-        <div class="products-list" ng-controller="ProductsListCtrl" ng-show="pg==1">
-            <div class="panel panel-primary" ng-repeat="product in products">
+    <div class="tab2" ng-show="getTabValue()==2">
+        <div class="products-list" ng-controller="ProductsListCtrl">
+            <div class="panel panel-primary" ng-repeat="product in products" ng-show="getTabValue()==1">
                 <div class="panel-heading">{{product[0].header}}</div>
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="/category/list/{{item.type}}/{{item.id}}" class="list-group-item" ng-repeat="item in product" ng-click="pg=2">{{item.value}}</a>
+                        <div class="list-group-item" ng-repeat="item in product"
+                             ng-click="setTabValue(2);init(item.type,item.id)">{{item.value}}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="productsInCtg" ng-controller="ProductsCtrl" ng-init='init("childrens_ikea",18706)' ng-show="pg==2">
-            <h1>{{header}}</h1>
-            <ol class="breadcrumb">
-                <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch on="isActive(item.id)" >
-                    <a href="" ng-switch-when="" ng-click="init(item.type,item.id,item.id)">{{item.value}}</a>
-                    <span ng-switch-when="active">{{item.value}}</span>
-                </li>
-            </ol>
-            <ul class="thumbnails">
-                <li class="span4" ng-repeat="item in data">
-                    <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
-                        <a ng-href="/category/product/{{item.id}}">
-                            <img src="{{item.img}}" alt="">
-                            <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
-                            <h4 class="price">{{item.price}} грн</h4>
-                        </a>
-                        <div class="info check-element animate-show" ng-show="info">
-                            <p>{{item.more_info}}</p>
-                            <button style="font-weight: bold" class="btn btn-mini btn-info" type="button" ng-click="buy(item)">
-                                <i class="glyphicon glyphicon-shopping-cart"></i> Buy
-                            </button>
-                            <em>{{added(item)}}</em>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <div class="products" ng-show="getTabValue()==2">
+                <h1>{{header}}</h1>
+                <ol class="breadcrumb">
+                    <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch
+                        on="isActive(item.id)">
+                        <a href="" ng-switch-when="" ng-click="init(item.type,item.id,item.id)">{{item.value}}</a>
+                        <span ng-switch-when="active">{{item.value}}</span>
+                    </li>
+                </ol>
+                <div class="col-sm-6 col-md-4">
+                    <ul class="thumbnails">
+                        <li class="span4" ng-repeat="item in prd">
+                            <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
+                                <a ng-href="/category/product/{{item.id}}">
+                                    <img src="{{item.img}}" alt="">
+                                    <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
+                                    <h4 class="price">{{item.price}} грн</h4>
+                                </a>
+
+                                <div class="info check-element animate-show" ng-show="info">
+                                    <p>{{item.more_info}}</p>
+                                    <button style="font-weight: bold" class="btn btn-mini btn-info" type="button"
+                                            ng-click="buy(item)">
+                                        <i class="glyphicon glyphicon-shopping-cart"></i> Buy
+                                    </button>
+                                    <em>{{added(item)}}</em>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <!--tab3-->

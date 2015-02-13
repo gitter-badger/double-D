@@ -4,17 +4,58 @@ function ProductsListCtrl($scope, $http) {
        $scope.products = data;
         console.log("good request! "+$scope.products.length+"");
     });
-    //$.ajax({
-    //    url: 'products/requests/getProductsList',
-    //    success: function (data) {
-    //        $scope.products=data;
-    //        console.log("good request!");
-    //    },
-    //    error:function()
-    //    {
-    //        console.log("bad request!");
-    //    }
-    //});
+    $scope.init = function (type, id) {
+        $scope.list_type = type;
+        $scope.list_id = id;
+        $(".thumbnails").animate({opacity:0}, 50);
+        $scope.getProducts();
+        $scope.getNavigation();
+
+    }
+    $scope.getProducts = function () {
+        $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getProducts"}).success(function (data) {
+            $scope.prd = data;
+            $(".thumbnails").animate({opacity:1}, 200);
+        });
+    }
+
+    $scope.getNavigation = function () {
+        $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getNavigation"}).success(function (data) {
+            $scope.navigation_data = data;
+            if(data.length==0){
+                location.href="/"
+            }
+            $scope.header = data[0].header;
+        });
+    }
+    $scope.isActive = function (id) {
+        if (id == $scope.list_id) {
+            return "active";
+        }
+        return "";
+    }
+
+    $scope.buy = function (item) {
+        $scope.storage.addToCart(item, 1);
+        item.added = true;
+
+    }
+    $scope.added = function (item) {
+        if (item.added) {
+            return "добавлено в корзину"
+        } else {
+            return "";
+        }
+    }
+    $scope.tab=1;
+    $scope.setTabValue=function(val)
+    {
+        $scope.tab=val;
+    }
+    $scope.getTabValue=function(val)
+    {
+        return $scope.tab;
+    }
 }
 function ProductsCtrl($scope, $http, $location) {
     $scope.isCollapsed = true;
@@ -25,12 +66,12 @@ function ProductsCtrl($scope, $http, $location) {
     $scope.init = function (type, id, path) {
         $scope.list_type = type;
         $scope.list_id = id;
-        if(path){
-            $location.path(""+path);
-        }
-        if($location.path()!=""){
-            $scope.list_id = parseInt($location.path().replace(/\//g, ""));
-        }
+        //if(path){
+        //    $location.path(""+path);
+        //}
+        //if($location.path()!=""){
+        //    $scope.list_id = parseInt($location.path().replace(/\//g, ""));
+        //}
         $(".thumbnails").animate({opacity:0}, 50);
         $scope.getProducts();
         $scope.getNavigation();

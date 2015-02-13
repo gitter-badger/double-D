@@ -223,3 +223,7 @@ footer{
 .active-header{
     color:#ffff00;
 }
+.list-group-item
+{
+    cursor: pointer;
+}
