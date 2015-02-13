@@ -36,7 +36,7 @@ function ProductsListCtrl($scope, $http) {
     }
 
     $scope.buy = function (item) {
-        $scope.storage.addToCart(item, 1);
+        $scope.storage.addToCart(item, 1); //todo:пофіксити баг,не додає в кошик
         item.added = true;
 
     }
@@ -57,62 +57,62 @@ function ProductsListCtrl($scope, $http) {
         return $scope.tab;
     }
 }
-function ProductsCtrl($scope, $http, $location) {
-    $scope.isCollapsed = true;
-    $scope.title = "gfTest";
-    $scope.data = null;
-    $scope.storage = new LocalStorage();
-
-    $scope.init = function (type, id, path) {
-        $scope.list_type = type;
-        $scope.list_id = id;
-        //if(path){
-        //    $location.path(""+path);
-        //}
-        //if($location.path()!=""){
-        //    $scope.list_id = parseInt($location.path().replace(/\//g, ""));
-        //}
-        $(".thumbnails").animate({opacity:0}, 50);
-        $scope.getProducts();
-        $scope.getNavigation();
-
-    }
-    $scope.getProducts = function () {
-        $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getProducts"}).success(function (data) {
-            $scope.data = data;
-            $(".thumbnails").animate({opacity:1}, 200);
-        });
-    }
-
-    $scope.getNavigation = function () {
-        $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getNavigation"}).success(function (data) {
-            $scope.navigation_data = data;
-            if(data.length==0){
-                location.href="/"
-            }
-            $scope.header = data[0].header;
-        });
-    }
-    $scope.isActive = function (id) {
-        if (id == $scope.list_id) {
-            return "active";
-        }
-        return "";
-    }
-
-    $scope.buy = function (item) {
-        $scope.storage.addToCart(item, 1);
-        item.added = true;
-
-    }
-    $scope.added = function (item) {
-        if (item.added) {
-            return "добавлено в корзину"
-        } else {
-            return "";
-        }
-    }
-}
+//function ProductsCtrl($scope, $http, $location) {
+//    $scope.isCollapsed = true;
+//    $scope.title = "gfTest";
+//    $scope.data = null;
+//    $scope.storage = new LocalStorage();
+//
+//    $scope.init = function (type, id, path) {
+//        $scope.list_type = type;
+//        $scope.list_id = id;
+//        //if(path){
+//        //    $location.path(""+path);
+//        //}
+//        //if($location.path()!=""){
+//        //    $scope.list_id = parseInt($location.path().replace(/\//g, ""));
+//        //}
+//        $(".thumbnails").animate({opacity:0}, 50);
+//        $scope.getProducts();
+//        $scope.getNavigation();
+//
+//    }
+//    $scope.getProducts = function () {
+//        $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getProducts"}).success(function (data) {
+//            $scope.data = data;
+//            $(".thumbnails").animate({opacity:1}, 200);
+//        });
+//    }
+//
+//    $scope.getNavigation = function () {
+//        $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getNavigation"}).success(function (data) {
+//            $scope.navigation_data = data;
+//            if(data.length==0){
+//                location.href="/"
+//            }
+//            $scope.header = data[0].header;
+//        });
+//    }
+//    $scope.isActive = function (id) {
+//        if (id == $scope.list_id) {
+//            return "active";
+//        }
+//        return "";
+//    }
+//
+//    $scope.buy = function (item) {
+//        $scope.storage.addToCart(item, 1);
+//        item.added = true;
+//
+//    }
+//    $scope.added = function (item) {
+//        if (item.added) {
+//            return "добавлено в корзину"
+//        } else {
+//            return "";
+//        }
+//    }
+//}
 function ProductCtrl($scope, $http) {
     $scope.number = 1;
     $scope.added = "";
