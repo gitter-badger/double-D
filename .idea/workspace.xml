@@ -48,10 +48,10 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50524473" vertical-offset="357" max-vertical-offset="4420">
-              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.53496504" vertical-offset="1275" max-vertical-offset="4437">
+              <caret line="148" column="27" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
               <folding>
-                <element signature="e#1717#1768#0" expanded="false" />
+                <element signature="e#1716#1767#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -432,7 +432,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423843842320</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Small fixes.">
+      <created>1423845506485</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1423845506485</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -523,7 +529,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="4590">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#1717#1768#0" expanded="false" />
+            <element signature="e#1716#1767#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -579,7 +585,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="2771" max-vertical-offset="4199">
           <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
-            <element signature="e#1717#1768#0" expanded="false" />
+            <element signature="e#1716#1767#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -631,7 +637,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="2771" max-vertical-offset="4199">
           <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
-            <element signature="e#1717#1768#0" expanded="false" />
+            <element signature="e#1716#1767#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -873,10 +879,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50524473" vertical-offset="357" max-vertical-offset="4420">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.53496504" vertical-offset="1275" max-vertical-offset="4437">
+          <caret line="148" column="27" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
           <folding>
-            <element signature="e#1717#1768#0" expanded="false" />
+            <element signature="e#1716#1767#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -36,7 +36,7 @@ function ProductsListCtrl($scope, $http) {
     }
 
     $scope.buy = function (item) {
-        $scope.storage.addToCart(item, 1); 
+        $scope.storage.addToCart(item, 1);
         item.added = true;
 
     }
@@ -146,6 +146,7 @@ function ShoppingCart($scope, $http){
     $scope.init=function()
     {
         $scope.data = $scope.storage.get("shopping_cart");
+        $scope.checkData();
     }
     $scope.img=function(img){
         return img.replace("_S3","_S2");
