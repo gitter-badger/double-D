@@ -172,7 +172,7 @@
             $(".tab3").fadeOut(0).fadeIn(500);
         });
         $(".toAll").click(function () {
-            $(".tab2").fadeOut(0).fadeIn(500);
+            $("body").animate({"scrollTop":0},1000);
         });
         $(document).ready(function(){
             $(".tab1").fadeOut(0).fadeIn(500);
