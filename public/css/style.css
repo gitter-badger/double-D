@@ -243,5 +243,12 @@ footer{
     margin-top: 2em;
     left: 1em;
     border-radius: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.toAll:hover
+{
+    background-color: #bbbbbb;
+    transition: all 0.2s;
 }
 

@@ -37,7 +37,7 @@
                 <ul class="nav navbar-nav">
                     <li ng-class="{active:getTabValue()==2}"><a href="#" ng-click="setTabValue(2)" class="allprd">Все товари</a>
                     </li>
-                    <li ng-class="{active:getTabValue()==3}"><a href="#" ng-click="setTabValue(3)">О нас</a></li>
+                    <li ng-class="{active:getTabValue()==3}" id="abU"><a href="#" ng-click="setTabValue(3)">О нас</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!--                        <li><a href="--><!--">Войти</a></li>-->
@@ -163,7 +163,7 @@
                 </div>
             </div>
             <div class="products" ng-show="getTabValue()==2">
-                <a href="#" ng-click="setTabValue(1)" class="toAll">Назад к категориям</a>
+                <span ng-click="setTabValue(1)" class="toAll">Назад к категориям</span>
                 <h1>{{header}}</h1>
                 <ol class="breadcrumb">
                     <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch
@@ -197,7 +197,7 @@
     </div>
     <!--tab3-->
     <div class="tab3" ng-show="getTabValue()==3">
-        <div class="aboutUs">
+        <div class="aboutUs"  ng-controller="aboutUsCtrl">
             <h1>О нас</h1>
 
             <p style="font-size: 1.2em">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod

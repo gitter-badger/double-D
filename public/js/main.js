@@ -61,7 +61,8 @@
         }
         $(".allprd").click(function () {
             $scope.makeRequest();
-        })
+            $(".tab2").fadeOut(0).fadeIn(500);
+        });
     });
     app.controller("ShoppingCart", function ($scope, $http) {
         $scope.storage = new LocalStorage();
@@ -152,6 +153,7 @@
         });
         $(".glyphicon-shopping-cart").click(function () {
             $scope.init();
+            $(".tab4").fadeOut(0).fadeIn(500);
         })
     });
     app.controller("tabCtrl", function ($scope) {
@@ -162,6 +164,22 @@
         $scope.getTabValue = function () {
             return $scope.tab;
         }
+        $(".navbar-brand").click(function () {
+            $("body").animate({"scrollTop":0},1000);
+            $(".tab1").fadeOut(0).fadeIn(500);
+        });
+        $("#abU").click(function () {
+            $(".tab3").fadeOut(0).fadeIn(500);
+        });
+        $(".toAll").click(function () {
+            $(".tab2").fadeOut(0).fadeIn(500);
+        });
+        $(document).ready(function(){
+            $(".tab1").fadeOut(0).fadeIn(500);
+        })
+    });
+    app.controller("aboutUsCtrl",function($scope){
+
     });
     function LocalStorage() {
         var th = this;
