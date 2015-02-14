@@ -5,10 +5,7 @@
         $scope.makeRequest = function () {
             $http.post('/products/requests/getProductsList').success(function (data) {
                 $scope.products = data;
-                console.log("good request! " + $scope.products.length + "");
-                if($(document).scrollTop()>0) {
-                    $("body").animate({"scrollTop": 0}, 1000);
-                }
+                $("body").animate({"scrollTop": 0}, 0);
             });
         }
         $scope.init = function (type, id) {
@@ -45,8 +42,8 @@
         $scope.buy = function (item) {
             $scope.storage.addToCart(item, 1);
             item.added = true;
-            $("#"+item.id+"").animate({opacity:"1"},500);
-            $("#"+item.id+"").animate({opacity:"0"},1000);
+            $("#" + item.id + "").animate({opacity: "1"}, 500);
+            $("#" + item.id + "").animate({opacity: "0"}, 1000);
         }
         $scope.added = function (item) {
             if (item.added) {
@@ -69,6 +66,9 @@
     });
     app.controller("ShoppingCart", function ($scope, $http) {
         $scope.storage = new LocalStorage();
+        $(document).ready(function(){
+            $scope.init();
+        });
         $scope.init = function () {
             $scope.data = $scope.storage.get("shopping_cart");
             $scope.checkData();
@@ -168,24 +168,21 @@
             return $scope.tab;
         }
         $(".navbar-brand").click(function () {
-            if($(document).scrollTop()>0) {
-                $("body").animate({"scrollTop": 0}, 1000);
-            }
+            $("body").animate({"scrollTop": 0}, 0);
             $(".tab1").fadeOut(0).fadeIn(500);
         });
         $("#abU").click(function () {
             $(".tab3").fadeOut(0).fadeIn(500);
         });
         $(".toAll").click(function () {
-            if($(document).scrollTop()>0) {
-                $("body").animate({"scrollTop": 0}, 1000);
-            }
+            $("body").animate({"scrollTop": 0}, 0);
+            $(".tab2").fadeOut(0).fadeIn(500);
         });
-        $(document).ready(function(){
+        $(document).ready(function () {
             $(".tab1").fadeOut(0).fadeIn(500);
         })
     });
-    app.controller("aboutUsCtrl",function($scope){
+    app.controller("aboutUsCtrl", function ($scope) {
 
     });
     function LocalStorage() {
