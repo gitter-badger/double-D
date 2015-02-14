@@ -183,11 +183,11 @@
 
                             <div class="info check-element animate-show" ng-show="info">
                                 <p>{{item.more_info}}</p>
-                                <button style="font-weight: bold" class="btn btn-mini btn-info" type="button"
+                                <button  style="font-weight: bold" class="btn btn-mini btn-info" type="button"
                                         ng-click="buy(item)">
                                     <i class="glyphicon glyphicon-shopping-cart"></i> Buy
                                 </button>
-                                <em>{{added(item)}}</em>
+                                <em id="{{item.id}}">{{added(item)}}</em>
                             </div>
                         </div>
                     </li>
