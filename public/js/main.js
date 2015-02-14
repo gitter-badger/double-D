@@ -6,6 +6,9 @@
             $http.post('/products/requests/getProductsList').success(function (data) {
                 $scope.products = data;
                 console.log("good request! " + $scope.products.length + "");
+                if($(document).scrollTop()>0) {
+                    $("body").animate({"scrollTop": 0}, 1000);
+                }
             });
         }
         $scope.init = function (type, id) {
@@ -165,14 +168,18 @@
             return $scope.tab;
         }
         $(".navbar-brand").click(function () {
-            $("body").animate({"scrollTop":0},1000);
+            if($(document).scrollTop()>0) {
+                $("body").animate({"scrollTop": 0}, 1000);
+            }
             $(".tab1").fadeOut(0).fadeIn(500);
         });
         $("#abU").click(function () {
             $(".tab3").fadeOut(0).fadeIn(500);
         });
         $(".toAll").click(function () {
-            $("body").animate({"scrollTop":0},1000);
+            if($(document).scrollTop()>0) {
+                $("body").animate({"scrollTop": 0}, 1000);
+            }
         });
         $(document).ready(function(){
             $(".tab1").fadeOut(0).fadeIn(500);
