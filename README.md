@@ -18,9 +18,10 @@ Clone the repository and manually invoke `composer` using the shipped
 available.)
 
 2. FrontEnd:
-В корені запускаємо(краще зайти через Git Bash): 
-  npm install
-  bower install
+В корені запускаємо(краще зайти через Git Bash):
+ 
+    npm install
+    bower install
   
 
 Запускаємо проект:
