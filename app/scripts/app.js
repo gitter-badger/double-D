@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('dikea', [
+  .module('dikeaApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -18,8 +18,8 @@ angular
     'ngTouch'
   ])
   .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+    $routeProvider.
+      when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })

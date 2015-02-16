@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the dikeaApp
  */
-angular.module('dikea')
+angular.module('dikeaApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
