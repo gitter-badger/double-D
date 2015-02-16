@@ -26,7 +26,7 @@ available.)
 -------------------
 1. run zend server 
 
-    `cd app`
+    `cd app` <br/>
     `php -S 0.0.0.0:8080 index.php`
 
 This will start the cli-server on port 8080, and bind it to all network
