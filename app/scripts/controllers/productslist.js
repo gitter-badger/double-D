@@ -9,6 +9,7 @@
  */
 angular.module('dikeaApp')
   .controller('ProductslistCtrl', function ($scope, $routeParams,$http) {
+    $scope.storage = new LocalStorage();
     $scope.init = function () {
       $scope.list_type = $routeParams.Type;
       $scope.list_id = $routeParams.Id;
