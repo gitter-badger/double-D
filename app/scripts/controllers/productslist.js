@@ -9,12 +9,12 @@
  */
 angular.module('dikeaApp')
   .controller('ProductslistCtrl', function ($scope, $routeParams) {
+    $scope.init();
     $scope.init = function () {
-      $scope.list_type = $routeParams.itemType;
-      $scope.list_id = $routeParams.itemId;
+      $scope.list_type = $routeParams.Type;
+      $scope.list_id = $routeParams.Id;
       $scope.getProducts();
       $scope.getNavigation();
-
     }
     $scope.getProducts = function () {
       $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getProducts"}).success(function (data) {
@@ -50,5 +50,4 @@ angular.module('dikeaApp')
         return "";
       }
     }
-    $scope.init();
   });
