@@ -18,7 +18,6 @@ angular.module('dikeaApp')
     $scope.getProducts = function () {
       $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getProducts"}).success(function (data) {
         $scope.prd = data;
-        $(".thumbnails").animate({opacity: 1}, 200);
       });
     }
 
