@@ -1,83 +1,254 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
 body {
-  padding: 0;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  overflow-y: scroll;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.zf-green {
+  color: #68b604;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+.btn-success {
+  background-color: #57a900;
+  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-image: -ms-linear-gradient(top, #70d900, #57a900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+  background-image: -o-linear-gradient(top, #70d900, #57a900);
+  background-image: linear-gradient(top, #70d900, #57a900);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  background-color: #57a900;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+.btn-success:active, .btn-success.active {
+  background-color: #57a900;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
+div.container a.brand {
+  background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
+  margin-left: 0;
+  padding: 8px 20px 12px 40px;
+}
+.products-list .panel{
+  display: inline-block;
+  vertical-align: top;
+  margin: 4px;
+  width: 220px;
+}
+.products-list{
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  font-size: 0.82em;
 }
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.products-list .panel-heading{
+  font-weight: bold;
+  padding: 5px;
+}
+.products-list .list-group-item{
+  padding: 2px;
+}
+.products-list .panel-body{
+  padding: 5px;
+}
+.products-list .list-group{
+  margin-bottom: 5px;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+.products .thumbnails{
+  list-style: none;
+  text-align: justify;
 }
-.marketing p + h4 {
-  margin-top: 28px;
+.products .thumbnails img{
+  height: 240px;
+}
+.products .thumbnails li:hover{
+  margin-bottom: -100%;
+  z-index: 1;
+  cursor: pointer;
+}
+.products .thumbnails li{
+  display: inline-block;
+  width: 250px;
+  margin: 10px;
+  vertical-align: top;
+  position: relative;
+}
+.products .thumbnails li .info{
+  text-align: justify;
+  padding: 12px;
+  /*display: none;*/
+}
+.products .thumbnails li .thumbnail{
+  /*width: 250px;*/
+  /*margin:0px auto;*/
+}
+.products .thumbnails li .thumbnail:hover{
+  border-color: #5bc0de;
+  box-shadow: 0 0 6px rgba(42,171,210,0.6);
+  border-radius: 0;
+  /*width: 300px;*/
+}
+.products .thumbnails h5{
+  height: 30px;
+  color: #333;;
+  text-align: center;
+}
+.products .thumbnails h4.price{
+  text-align: right;
+  padding: 0 10px;
+  color: #333;
+}
+.products .thumbnails a:hover h5{
+  text-decoration: underline;
+}
+.products .thumbnails a:hover{
+  text-decoration: none;
+}
+.product_content >div img{
+  margin-right: 20px;
+}
+.product_content >div{
+  display: inline-block;
+  vertical-align: top;
+}
+.product_about >div{
+  margin-bottom: 20px;
+}
+.product_about .price{
+  font-weight: bold;
+}
+.price_block .nums{
+  display: inline-block;
+  width: 100px;
+}
+.product_content .img-thumbnail{
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.card_product >div{
+  display: inline-block;
+  vertical-align: top;
+}
+.card_product .cart-img{
+  cursor: pointer;
+  margin-right: 10px;
+  height: 60px;
+}
+.cart_table .table td input[type="number"]{
+  width: 88px;
+}
+.card_product .cart-info a{
+  color: #333;
+}
+.cart_table .table td .price{
+  padding-left: 10px;
+}
+.cart_table .table td{
+  vertical-align: middle;
+}
+.my-modal .modal-body{
+  text-align: center;
+}
+.sum{
+  text-align: right;
+  padding: 5px 150px;
+}
+footer{
+  position: absolute;
+  bottom:0;
+}
+.my-navbar .navbar-nav>li>a,
+.my-navbar .navbar-brand{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.navbar-brand{
+  cursor: pointer;
+}
+.my-navbar.navbar{
+  min-height: 40px;
+  height: 41px;
+}
+.my-navbar .nav li a.shopping-cart{
+  padding: 5px 2px;
+}
+.shopping-cart .glyphicon-shopping-cart{
+  color: #ffffff;
+  font-size: 23px;
+}
+#big_img{
+  max-height: 420px;
+}
+.user-form.ng-invalid-required .ng-dirty.ng-invalid-required,
+.user-form.ng-invalid-required .ng-dirty.ng-invalid-email{
+  border-color: #d44950;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(233,175,102,0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(233,175,102,0.6);
+}
+.user-form textarea{
+  resize:none;
+}
+.main-carousel.carousel .carousel-caption{
+  padding-top:10px;
+  padding-bottom: 10px;
+  bottom:0;
+  text-shadow: 0 1px 5px rgba(0,0,0,1);
+}
+.main-carousel.carousel .carousel-indicators{
+  bottom: -25px;
+  margin-bottom: 0;
+}
+.main-carousel.carousel .carousel-indicators li.active{
+  background-color: #3c3c3c;
+}
+.main-carousel.carousel .carousel-indicators li{
+  border-color: #3c3c3c;
+}
+.aboutUs
+{
+  width: 90%;
+  margin: 0 auto;
+}
+.cart{
+  width: 90%;
+  margin: 0 auto;
+}
+.active-header{
+  color:#ffff00;
+}
+.list-group-item
+{
+  cursor: pointer;
+}
+.list-group-item:hover
+{
+  background: #bbbbbb;
+}
+.toAll
+{
+  width: 70px;
+  height: 70px;
+  color: white;
+  opacity: 0.5;
+  background-color: #000000;
+  padding-top: 17px;
+  position: fixed;
+  margin-top: 2em;
+  left: 1em;
+  border-radius: 2px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.toAll:hover
+{
+  background-color: #bbbbbb;
+  transition: all 0.2s;
 }
