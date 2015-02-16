@@ -233,23 +233,4 @@ footer{
 {
   background: #bbbbbb;
 }
-.toAll
-{
-  width: 70px;
-  height: 70px;
-  color: white;
-  opacity: 0.5;
-  background-color: #000000;
-  padding-top: 17px;
-  position: fixed;
-  margin-top: 2em;
-  left: 1em;
-  border-radius: 2px;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-.toAll:hover
-{
-  background-color: #bbbbbb;
-  transition: all 0.2s;
-}
+

@@ -8,7 +8,7 @@
  * Controller of the dikeaApp
  */
 angular.module('dikeaApp')
-  .controller('ProductslistCtrl', function ($scope, $routeParams) {
+  .controller('ProductslistCtrl', function ($scope, $routeParams,$http) {
     $scope.init = function () {
       $scope.list_type = $routeParams.Type;
       $scope.list_id = $routeParams.Id;
