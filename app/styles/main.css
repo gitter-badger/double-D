@@ -178,7 +178,8 @@ footer{
   height: 41px;
 }
 .my-navbar .nav li a.shopping-cart{
-  padding: 5px 2px;
+  padding: 7px 2px;
+  transform:rotateY(180deg);
 }
 .shopping-cart .glyphicon-shopping-cart{
   color: #ffffff;
