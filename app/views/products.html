@@ -1,1 +1,10 @@
-<p>This is the products view.</p>
+<div class="products-list">
+  <div class="panel panel-primary" ng-repeat="product in products">
+    <div class="panel-heading">{{product[0].header}}</div>
+    <div class="panel-body">
+      <div class="list-group">
+        <a href="/category/list/{{item.type}}/{{item.id}}" class="list-group-item" ng-repeat="item in product">{{item.value}}</a>
+      </div>
+    </div>
+  </div>
+  <p>ekjdekjd</p>

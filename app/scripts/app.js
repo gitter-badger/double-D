@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('dikeaApp', [
+  .module('dikea', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -26,10 +26,6 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      })
-      .when('/products-uri=products', {
-        templateUrl: 'views/products-uri=products.html',
-        controller: 'ProductsUriProductsCtrl'
       })
       .when('/products', {
         templateUrl: 'views/products.html',
