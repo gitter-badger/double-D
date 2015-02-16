@@ -20,23 +20,23 @@ available.)
 2. FrontEnd:
 В корені запускаємо(краще зайти через Git Bash):
  
-    npm install
-    bower install
+    `npm install`
+    `bower install`
   
 
 Запускаємо проект:
 -------------------
 1. run zend server 
 
-    cd app
-    php -S 0.0.0.0:8080 index.php
+    `cd app`
+    `php -S 0.0.0.0:8080 index.php`
 
 This will start the cli-server on port 8080, and bind it to all network
 interfaces.
 
 2. Білдимо фронтенд
 
-  grunt serve
+  `grunt serve`
   
 
 
