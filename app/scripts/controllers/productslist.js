@@ -9,7 +9,6 @@
  */
 angular.module('dikeaApp')
   .controller('ProductslistCtrl', function ($scope, $routeParams) {
-    $scope.init();
     $scope.init = function () {
       $scope.list_type = $routeParams.Type;
       $scope.list_id = $routeParams.Id;
@@ -50,4 +49,5 @@ angular.module('dikeaApp')
         return "";
       }
     }
+    $scope.init();
   });
