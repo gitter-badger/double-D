@@ -51,8 +51,10 @@ angular.module('dikeaApp')
     }
     $scope.added = function (item) {
       if (item.added) {
+        $("#"+item.id+"").html("добавлено в корзину");
         return "добавлено в корзину"
       } else {
+        $("#"+item.id+"").html("");
         return "";
       }
     }
