@@ -1,11 +1,17 @@
+'use strict';
+
 /**
- * Created by mohsom on 16.02.2015.
+ * @ngdoc function
+ * @name dikeaApp.controller:ProductslistCtrl
+ * @description
+ * # ProductslistCtrl
+ * Controller of the dikeaApp
  */
 angular.module('dikeaApp')
-  .controller('ProductsOnCtg', function ($scope,$http) {
-    $scope.init = function (type, id) {
-      $scope.list_type = type;
-      $scope.list_id = id;
+  .controller('ProductslistCtrl', function ($scope, $routeParams) {
+    $scope.init = function () {
+      $scope.list_type = $routeParams.itemType;
+      $scope.list_id = $routeParams.itemId;
       $scope.getProducts();
       $scope.getNavigation();
 
@@ -13,6 +19,7 @@ angular.module('dikeaApp')
     $scope.getProducts = function () {
       $http.post("/category/requests/" + $scope.list_type + "/" + $scope.list_id, {"action": "getProducts"}).success(function (data) {
         $scope.prd = data;
+        $(".thumbnails").animate({opacity: 1}, 200);
       });
     }
 
