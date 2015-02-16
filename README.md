@@ -9,8 +9,6 @@ Clone the repository and manually invoke `composer` using the shipped
 `composer.phar`:
 
     cd my/project/dir
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git
-    cd ZendSkeletonApplication
     php composer.phar self-update
     php composer.phar install
 
@@ -20,7 +18,7 @@ available.)
 2. FrontEnd:
 В корені запускаємо(краще зайти через Git Bash):
  
-    `npm install`
+    `npm install` <br/>
     `bower install`
   
 
