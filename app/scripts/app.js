@@ -30,7 +30,7 @@ angular.module('dikeaApp', [
         templateUrl: 'views/products.html',
         controller: 'ProductsCtrl'
       })
-      .when('/category/list/:Type/:Id', {
+      .when('/products/:Type/:Id', {
         templateUrl: 'views/productslist.html',
         controller: 'ProductslistCtrl'
       })
