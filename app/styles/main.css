@@ -131,14 +131,10 @@ div.container a.brand {
   width: 85%;
   margin: 0 auto;
 }
-
-.product_content > .img-thumbnail {
-  width: 500px;
-  height: 500px;
-}
-
 .product_content > div img {
   margin-right: 20px;
+  width: 500px;
+  height: 500px;
 }
 
 .product_content > div {
