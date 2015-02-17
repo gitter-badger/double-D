@@ -286,3 +286,6 @@ footer {
   margin: 0 auto;
   width: 90%;
 }
+.back-arr,.next-arr{
+  cursor: pointer;
+}
