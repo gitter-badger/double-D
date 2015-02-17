@@ -22,7 +22,7 @@ angular.module('dikeaApp')
     $scope.buy = function () {
       if ($scope.price()) {
         $scope.storage.addToCart($scope.data, $scope.number);
-        $scope.added = "РґРѕР±Р°РІР»РµРЅРѕ РІ РєРѕСЂР·РёРЅСѓ";
+        $scope.added = "добавлено в корзину";
       }
     }
     $scope.getNavigation = function () {
