@@ -9,9 +9,6 @@
  */
 angular.module('dikeaApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.storage = new LocalStorage();
+    $scope.storage.getNumbers();
   });

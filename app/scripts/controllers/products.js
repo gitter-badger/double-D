@@ -14,6 +14,8 @@ angular.module('dikeaApp')
         $scope.products = data;
         $("body").animate({"scrollTop": 0}, 0);
       });
+      $scope.storage = new LocalStorage();
+      $scope.storage.getNumbers();
     }
     $scope.makeRequest();
   });
