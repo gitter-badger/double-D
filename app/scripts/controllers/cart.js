@@ -11,7 +11,7 @@ angular.module('dikeaApp')
   .controller('CartCtrl', function ($scope,$http) {
     $scope.storage = new LocalStorage();
     $scope.data = $scope.storage.get("shopping_cart");
-    $scope.checkData();
+   // $scope.checkData();
     $scope.img = function (img) {
       return img.replace("_S3", "_S2");
     }
@@ -93,8 +93,4 @@ angular.module('dikeaApp')
         $scope.user = angular.fromJson(localStorage.getItem('self_info'));
       }
     });
-    $(".glyphicon-shopping-cart").click(function () {
-      $scope.init();
-      $(".tab4").fadeOut(0).fadeIn(500);
-    })
   });
