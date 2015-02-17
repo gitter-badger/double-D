@@ -1,1 +1,31 @@
-<p>This is the oneProduct view.</p>
+<div class="product_content" ng-init='init(<?php echo json_encode($this->data); ?>)'>
+  <ol class="breadcrumb">
+    <li><a href="/products">{{navigation.header}}</a></li>
+    <li><a href="/category/list/{{navigation.type}}/{{navigation.id}}">{{navigation.value}}</a></li>
+    <li class="active"><span >{{data.title}}</span></li>
+  </ol>
+  <h2><?php echo $this->data->title ?></h2>
+  <div>
+    <img src="<?php echo $img; ?>" alt="..." class="img-thumbnail">
+  </div>
+  <div class="product_about">
+    <div class="info">
+      <h4>Описание:</h4>
+      <p><?php echo $this->data->desp?></p>
+      <p><?php echo $this->data->more_info?></p>
+    </div>
+    <div class="links">
+      <h4>Страница производителя:</h4>
+      <div>Страница на польском сайте <a target="_blank" href="http://www.ikea.com/pl/pl/catalog/products/<?php echo $this->data->id ?>/">здесь</a></div>
+      <div>Страница на русском сайте <a target="_blank" href="http://www.ikea.com/ru/ru/catalog/products/<?php echo $this->data->id ?>/">здесь</a>(может не существовать)</div>
+    </div>
+    <div class="price_block">
+      <h4>Купить:</h4>
+      <h1 class="price">{{price()}} грн</h1>
+      <input type="number" ng-model="number" class="nums form-control" min=1 max=99 value="1">
+      <button class="btn btn-info" ng-click="buy()"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
+      <em>{{added}}</em>
+    </div>
+  </div>
+
+</div>
