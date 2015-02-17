@@ -38,6 +38,10 @@ angular.module('dikeaApp', [
         templateUrl: 'views/oneproduct.html',
         controller: 'OneproductCtrl'
       })
+      .when('/cart', {
+        templateUrl: 'views/cart.html',
+        controller: 'CartCtrl'
+      })
       .otherwise({
         redirectTo: '/main'
       });
