@@ -18,7 +18,7 @@ angular.module('dikeaApp', [
   ])
   .config(function ($routeProvider) {
     $routeProvider.
-      when('/', {
+      when('/main', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
@@ -39,6 +39,6 @@ angular.module('dikeaApp', [
         controller: 'OneproductCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/main'
       });
   });
