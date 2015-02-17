@@ -34,6 +34,10 @@ angular.module('dikeaApp', [
         templateUrl: 'views/productslist.html',
         controller: 'ProductslistCtrl'
       })
+      .when('/category/product/:Id', {
+        templateUrl: 'views/oneproduct.html',
+        controller: 'OneproductCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
