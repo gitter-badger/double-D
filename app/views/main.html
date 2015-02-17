@@ -1,3 +1,11 @@
+<script>
+  $("div.back-arr").click(function(){
+    $('.carousel').carousel('prev');
+  });
+  $("div.next-arr").click(function(){
+    $('.carousel').carousel('next')
+  });
+</script>
 <div class="container">
   <div id="main-carousel" class="carousel slide main-carousel" data-ride="carousel">
     <!-- Indicators -->
@@ -46,12 +54,12 @@
     </div>
 
     <!-- Controls -->
-    <a class="left carousel-control" href="#main-carousel" data-slide="prev"> <!--todo:we should remake carousel controllers without links-->
+    <div class="left carousel-control back-arr">
       <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#main-carousel" data-slide="next">
+    </div>
+    <div class="right carousel-control next-arr">
       <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
+    </div>
   </div>
 
   <h1>Lorem ipsum</h1>
