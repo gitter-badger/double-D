@@ -1,6 +1,7 @@
 /**
  * Created by mohsom on 16.02.2015.
  */
+'use strict';
 function LocalStorage() {
   var th = this;
 
@@ -29,7 +30,7 @@ function LocalStorage() {
   };
   this.check = function () {
     try {
-      return 'localStorage' in window && window['localStorage'] !== null;
+      return 'localStorage' in window && window.localStorage !== null;
     } catch (e) {
       return false;
     }
