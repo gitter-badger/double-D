@@ -289,3 +289,6 @@ footer {
 .back-arr,.next-arr{
   cursor: pointer;
 }
+.sort{
+  cursor: pointer;
+}

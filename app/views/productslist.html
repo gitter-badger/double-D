@@ -1,31 +1,56 @@
-  <div class="products">
-    <h1>{{header}}</h1>
-    <ol class="breadcrumb">
-      <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch
-          on="isActive(item.id)">
-        <a href="" ng-switch-when="" ng-click="init2(item.type,item.id,item.id)">{{item.value}}</a>
-        <span ng-switch-when="active">{{item.value}}</span>
-      </li>
-    </ol>
-    <ul class="thumbnails">
-      <li class="span4" ng-repeat="item in prd">
-        <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
-          <a ng-href="#/product/{{item.id}}">
-            <img src="{{item.img}}" alt="">
-            <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
-            <h4 class="price">{{item.price}} грн</h4>
-          </a>
-
-          <div class="info check-element animate-show" ng-show="info">
-            <p>{{item.more_info}}</p>
-            <button style="font-weight: bold" class="btn btn-mini btn-info" type="button"
-                    ng-click="buy(item)">
-              <i class="glyphicon glyphicon-shopping-cart"></i> Buy
-            </button>
-            <em id="{{item.id}}">{{added(item)}}</em>
-          </div>
-        </div>
-      </li>
+<script>
+  $('#-price').click(function(){
+    $('.span4').attr('ng-repeat','item in prd | orderBy: "-item.price"');
+    $('#dropd').html($('#-price').html());
+  });
+  $('#pprice').click(function(){
+    $('.span4').attr('ng-repeat','item in prd | orderBy: "+item.price"');
+    $('#dropd').html($('#pprice').html());
+  });
+  $('#noneprice').click(function(){
+    $('.span4').attr('ng-repeat','item in prd');
+    $('#dropd').html($('#noneprice').html());
+  });
+</script>
+<div class="products">
+  <h1>{{header}}</h1>
+  <ol class="breadcrumb">
+    <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch
+        on="isActive(item.id)">
+      <a href="" ng-switch-when="" ng-click="init2(item.type,item.id,item.id)">{{item.value}}</a>
+      <span ng-switch-when="active">{{item.value}}</span>
+    </li>
+  </ol>
+  <label for="#dropd">Сортировка товаров: </label>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="dropd">
+      Без сортировки <span class="caret"></span>
+    </button></p>
+    <ul class="dropdown-menu" role="menu">
+      <li><a id="-price" class="sort">От дорогого к дешевому</a></li>
+      <li><a id="pprice" class="sort">От дешевого к дорогому</a></li>
+      <li><a id="noneprice" class="sort">Без сортировки</a></li>
     </ul>
   </div>
+  <ul class="thumbnails">
+    <li class="span4" ng-repeat="item in prd">
+      <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
+        <a ng-href="#/product/{{item.id}}">
+          <img src="{{item.img}}" alt="">
+          <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
+          <h4 class="price">{{item.price}} грн</h4>
+        </a>
+
+        <div class="info check-element animate-show" ng-show="info">
+          <p>{{item.more_info}}</p>
+          <button style="font-weight: bold" class="btn btn-mini btn-info" type="button"
+                  ng-click="buy(item)">
+            <i class="glyphicon glyphicon-shopping-cart"></i> Buy
+          </button>
+          <em id="{{item.id}}">{{added(item)}}</em>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
 
