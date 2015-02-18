@@ -8,10 +8,15 @@
  * Controller of the dikeaApp
  */
 angular.module('dikeaApp')
-  .controller('ProductslistCtrl', function ($scope, $routeParams,$http) {
+  .controller('ProductslistCtrl', function ($scope, $routeParams,$http,$filter) {
     $scope.storage = new LocalStorage();
     $scope.storage.getNumbers();
     $scope.predicate = '';
+    var orderBy = $filter('orderBy');
+    $scope.order = function(predicate) {
+      $scope.prd = orderBy($scope.prd, predicate);
+    };
+    $scope.order('',false);
     $scope.init = function () {
       $scope.list_type = $routeParams.Type;
       $scope.list_id = $routeParams.Id;
