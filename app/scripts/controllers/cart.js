@@ -10,41 +10,41 @@
 angular.module('dikeaApp')
   .controller('CartCtrl', function ($scope,$http) {
     $scope.storage = new LocalStorage();
-    $scope.data = $scope.storage.get("shopping_cart");
+    $scope.data = $scope.storage.get('shopping_cart');
     $scope.img = function (img) {
-      return img.replace("_S3", "_S2");
-    }
-    $scope.remove = function (item, $event) {
+      return img.replace('_S3', '_S2');
+    };
+    $scope.remove = function (item) {
       var index = $scope.data.indexOf(item);
-      $scope.data.splice(index, 1)
-      $scope.storage.set("shopping_cart", $scope.data)
+      $scope.data.splice(index, 1);
+      $scope.storage.set('shopping_cart', $scope.data);
       $scope.storage.getNumbers();
       $scope.checkData();
-    }
+    };
     $scope.removeAll = function () {
       $scope.data = [];
-      $scope.storage.set("shopping_cart", $scope.data)
+      $scope.storage.set('shopping_cart', $scope.data);
       $scope.storage.getNumbers();
       $scope.checkData();
-    }
+    };
     $scope.numChange = function (item) {
       if (item.number) {
-        $scope.storage.set("shopping_cart", $scope.data)
+        $scope.storage.set('shopping_cart', $scope.data);
         $scope.storage.getNumbers();
       }
-    }
+    };
     $scope.showImg = function (item) {
-      $("#big_img").attr("src", item.img.replace("_S3", "_S4"));
-      $('#myModal .modal-title').html(item.title)
-      $('#myModal').modal('show')
-    }
+      $('#big_img').attr('src', item.img.replace('_S3', '_S4'));
+      $('#myModal.modal-title').html(item.title);
+      $('#myModal').modal('show');
+    };
     $scope.price = function () {
       var price = 0;
-      angular.forEach($scope.data, function (value, key) {
+      angular.forEach($scope.data, function (value) {
         price += value.number * value.item.price;
       });
       return price;
-    }
+    };
 
     $scope.checkData = function () {
       if (($scope.data) && ($scope.data.length)) {
@@ -52,16 +52,16 @@ angular.module('dikeaApp')
       } else {
         $('.btn-order').prop('disabled', true);
       }
-    }
+    };
 
     $scope.selfInfo = function () {
       $('#selfInfo').modal('show');
-    }
+    };
     $scope.submit = function () {
       $scope.setUser();
-    }
+    };
     $scope.setUser = function () {
-      $http.post("/store/do/setCart", $scope.user).success(function (data) {
+      $http.post('/store/do/setCart', $scope.user).success(function (data) {
         if (data.error) {
         } else {
 //                $scope.user=data; // todo: remove it in future.
@@ -71,7 +71,7 @@ angular.module('dikeaApp')
         }
 
       });
-    }
+    };
     $scope.sendCartData = function (id) {
       console.log($scope.data);
       $http.post('/store/do/setCartList', {
@@ -79,12 +79,11 @@ angular.module('dikeaApp')
         user: $scope.user,
         data: $scope.data
       }).success(function (data) {
-        angular.forEach(data, function (item) {
-
+        angular.forEach(data, function () {
           $scope.removeAll();
-        })
+        });
       });
-    }
+    };
 
     $(function () {
       $scope.checkData();
