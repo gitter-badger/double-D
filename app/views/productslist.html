@@ -1,14 +1,11 @@
 <script>
-  $('#-price').click(function(){
-    $('.span4').attr('ng-repeat','item in prd | orderBy: "-item.price"');
+  $('#-price').click(function () {
     $('#dropd').html($('#-price').html());
   });
-  $('#pprice').click(function(){
-    $('.span4').attr('ng-repeat','item in prd | orderBy: "+item.price"');
+  $('#pprice').click(function () {
     $('#dropd').html($('#pprice').html());
   });
-  $('#noneprice').click(function(){
-    $('.span4').attr('ng-repeat','item in prd');
+  $('#noneprice').click(function () {
     $('#dropd').html($('#noneprice').html());
   });
 </script>
@@ -22,18 +19,23 @@
     </li>
   </ol>
   <label for="#dropd">Сортировка товаров: </label>
+
   <div class="btn-group">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="dropd">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"
+            id="dropd">
       Без сортировки <span class="caret"></span>
-    </button></p>
+    </button>
+    </p>
     <ul class="dropdown-menu" role="menu">
-      <li><a id="-price" class="sort">От дорогого к дешевому</a></li>
-      <li><a id="pprice" class="sort">От дешевого к дорогому</a></li>
-      <li><a id="noneprice" class="sort">Без сортировки</a></li>
+      <li><a id="-price" ng-click="predicate = '-item.price';reverse=!reverse" class="sort">От дорогого к дешевому</a>
+      </li>
+      <li><a id="+price" ng-click="predicate = '+item.price';reverse=!reverse" class="sort">От дешевого к дорогому</a>
+      </li>
+      <li><a id="noneprice" ng-click="predicate = ''" class="sort">Без сортировки</a></li>
     </ul>
   </div>
   <ul class="thumbnails">
-    <li class="span4" ng-repeat="item in prd">
+    <li class="span4" ng-repeat="item in prd | orderBy:predicate:reverse">
       <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
         <a ng-href="#/product/{{item.id}}">
           <img src="{{item.img}}" alt="">
