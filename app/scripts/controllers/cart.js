@@ -62,7 +62,7 @@ angular.module('dikeaApp')
     };
     $scope.setUser = function () {
       $http.post('/store/do/setCart', $scope.user).success(function (data) {
-        if (data.error) {
+        if (!data.error) {
         } else {
 //                $scope.user=data; // todo: remove it in future.
           localStorage.setItem('self_info', angular.toJson($scope.user));
