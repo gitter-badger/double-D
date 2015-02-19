@@ -7,7 +7,7 @@
  * # ProductslistCtrl
  * Controller of the dikeaApp
  */
-angular.module('dikeaApp')
+angular.module('dikeaApp') //Products in Category Ctrl
   .controller('ProductslistCtrl', function ($scope, $routeParams,$http,$filter) {
     $scope.storage = new LocalStorage();
     $scope.storage.getNumbers();

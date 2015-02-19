@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular.module('dikeaApp', [
+angular.module('dikeaApp', [  //Route config
     'ngAnimate',
     'ngCookies',
     'ngResource',

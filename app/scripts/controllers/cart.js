@@ -7,7 +7,7 @@
  * # CartCtrl
  * Controller of the dikeaApp
  */
-angular.module('dikeaApp')
+angular.module('dikeaApp') //Ctrl for shopping cart
   .controller('CartCtrl', function ($scope,$http) {
     $scope.storage = new LocalStorage();
     $scope.data = $scope.storage.get('shopping_cart');

@@ -7,18 +7,6 @@
  * # AboutCtrl
  * Controller of the dikeaApp
  */
-angular.module('dikeaApp')
+angular.module('dikeaApp')//about us page Ctrl.
   .controller('AboutCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-    $scope.makeRequest = function () {
-      $http.post('/products/requests/getProductsList').success(function (data) {
-        console.log('data is:', data);
-      });
-    };
-
-    $scope.makeRequest();
   });

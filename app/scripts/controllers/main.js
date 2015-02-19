@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the dikeaApp
  */
-angular.module('dikeaApp')
+angular.module('dikeaApp') //App Ctrl
   .controller('MainCtrl', function ($scope) {
     $scope.storage = new LocalStorage();
     $scope.storage.getNumbers();

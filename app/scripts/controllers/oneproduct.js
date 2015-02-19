@@ -7,7 +7,7 @@
  * # OneproductCtrl
  * Controller of the dikeaApp
  */
-angular.module('dikeaApp')
+angular.module('dikeaApp')  //Product page Ctrl
   .controller('OneproductCtrl', function ($scope,$http) {
     $scope.number = 1;
     $scope.added = '';
