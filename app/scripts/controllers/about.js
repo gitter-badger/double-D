@@ -7,6 +7,6 @@
  * # AboutCtrl
  * Controller of the dikeaApp
  */
-angular.module('dikeaApp')//about us page Ctrl.
+angular.module('dikeaApp')//about us page Ctrl. View: 'about.html'
   .controller('AboutCtrl', function ($scope, $http) {
   });

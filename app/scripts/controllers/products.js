@@ -7,7 +7,7 @@
  * # ProductsCtrl
  * Controller of the dikeaApp
  */
-angular.module('dikeaApp') //category Ctrl
+angular.module('dikeaApp')//category Ctrl. View: 'products.html'
   .controller('ProductsCtrl', function ($scope,$http) {
     $scope.makeRequest = function () {
       $http.post('/products/requests/getProductsList').success(function (data) {
