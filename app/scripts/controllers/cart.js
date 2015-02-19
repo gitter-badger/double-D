@@ -67,6 +67,7 @@ angular.module('dikeaApp')
 //                $scope.user=data; // todo: remove it in future.
           localStorage.setItem('self_info', angular.toJson($scope.user));
           $('#selfInfo').modal('hide');
+          $scope.checkData();
           $scope.sendCartData(data);
         }
 
