@@ -204,6 +204,7 @@ footer {
 .my-navbar .navbar-brand {
   padding-top: 10px;
   padding-bottom: 10px;
+  height: 30px;
 }
 
 .navbar-brand {
@@ -211,7 +212,7 @@ footer {
 }
 
 .my-navbar.navbar {
-  min-height: 40px;
+  min-height: 41px;
 }
 
 .my-navbar .nav li a.shopping-cart {
