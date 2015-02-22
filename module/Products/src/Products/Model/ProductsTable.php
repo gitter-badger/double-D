@@ -23,6 +23,14 @@ class ProductsTable
         return $data;
     }
 
+    public function getProduct($id){
+        $id=(int)$id;
+        $select = "select * from products where id=".$id;
+        $adapter = $this->tableGateway->getAdapter();
+        $request = $adapter->query($select, $adapter::QUERY_MODE_EXECUTE);
+        $row = $request->current();
+        return $row;
+    }
     public function saveProductsList($data){
         $insert ="replace into products_list(id, header, type, value,active) values";
         $id_array= array();

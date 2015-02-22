@@ -20,8 +20,8 @@ class ProductsController extends AbstractActionController
     public function requestsAction(){
         $request = $this->getRequest();
         $do = $this->params()->fromRoute("do");
+        $pu = new ProductsUpdate();
         if($request->isPost()&& isset($do)){
-            $pu = new ProductsUpdate();
             switch($do){
                 case "getProductsPage":
                     try{
@@ -68,6 +68,24 @@ class ProductsController extends AbstractActionController
                     );
                     break;
             }
+        }else if($request->isGet()&& isset($do)){
+            $data = new \stdClass();
+            switch($do){
+                case "product":
+                    $id = $this->params()->fromQuery('id');
+                    if(isset($id)){
+                        $data->data = $this->getProductsTable()->getProduct($id);
+                        return array(
+                            'data'=> json_encode($data)
+                        );
+                    }else{
+                        var_dump($data);
+                    }
+                    break;
+            }
+            return array(
+                'data'=> json_encode($data)
+            );
         }else{
             return $this->redirect()->toRoute("products");
         }
