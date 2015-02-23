@@ -34,12 +34,13 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
       }
     };
     $scope.getNavigation = function () {
-      $http.get('/category/requests/' + $scope.data.list_type + '/' + $scope.data.list_id, {'action': 'getShortNavigation'}).success(function (data) {
+      $http.post("/category/requests/" + $scope.data.list_type + "/" + $scope.data.list_id, {"action": "getShortNavigation"}).success(function (data) {
         $scope.navigation = data;
-        if(data.length===0){
-          location.href='/';
+        if(data.length==0){
+          location.href="/"
         }
+       // console.log(data);=>''
       });
-    };
+    }
     $scope.init();
   });
