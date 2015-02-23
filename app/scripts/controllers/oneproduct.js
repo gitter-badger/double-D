@@ -33,6 +33,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
       }
     };
     $scope.getNavigation = function () {
+      //list_type, list_id undefined
       $http.post("/category/requests/" + $scope.data.list_type + "/" + $scope.data.list_id, {"action": "getShortNavigation"}).success(function (data) {
         $scope.navigation = data;
         if(data.length==0){
