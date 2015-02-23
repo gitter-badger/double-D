@@ -16,11 +16,18 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.init=function(){
       $scope.id=$routeParams.Id;
       $scope.getData($scope.id);
-      $scope.getNavigation();
     };
     $scope.getData=function(id){
+      //getting data
       $http.get('/products/requests/product?id='+id+'').success(function(data){
         $scope.data=data.data;
+        //getting navigation
+        $http.post("/category/requests/" + data.data.list_type + "/" + data.data.list_id, {"action": "getShortNavigation"}).success(function (data) {
+          $scope.navigation = data;
+          if(data.length==0){
+            location.href="/"
+          }
+        });
       });
     };
     $scope.price = function () {
@@ -31,16 +38,6 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
         $scope.storage.addToCart($scope.data, $scope.number);
         $scope.added = 'добавлено в корзину';
       }
-    };
-    $scope.getNavigation = function () {
-      //list_type, list_id undefined
-      $http.post("/category/requests/" + $scope.data.list_type + "/" + $scope.data.list_id, {"action": "getShortNavigation"}).success(function (data) {
-        $scope.navigation = data;
-        if(data.length==0){
-          location.href="/"
-        }
-        console.log(data);//==>''
-      });
     };
     $scope.init();
   });
