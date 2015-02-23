@@ -12,14 +12,16 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.number = 1;
     $scope.added = '';
     $scope.storage = new LocalStorage();
-    $scope.id=$routeParams.Id;
+    $scope.data={};
     $scope.init=function(){
-      $scope.getData();
+      $scope.id=$routeParams.Id;
+      $scope.getData($scope.id);
       $scope.getNavigation();
     };
-    $scope.getData=function(){
-      $http.get('/products/requests/product?id='+$scope.id+'').success(function(data){
+    $scope.getData=function(id){
+      $http.get('/products/requests/product?id='+id+'').success(function(data){
         $scope.data=data.data;
+        //alert(data.data.title);
       });
     };
     $scope.price = function () {
