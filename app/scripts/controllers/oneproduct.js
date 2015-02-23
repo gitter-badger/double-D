@@ -8,14 +8,16 @@
  * Controller of the dikeaApp
  */
 angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
-  .controller('OneproductCtrl', function ($scope,$http) {
+  .controller('OneproductCtrl', function ($scope,$http,$routeParams) {
     $scope.number = 1;
     $scope.added = '';
     $scope.storage = new LocalStorage();
-    $scope.init = function (data) {
-      $scope.data = data;
+    $scope.id=$routeParams.Id;
+    $http.post('/products/requests/product?id='+$scope.id+'').success(function(data){
+      $scope.data=data;
+      alert(data);
       $scope.getNavigation();
-    };
+    });
     $scope.price = function () {
       return $scope.data.price * $scope.number;
     };
