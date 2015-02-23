@@ -13,6 +13,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.added = '';
     $scope.storage = new LocalStorage();
     $scope.data={};
+    $scope.navigation={};
     $scope.init=function(){
       $scope.id=$routeParams.Id;
       $scope.getData($scope.id);
@@ -21,7 +22,6 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.getData=function(id){
       $http.get('/products/requests/product?id='+id+'').success(function(data){
         $scope.data=data.data;
-        //alert(data.data.title);
       });
     };
     $scope.price = function () {
@@ -34,7 +34,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
       }
     };
     $scope.getNavigation = function () {
-      $http.post('/category/requests/' + $scope.data.list_type + '/' + $scope.data.list_id, {'action': 'getShortNavigation'}).success(function (data) {
+      $http.get('/category/requests/' + $scope.data.list_type + '/' + $scope.data.list_id, {'action': 'getShortNavigation'}).success(function (data) {
         $scope.navigation = data;
         if(data.length===0){
           location.href='/';
