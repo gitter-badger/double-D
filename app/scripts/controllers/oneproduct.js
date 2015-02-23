@@ -13,11 +13,15 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.added = '';
     $scope.storage = new LocalStorage();
     $scope.id=$routeParams.Id;
-    $http.post('/products/requests/product?id='+$scope.id+'').success(function(data){
-      $scope.data=data;
-      alert(data);
+    $scope.init=function(){
+      $scope.getData();
       $scope.getNavigation();
-    });
+    };
+    $scope.getData=function(){
+      $http.get('/products/requests/product?id='+$scope.id+'').success(function(data){
+        $scope.data=data.data;
+      });
+    };
     $scope.price = function () {
       return $scope.data.price * $scope.number;
     };
@@ -35,4 +39,5 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
         }
       });
     };
+    $scope.init();
   });
