@@ -21,6 +21,9 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
       //getting data
       $http.get('/products/requests/product?id='+id+'').success(function(data){
         $scope.data=data.data;
+        if(!data.data){
+          location.href='/#main';
+        }
         //getting navigation
         $http.post("/category/requests/" + data.data.list_type + "/" + data.data.list_id, {"action": "getShortNavigation"}).success(function (data) {
           $scope.navigation = data;
