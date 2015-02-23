@@ -41,6 +41,6 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
         }
         console.log(data);//==>''
       });
-    }
+    };
     $scope.init();
   });
