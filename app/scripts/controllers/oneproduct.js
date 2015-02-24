@@ -35,6 +35,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
         });
         $http.post('/category/requests/' + data.data.list_type + '/' + data.data.list_id, {'action': 'getProducts'}).success(function (data) {
           $scope.prd = data;
+          $scope.prd= _.shuffle($scope.prd);
           $scope.prd1[0]=$scope.prd[0];
           $scope.prd1[1]=$scope.prd[1];
           $scope.prd1[2]=$scope.prd[2];
