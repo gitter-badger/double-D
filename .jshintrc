@@ -18,6 +18,7 @@
   "globals": {
     "angular": false,
     "$":false,
-    "LocalStorage":false
+    "LocalStorage":false,
+    "_":false
   }
 }
