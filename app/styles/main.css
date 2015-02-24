@@ -302,4 +302,13 @@ footer {
   width: 390px;
   display: block;
 }
+.imginpnl{
+  display: inline-block;
+}
+.imginpnl>div img{
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+}
+
 

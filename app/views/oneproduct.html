@@ -30,6 +30,11 @@
     <div class="panel panel-default">
       <div class="panel-body">
        <p>Далее {{navigation.value}}</p>
+        <div class="imginpnl" ng-repeat="item in prd1">
+          <div>
+             <img src="{{item.img}}">
+          </div>
+        </div>
        <p><a href="#/products/{{navigation.type}}/{{navigation.id}}">Перейти к {{navigation.value}}</a></p>
       </div>
     </div>
