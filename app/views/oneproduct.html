@@ -32,7 +32,7 @@
        <p>Далее {{navigation.value}}</p>
         <div class="imginpnl" ng-repeat="item in prd1">
           <div>
-             <img src="{{item.img}}">
+             <a href="#/product/{{item.id}}"><img src="{{item.img}}"></a>
           </div>
         </div>
        <p><a href="#/products/{{navigation.type}}/{{navigation.id}}">Перейти к {{navigation.value}}</a></p>
