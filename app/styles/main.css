@@ -318,12 +318,7 @@ footer {
   transform: scale(1.1);
   transition: all 0.1s;
 }
-.infosm{
-  display: none;
-  width: 100px;
-  height: 100px;
-  visibility: hidden;
-}
+
 
 
 

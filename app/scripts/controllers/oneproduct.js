@@ -18,6 +18,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.init = function () {
       $scope.id = $routeParams.Id;
       $scope.getData($scope.id);
+      $('.sming').tooltip();
     };
     $scope.getData = function (id) {
       //getting data
