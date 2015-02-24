@@ -13,6 +13,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.added = '';
     $scope.storage = new LocalStorage();
     $scope.data = {};
+    $scope.prd={};
     $scope.init = function () {
       $scope.id = $routeParams.Id;
       $scope.getData($scope.id);
