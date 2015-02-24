@@ -34,6 +34,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
             location.href = '/';
           }
         });
+        //others products
         $http.post('/category/requests/' + data.data.list_type + '/' + data.data.list_id, {'action': 'getProducts'}).success(function (data) {
           $scope.prd = data;
           $scope.prd= _.shuffle($scope.prd);
