@@ -31,7 +31,7 @@
       <div class="panel-body">
        <p>Далее {{navigation.value}}</p>
         <div class="imginpnl" ng-repeat="item in prd1">
-          <div>
+          <div ng-show="item.id!==data.id">
              <a href="#/product/{{item.id}}"><img src="{{item.img}}"></a>
           </div>
         </div>

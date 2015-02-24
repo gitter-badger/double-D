@@ -13,7 +13,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.added = '';
     $scope.storage = new LocalStorage();
     $scope.data = {};
-    $scope.prd1=new Array(3);
+    $scope.prd1=new Array(5);
 
     $scope.init = function () {
       $scope.id = $routeParams.Id;
@@ -38,6 +38,8 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
           $scope.prd1[0]=$scope.prd[0];
           $scope.prd1[1]=$scope.prd[1];
           $scope.prd1[2]=$scope.prd[2];
+          $scope.prd1[3]=$scope.prd[3];
+          $scope.prd1[4]=$scope.prd[4];
         });
       })
     };
