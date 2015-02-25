@@ -299,15 +299,15 @@ footer {
   cursor: pointer;
 }
 .panel{
-  width: 390px;
+
   display: block;
 }
 .imginpnl{
   display: inline-block;
 }
 .imginpnl>div img{
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   margin: 10px;
   border-color: #5bc0de;
   box-shadow: 0 0 2px rgba(42, 171, 210, 0.6);
@@ -324,11 +324,9 @@ a.tooltips {
 }
 a.tooltips span {
   position: absolute;
-  width:140px;
   color: #FFFFFF;
   background: #000;
-  height: 100px;
-  line-height: 100px;
+  padding: 10px;
   text-align: center;
   visibility: hidden;
   border-radius: 6px;
@@ -347,9 +345,8 @@ a.tooltips span:after {
 a:hover.tooltips span {
   visibility: visible;
   opacity: 1;
-  bottom: 30px;
-  left: 50%;
-  margin-left: -76px;
+  bottom: 50px;
+  min-width: 100px;
   z-index: 999;
 }
 
