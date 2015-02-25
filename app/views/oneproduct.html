@@ -32,7 +32,14 @@
        <p>Далее {{navigation.value}}</p>
         <div class="imginpnl" ng-repeat="item in prd1">
           <div ng-show="item.id!==data.id">
-             <a href="#/product/{{item.id}}"><img src="{{item.img}}" class="sming" data-toggle="tooltip" data-placement="left" title="{{item.title}} {{item.price}} грн"></a>
+            <div class="row">
+              <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="{{item.img}}">
+                </div>
+              </div>
+            </div>
+             <a href="#/product/{{item.id}}"><img src="{{item.img}}" class="sming"></a>
           </div>
         </div>
        <p><a href="#/products/{{navigation.type}}/{{navigation.id}}">Перейти к {{navigation.value}}</a></p>
