@@ -36,7 +36,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
         //others products
         $http.post('/category/requests/' + data.data.list_type + '/' + data.data.list_id, {'action': 'getProducts'}).success(function (data) {
           $scope.prd = data;
-          $scope.prd= _.shuffle($scope.prd);
+          $scope.prd= $scope.shuffleArray($scope.prd);
           $scope.prd1[0]=$scope.prd[0];
           $scope.prd1[1]=$scope.prd[1];
           $scope.prd1[2]=$scope.prd[2];
@@ -44,6 +44,19 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
           $scope.prd1[4]=$scope.prd[4];
         });
       });
+    };
+    $scope.shuffleArray=function(array){
+      var counter=array.length;
+      var temp,index;
+      while(counter>0){
+        index=Math.floor(Math.random()*counter);
+        counter--;
+        temp=array[counter];
+        array[counter]=array[index];
+        array[index]=temp;
+      }
+      var shuffledArr=array;
+      return shuffledArr;
     };
     $scope.price = function () {
       return $scope.data.price * $scope.number;
