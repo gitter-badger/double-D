@@ -309,12 +309,12 @@ footer {
   height: 70px;
   width: 70px;
   margin: 10px;
-  border-color: #5bc0de;
-  box-shadow: 0 0 2px rgba(42, 171, 210, 0.6);
   transition: all 0.1s;
 
 }
 .imginpnl>div img:hover{
+  border-color: #5bc0de;
+  box-shadow: 0 0 2px rgba(42, 171, 210, 0.6);
   transform: scale(1.1);
   transition: all 0.1s;
 }
