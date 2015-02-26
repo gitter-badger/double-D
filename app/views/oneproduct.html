@@ -30,7 +30,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
        <p>Далее {{navigation.value}}</p>
-        <div class="imginpnl" ng-repeat="item in prd1">
+        <div class="imginpnl" ng-repeat="item in prd1 | limitTo: 5">
           <div ng-show="item.id!==data.id">
              <a href="#/product/{{item.id}}" class="tooltips"><span>{{item.title}}, {{item.price}} грн</span><img src="{{item.img}}" class="sming"></a>
           </div>
