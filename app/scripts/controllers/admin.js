@@ -10,8 +10,8 @@
 angular.module('dikeaApp')
   .controller('AdminCtrl', function ($scope) {
          $scope.user={};
-         $scope.submit=function(){
-           alert('User name: '+$scope.user.userName);
+         $scope.submitForm=function(){
+           alert('User name: ');
          };
          $scope.errorSubmit=function(){
            alert("Error!");
