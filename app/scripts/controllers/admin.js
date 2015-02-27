@@ -11,7 +11,7 @@ angular.module('dikeaApp')
   .controller('AdminCtrl', function ($scope) {
          $scope.user={};
          $scope.submitForm=function(){
-           alert('User name: ');
+           alert('User name: '+$scope.user.userName);
          };
          $scope.errorSubmit=function(){
            alert("Error!");
