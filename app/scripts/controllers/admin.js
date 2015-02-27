@@ -14,6 +14,6 @@ angular.module('dikeaApp')
            alert('User name: '+$scope.user.userName+' Password: '+$scope.user.Password);
          };
          $scope.errorSubmit=function(){
-           alert("Error!");
+           alert("Fill the all fields!");
          }
   });
