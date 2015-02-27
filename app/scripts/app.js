@@ -42,7 +42,7 @@ angular.module('dikeaApp', [  //Route config
         templateUrl: 'views/cart.html',
         controller: 'CartCtrl'
       })
-      .when('/C:/Program Files (x86)/Git/admin', {
+      .when('/admin', {
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl'
       })
