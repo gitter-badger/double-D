@@ -349,6 +349,29 @@ a:hover.tooltips span {
   min-width: 100px;
   z-index: 999;
 }
-
+.login-form{
+  width:50%;
+  height: 40em;
+  margin: 0 auto;
+  display: block;
+}
+.login-form>.input-group,.btn-primary
+{
+  left:-1em;
+  margin-top: 1em;
+}
+.login-form>.btn-primary
+{
+  left: 0;
+}
+.login-form>.input-group
+{
+  width: 90%;
+  margin-top: 1em;
+}
+.login-form>h1
+{
+  margin-bottom: 1em;
+}
 
 
