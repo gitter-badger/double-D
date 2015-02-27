@@ -9,9 +9,11 @@
  */
 angular.module('dikeaApp')
   .controller('AdminCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+         $scope.user={};
+         $scope.submit=function(){
+           alert('User name: '+$scope.user.userName);
+         };
+         $scope.errorSubmit=function(){
+           alert("Error!");
+         }
   });
