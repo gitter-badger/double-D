@@ -7,6 +7,7 @@ body {
 .zf-green {
   color: #68b604;
 }
+
 .btn-success {
   background-color: #57a900;
   background-image: -moz-linear-gradient(top, #70d900, #57a900);
@@ -86,15 +87,16 @@ div.container a.brand {
   vertical-align: top;
   position: relative;
 }
-.thumbnail
-{
+
+.thumbnail {
   border: none;
   box-shadow: none;
 }
-.thumbnail:hover
-{
+
+.thumbnail:hover {
   border: none;
 }
+
 .products .thumbnails li .info {
   text-align: justify;
   padding: 12px;
@@ -137,6 +139,7 @@ div.container a.brand {
   width: 85%;
   margin: 0 auto;
 }
+
 .product_content > div img {
   margin-right: 20px;
   width: 500px;
@@ -241,14 +244,17 @@ footer {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 175, 102, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 175, 102, 0.6);
 }
-input.ng-invalid.ng-dirty{
+
+input.ng-invalid.ng-dirty {
   border-color: #d44950;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 175, 102, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 175, 102, 0.6);
 }
-input.ng-valid.ng-dirty{
+
+input.ng-valid.ng-dirty {
 
 }
+
 .user-form textarea {
   resize: none;
 }
@@ -299,36 +305,44 @@ input.ng-valid.ng-dirty{
   margin: 0 auto;
   width: 90%;
 }
-.back-arr,.next-arr{
+
+.back-arr, .next-arr {
   cursor: pointer;
 }
-.sort{
+
+.sort {
   cursor: pointer;
 }
-.panel{
+
+.panel {
 
   display: block;
 }
-.imginpnl{
+
+.imginpnl {
   display: inline-block;
 }
-.imginpnl>div img{
+
+.imginpnl > div img {
   height: 70px;
   width: 70px;
   margin: 10px;
   transition: all 0.1s;
 
 }
-.imginpnl>div img:hover{
+
+.imginpnl > div img:hover {
   border-color: #5bc0de;
   box-shadow: 0 0 2px rgba(42, 171, 210, 0.6);
   transform: scale(1.1);
   transition: all 0.1s;
 }
+
 a.tooltips {
   position: relative;
   display: inline;
 }
+
 a.tooltips span {
   position: absolute;
   color: #FFFFFF;
@@ -338,17 +352,20 @@ a.tooltips span {
   visibility: hidden;
   border-radius: 6px;
 }
+
 a.tooltips span:after {
   content: '';
   position: absolute;
   top: 100%;
   left: 50%;
   margin-left: -8px;
-  width: 0; height: 0;
+  width: 0;
+  height: 0;
   border-top: 8px solid #000;
   border-right: 8px solid transparent;
   border-left: 8px solid transparent;
 }
+
 a:hover.tooltips span {
   visibility: visible;
   opacity: 1;
@@ -356,28 +373,51 @@ a:hover.tooltips span {
   min-width: 100px;
   z-index: 999;
 }
-.login-form{
-  width:50%;
+
+.login-form {
+  width: 50%;
   height: 40em;
   margin: 0 auto;
   display: block;
 }
-.login-form>.input-group,.btn-primary
-{
-  left:-1em;
+
+.adminSub {
+  -moz-box-shadow: inset 0 1px 1px -41px #3174af;
+  -webkit-box-shadow: inset 0 1px 1px -41px #3174af;
+  box-shadow: inset 0 1px 1px -41px #3174af;
+  background-color: transparent;
+  border: 2px solid #3174af;
+  border-radius: 2px;
+  display: inline-block;
+  cursor: pointer;
+  color: #000;
+  font-size: 19px;
+  padding: 6px 45px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.adminSub:hover {
+  background-color: #3174af;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.login-form > .input-group, .adminSub {
+  left: -1em;
   margin-top: 1em;
 }
-.login-form>.btn-primary
-{
+
+.login-form > .adminSub {
   left: 0;
 }
-.login-form>.input-group
-{
+
+.login-form > .input-group {
   width: 90%;
   margin-top: 1em;
 }
-.login-form>h1
-{
+
+.login-form > h1 {
   margin-bottom: 1em;
 }
 

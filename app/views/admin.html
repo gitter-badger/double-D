@@ -1,7 +1,7 @@
 <div class="login-form panel panel-primary">
-  <div class="panel-heading">Login Administrator</div>
+  <div class="panel-heading">Log In Administrator</div>
   <div class="panel-body">
-    <h1>Login Administrator</h1>
+    <h1>Log In Administrator</h1>
     <br>
 
     <form  name="logAdmin" novalidate>
@@ -15,7 +15,7 @@
         <span class="input-group-addon" id="sizing-addon2">Password</span>
         <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" ng-model="user.Password" required/>
       </div>
-      <button type="submit" class="btn btn-primary btn-lg" ng-click="logAdmin.$valid?submitForm():errorSubmit()" >Login</button>
+      <button type="submit" class="adminSub" ng-click="logAdmin.$valid?submitForm():errorSubmit()" >Log In</button>
     </form>
   </div>
 </div>
