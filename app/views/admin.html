@@ -7,15 +7,15 @@
     <form name="logAdmin" novalidate>
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">Username</span>
-        <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" required>
+        <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" ng-model="userName" required/>
       </div>
       <br>
 
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon2">Password</span>
-        <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" required>
+        <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" ng-model="password" required/>
       </div>
-      <button type="button" class="btn btn-primary btn-lg">Login</button>
+      <button type="submit" class="btn btn-primary btn-lg">Login</button>
       {{logAdmin.$valid}}
     </form>
   </div>
