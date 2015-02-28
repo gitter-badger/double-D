@@ -10,6 +10,8 @@
 angular.module('dikeaApp')
   .controller('AdminCtrl', function ($scope) {
          $scope.user={};
+         $scope.localStorage=new LocalStorage();
+         $scope.localStorage.getNumbers();
          $scope.submitForm=function(){
            //alert('User name: '+$scope.user.userName+' Password: '+$scope.user.Password);
          };
