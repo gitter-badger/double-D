@@ -12,7 +12,7 @@ angular.module('dikeaApp')//category Ctrl. View: 'products.html'
     $scope.makeRequest = function () {
       $http.post('/products/requests/getProductsList').success(function (data) {
         $scope.products = data;
-        $('body').animate({'scrollTop': 0}, 0);
+        $("title").html("Категории товаров |DIKEA");
       });
       $scope.storage = new LocalStorage();
       $scope.storage.getNumbers();

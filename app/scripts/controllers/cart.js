@@ -11,6 +11,7 @@ angular.module('dikeaApp')//Ctrl for shopping cart. View: 'cart.html'
   .controller('CartCtrl', function ($scope,$http) {
     $scope.storage = new LocalStorage();
     $scope.data = $scope.storage.get('shopping_cart');
+    $("title").html("Корзина |DIKEA");
     $scope.img = function (img) {
       return img.replace('_S3', '_S2');
     };
