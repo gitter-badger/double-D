@@ -423,5 +423,12 @@ a:hover.tooltips span {
 .login-form .input-group-addon{
   color: #3174af;
 }
-
+.button-href{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 0.5em;
+}
+.button-href:hover{
+  text-decoration: none;
+}
 
