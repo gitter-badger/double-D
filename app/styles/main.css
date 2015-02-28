@@ -390,7 +390,7 @@ a:hover.tooltips span {
   border-radius: 2px;
   display: inline-block;
   cursor: pointer;
-  color: #000;
+  color: #3174af;
   font-size: 19px;
   padding: 6px 45px;
   text-decoration: none;
@@ -417,8 +417,11 @@ a:hover.tooltips span {
   margin-top: 1em;
 }
 
-.login-form > h1 {
-  margin-bottom: 1em;
+.login-form  h1 {
+  color: #3174af;
+}
+.login-form .input-group-addon{
+  color: #3174af;
 }
 
 
