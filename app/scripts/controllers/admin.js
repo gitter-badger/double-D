@@ -13,9 +13,9 @@ angular.module('dikeaApp')
          $scope.localStorage=new LocalStorage();
          $scope.localStorage.getNumbers();
          $scope.submitForm=function(){
-           //alert('User name: '+$scope.user.userName+' Password: '+$scope.user.Password);
+           console.log('User name: '+$scope.user.userName+' Password: '+$scope.user.Password);
          };
          $scope.errorSubmit=function(){
-          // alert('Fill the all fields!');
+          console.log('Fill the all fields!');
          };
   });
