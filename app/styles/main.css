@@ -427,8 +427,11 @@ a:hover.tooltips span {
   padding-left: 20px;
   padding-right: 20px;
   margin-left: 0.5em;
+  color:#008B8B;
+  border-color: #008B8B;
 }
 .button-href:hover{
   text-decoration: none;
+  background-color: #008B8B;
 }
 
