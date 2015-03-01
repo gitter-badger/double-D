@@ -9,7 +9,7 @@
  */
 angular.module('dikeaApp')//App Ctrl. View: 'main.html'
   .controller('MainCtrl', function ($scope) {
-    $("title").html("Главная |DIKEA");
+    $('title').html('Главная |DIKEA');
     $scope.storage = new LocalStorage();
     $scope.storage.getNumbers();
   });

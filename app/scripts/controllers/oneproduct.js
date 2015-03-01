@@ -23,7 +23,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
       //getting data
       $http.get('/products/requests/product?id=' + id + '').success(function (data) {
         $scope.data = data.data;
-        $("title").html(data.data.title+" |DIKEA");
+        $('title').html(data.data.title+' |DIKEA');
         if ((!data.data)||(data.data.id==='')) {
           location.href = '/#main';
         }

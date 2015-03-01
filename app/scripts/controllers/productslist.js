@@ -36,7 +36,7 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
           location.href = '/';
         }
         $scope.header = data[0].header;
-        $("title").html($scope.header+" |DIKEA");
+        $('title').html($scope.header+' |DIKEA');
       });
     };
     $scope.isActive = function (id) {

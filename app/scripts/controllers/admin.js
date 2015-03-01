@@ -12,7 +12,7 @@ angular.module('dikeaApp')
          $scope.user={};
          $scope.localStorage=new LocalStorage();
          $scope.localStorage.getNumbers();
-         $("title").html("Admin |DIKEA");
+         $('title').html('Admin |DIKEA');
          $scope.submitForm=function(){
            console.log('User name: '+$scope.user.userName+' Password: '+$scope.user.Password);
          };
