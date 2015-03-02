@@ -4,10 +4,10 @@
     <li><a href="#/products/{{navigation.type}}/{{navigation.id}}">{{navigation.header}}</a></li>
     <li><a href="#/products/{{navigation.type}}/{{navigation.id}}">{{navigation.value}}</a></li>
     <li class="active"><span >{{data.title}}</span></li>
-  </ol>     
+  </ol>
   <h2>{{data.title}}</h2>
   <div>
-    <img src="{{data.img}}" alt="..." class="img-thumbnail">
+    <img src="{{data.img}}" alt="{{data.title}}" class="img-thumbnail">
   </div>
   <div class="product_about">
     <div class="info">
@@ -32,7 +32,7 @@
        <p>Далее {{navigation.value}}</p>
         <div class="imginpnl" ng-repeat="item in prd1 | limitTo: 5">
           <div ng-show="item.id!==data.id">
-             <a href="#/product/{{item.id}}" class="tooltips"><span>{{item.title}}, {{item.price}} грн</span><img src="{{item.img}}" class="sming"></a>
+             <a href="#/product/{{item.id}}" class="tooltips"><span>{{item.title}}, {{item.price}} грн</span><img src="{{item.img}}" class="sming" alt="{{item.title}}"></a>
           </div>
         </div>
        <p><a href="#/products/{{navigation.type}}/{{navigation.id}}">Перейти к {{navigation.value}}</a></p>

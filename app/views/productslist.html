@@ -39,7 +39,7 @@
     <li class="span4" ng-repeat="item in prd | orderBy:predicate">
       <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
         <a ng-href="#/product/{{item.id}}">
-          <img src="{{item.img}}" alt="">
+          <img src="{{item.img}}" alt="{{item.title}}">
           <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
           <h4 class="price">{{item.price}} грн</h4>
         </a>
