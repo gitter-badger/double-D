@@ -27,7 +27,7 @@
       <button class="btn btn-info" ng-click="buy()"><i class="glyphicon glyphicon-shopping-cart"></i> Купить</button>
       <em>{{added}}</em>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-show="prd1.length>1">
       <div class="panel-body">
        <p>Далее {{navigation.value}}</p>
         <div class="imginpnl" ng-repeat="item in prd1 | limitTo: 5">
