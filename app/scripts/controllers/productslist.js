@@ -26,7 +26,6 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     $scope.init2 = function (type,id) {
       $scope.list_type = type;
       $scope.list_id = id;
-      $location.path("products/"+type+"/"+id);
       $scope.getProducts();
     };
     $scope.getProducts = function () {
