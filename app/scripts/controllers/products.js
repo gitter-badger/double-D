@@ -13,11 +13,11 @@ angular.module('dikeaApp')//category Ctrl. View: 'products.html'
       $('title').html('Категории товаров |DIKEA');
       $http.post('/products/requests/getProductsList').success(function (data) {
         $scope.data = data;
+        $scope.storage.set('products_categories',$scope.data);
         //$scope.products = data;
       });
       $scope.storage = new LocalStorage();
       $scope.storage.getNumbers();
-      $scope.storage.addCategories($scope.data);
       $scope.products=$scope.storage.getCategories();
     };
     $scope.makeRequest();
