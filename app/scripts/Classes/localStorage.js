@@ -63,5 +63,11 @@ function LocalStorage() {
     th.set('shopping_cart', cart);
     th.getNumbers();
   };
+  this.getCategories=function(){
+    var ctgs=th.get('products_categories');
+  };
+  this.addCategories=function(){
+    var ctgs=th.get('products_categories');
+  };
   this.init();
 }
