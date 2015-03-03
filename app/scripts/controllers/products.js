@@ -10,12 +10,15 @@
 angular.module('dikeaApp')//category Ctrl. View: 'products.html'
   .controller('ProductsCtrl', function ($scope,$http) {
     $scope.makeRequest = function () {
+      $('title').html('Категории товаров |DIKEA');
       $http.post('/products/requests/getProductsList').success(function (data) {
-        $scope.products = data;
-        $('title').html('Категории товаров |DIKEA');
+        $scope.data = data;
+        //$scope.products = data;
       });
       $scope.storage = new LocalStorage();
       $scope.storage.getNumbers();
+      $scope.storage.addCategories($scope.data);
+      $scope.products=$scope.storage.getCategories();
     };
     $scope.makeRequest();
   });

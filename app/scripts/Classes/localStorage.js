@@ -65,9 +65,12 @@ function LocalStorage() {
   };
   this.getCategories=function(){
     var ctgs=th.get('products_categories');
+    return JSON.stringify(ctgs);
   };
-  this.addCategories=function(){
+  this.addCategories=function(data){
     var ctgs=th.get('products_categories');
+    $(ctgs).splice(0, $(ctgs).length-1);
+    $(ctgs).push(data);
   };
   this.init();
 }
