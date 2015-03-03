@@ -67,9 +67,5 @@ function LocalStorage() {
     var ctgs=th.get('products_categories');
     return ctgs;
   };
-  this.addCategories=function(data){
-    var ctgs=th.get('products_categories');
-    ctgs.push(data);
-  };
   this.init();
 }
