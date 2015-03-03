@@ -19,10 +19,10 @@ angular.module('dikeaApp')//category Ctrl. View: 'products.html'
       $('title').html('Категории товаров |DIKEA');
       $http.post('/products/requests/getProductsList').success(function (data) {
         $scope.data = data;
-        if($scope.products.length===0){
-          $scope.products=$scope.data;
-        }
         $scope.storage.set('products_categories',$scope.data);
+        if($scope.products===null){
+          $scope.products=$scope.storage.getCategories();
+        }
       });
     };
     $scope.init();
