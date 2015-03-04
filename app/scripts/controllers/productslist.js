@@ -17,9 +17,10 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
       $scope.prd = orderBy($scope.prd, predicate);
     };
     $scope.order('',false);
-    $scope.init = function () {
+    $scope.init = function (navigation) {
       $scope.list_type = $routeParams.Type;
       $scope.list_id = $routeParams.Id;
+      $scope.navigation_data=navigation;
       $scope.getProducts();
       $scope.getNavigation();
     };
