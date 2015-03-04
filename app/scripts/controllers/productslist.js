@@ -34,8 +34,6 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     $scope.initFromNavigation = function () {
       window.navigation_data=$scope.navigation_data;
       window.header=$scope.header;
-      $scope.prd=[];
-      $scope.getProducts();
     };
     $scope.getProducts = function () {
       $http.post('/category/requests/' + $scope.list_type + '/' + $scope.list_id, {'action': 'getProducts'}).success(function (data) {
