@@ -12,6 +12,7 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     $scope.storage = new LocalStorage();
     $scope.storage.getNumbers();
     $scope.predicate = '';
+    $scope.initParam=null;
     var orderBy = $filter('orderBy');
     $scope.order = function(predicate) {
       $scope.prd = orderBy($scope.prd, predicate);
@@ -20,14 +21,19 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     $scope.init = function () {
       $scope.list_type = $routeParams.Type;
       $scope.list_id = $routeParams.Id;
+      $scope.navigation=$scope.initParam;
       $scope.getProducts();
-      $scope.getNavigation();
+      if(!$scope.initParam) {
+        $scope.getNavigation();
+      }
     };
     $scope.initFromNavigation = function (type,id) {
       $scope.prd=[];
       $scope.list_type = type;
       $scope.list_id = id;
-      $scope.getProducts();
+      $location.url('#/products'+$scope.list_type+'/'+$scope.list_id);
+      $scope.initParam=$scope.navigation;
+      $scope.init($scope.initParam);
     };
     $scope.getProducts = function () {
       $http.post('/category/requests/' + $scope.list_type + '/' + $scope.list_id, {'action': 'getProducts'}).success(function (data) {
