@@ -16,7 +16,7 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     $scope.order = function(predicate) {
       $scope.prd = orderBy($scope.prd, predicate);
     };
-    $scope.dropClick=function(id){
+    $scope.dropdownClick=function(id){
       $('#dropd').html($('#'+id+'').html()+' <span class="caret"></span>');
     };
     $scope.order('',false);
