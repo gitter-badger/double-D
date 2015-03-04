@@ -21,13 +21,16 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
       $scope.list_type = $routeParams.Type;
       $scope.list_id = $routeParams.Id;
       $scope.navigation_data=window.navigation_data;
+      $scope.header=window.header;
       $scope.getProducts();
-      if(!window.navigation_data) {
+      if((!window.navigation_data)&&(window.list_type!==$scope.list_type)) {
         $scope.getNavigation();
       }
     };
     $scope.initFromNavigation = function (type,id) {
       window.navigation_data=$scope.navigation_data;
+      window.list_type=type;
+      window.header=$scope.header;
       $scope.prd=[];
       $scope.list_type = type;
       $scope.list_id = id;
