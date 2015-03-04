@@ -8,7 +8,7 @@
  * Controller of the dikeaApp
  */
 angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
-  .controller('ProductslistCtrl', function ($scope, $routeParams,$http,$filter,$location) {
+  .controller('ProductslistCtrl', function ($scope, $routeParams,$http,$filter) {
     $scope.storage = new LocalStorage();
     $scope.storage.getNumbers();
     $scope.predicate = '';
@@ -26,6 +26,8 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
       if((!window.navigation_data)&&(window.list_type!==$scope.list_type)) {
         $scope.getNavigation();
       }
+      window.navigation_data=null;
+      window.header=null;
     };
     $scope.initFromNavigation = function (type,id) {
       window.navigation_data=$scope.navigation_data;
