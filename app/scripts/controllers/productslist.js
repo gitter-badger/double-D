@@ -23,7 +23,7 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
       $scope.navigation_data=window.navigation_data;
       $scope.header=window.header;
       $scope.getProducts();
-      if((!window.navigation_data)&&(window.list_type!==$scope.list_type)) {
+      if(!window.navigation_data) {
         $scope.getNavigation();
       }
       window.navigation_data=null;
