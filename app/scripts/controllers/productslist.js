@@ -31,13 +31,10 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
       window.navigation_data=null;
       window.header=null;
     };
-    $scope.initFromNavigation = function (type,id) {
+    $scope.initFromNavigation = function () {
       window.navigation_data=$scope.navigation_data;
-      window.list_type=type;
       window.header=$scope.header;
       $scope.prd=[];
-      $scope.list_type = type;
-      $scope.list_id = id;
       $scope.getProducts();
     };
     $scope.getProducts = function () {

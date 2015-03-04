@@ -15,7 +15,7 @@
   <ol class="breadcrumb">
     <li data-ng-repeat="item in navigation_data" class="{{isActive(item.id)}}" ng-switch
         on="isActive(item.id)">
-      <a href="#/products/{{item.type}}/{{item.id}}" ng-switch-when="" ng-click="initFromNavigation(navigation_data);">{{item.value}}</a>
+      <a href="#/products/{{item.type}}/{{item.id}}" ng-switch-when="" ng-click="initFromNavigation();">{{item.value}}</a>
       <span ng-switch-when="active">{{item.value}}</span>
     </li>
   </ol>
