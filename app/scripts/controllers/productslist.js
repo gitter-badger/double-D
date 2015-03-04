@@ -17,14 +17,15 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
       $scope.prd = orderBy($scope.prd, predicate);
     };
     $scope.order('',false);
-    $scope.init = function (navigation) {
+    $scope.init = function () {
       $scope.list_type = $routeParams.Type;
       $scope.list_id = $routeParams.Id;
-      $scope.navigation_data=navigation;
+      $scope.navigation_data=window.navigation_data;
       $scope.getProducts();
       $scope.getNavigation();
     };
     $scope.initFromNavigation = function (type,id) {
+      window.navigation_data=$scope.navigation_data;
       $scope.prd=[];
       $scope.list_type = type;
       $scope.list_id = id;
