@@ -27,7 +27,7 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
         $scope.getNavigation();
       }
       else{
-        $scope.navigation_data=window.navigation_data;
+        $scope.navigation_data=window.navigation_data; //i have saved the navigation and navigation header on the window global object
         $scope.header=window.header;
       }
       $scope.getProducts();
