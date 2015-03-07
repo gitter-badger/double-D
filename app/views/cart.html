@@ -34,7 +34,7 @@
           </div>
           <div class="modal-body">
             <div style="margin: 0 auto; max-width: 500px; text-align: left">
-              <form role="form" class="user-form">
+              <form role="form" class="user-form" name="cartForm">
                 <div class="form-group">
                   <label for="email">Електронная почта</label>
                   <input type="email" ng-model="user.email" name="email" class="form-control"
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-success pull-right" ng-click="submit()">Зделать
+            <button type="submit" class="btn btn-success pull-right" ng-click="cartForm.$valid?submit():''">Зделать
               заказ
             </button>
           </div>
