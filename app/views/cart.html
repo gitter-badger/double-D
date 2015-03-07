@@ -111,7 +111,7 @@
         </td>
       </tr>
     </table>
-    <button type="button" class="btn btn-info pull-right btn-order" ng-click="selfInfo()">Оформить заказ
+    <button type="button" class="btn btn-info pull-right btn-order" ng-click="price().toString()!=='NaN'?selfInfo():''">Оформить заказ
     </button>
     <h3 class="sum">Сумма: {{price()}} грн </h3>
   </div>
