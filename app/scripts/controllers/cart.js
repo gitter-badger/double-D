@@ -44,6 +44,12 @@ angular.module('dikeaApp')//Ctrl for shopping cart. View: 'cart.html'
       angular.forEach($scope.data, function (value) {
         price += value.number * value.item.price;
       });
+      if(!price) {
+        $('.btn-order').attr('disabled', '');
+      }
+      else{
+        $('.btn-order').removeAttr('disabled');
+      }
       return price;
     };
 
