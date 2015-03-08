@@ -68,6 +68,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.buy = function () {
       if ($scope.price()) {
         $scope.storage.addToCart($scope.data, $scope.number);
+        $('.buy-one-prd').attr('disabled','');
         $scope.added = 'добавлено в корзину';
       }
     };
