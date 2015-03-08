@@ -65,7 +65,7 @@ angular.module('dikeaApp')//Ctrl for shopping cart. View: 'cart.html'
       $http.post('/store/do/setCart', $scope.user).success(function (data) {
         if (data.error) {
         } else {
-//                $scope.user=data; // todo: remove it in future.
+          //$scope.user=data; // todo: remove it in future.
           localStorage.setItem('self_info', angular.toJson($scope.user));
           $('#selfInfo').modal('hide');
           $scope.checkData();
