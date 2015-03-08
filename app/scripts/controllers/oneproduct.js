@@ -56,6 +56,13 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
       return shuffledArr;
     };
     $scope.price = function () {
+      var price=$scope.data.price * $scope.number;
+      if(!price){
+            $('.buy-one-prd').attr('disabled','');
+      }
+      else{
+        $('.buy-one-prd').removeAttr('disabled');
+      }
       return $scope.data.price * $scope.number;
     };
     $scope.buy = function () {
