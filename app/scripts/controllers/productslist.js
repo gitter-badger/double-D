@@ -31,6 +31,7 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
         $scope.header=window.header;
       }
       $scope.getProducts();
+      $scope.disableAddedPrds();
       window.navigation_data=null;
       window.header=null;
     };
@@ -68,11 +69,20 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     $scope.added = function (item) {
       if (item.added) {
         $('#'+item.id+'').html('добавлено в корзину');
+        $('#'+item.id+'-prd').attr('disabled','');
         return 'добавлено в корзину';
       } else {
+        $('#'+item.id+'-prd').removeAttr('disabled');
         $('#'+item.id+'').html('');
         return '';
       }
+    };
+    $scope.disableAddedPrds=function(){
+       var prd=localStorage.getItem('shopping_cart');
+       angular.forEach(prd,function(item){
+         $('#'+item.id+'-prd').attr('disabled','');
+         $('#'+item.id+'').html('добавлено в корзину');
+       });
     };
     $scope.init();
   });
