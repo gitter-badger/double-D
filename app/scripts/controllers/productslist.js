@@ -32,9 +32,9 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
         $scope.header=window.header;
       }
       $scope.getProducts();
-      $scope.disableAddedPrds();
       window.navigation_data=null;
       window.header=null;
+      $scope.disableAddedPrds();
     };
     $scope.initFromNavigation = function () {
       window.navigation_data=$scope.navigation_data;
