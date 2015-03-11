@@ -81,8 +81,8 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     $scope.disableAddedPrds=function(){
        $scope.cartPrds=$scope.storage.get('shopping_cart');
        angular.forEach($scope.cartPrds,function(data){
-         $('#'+data.item.id+'-prd').attr('disabled',''); //doesn't works!
-         $('#'+data.item.id+'').html('добавлено в корзину');
+         //$('#'+data.item.id+'-prd').attr('disabled',''); //doesn't works!
+         //$('#'+data.item.id+'').html('добавлено в корзину');
        });
     };
     $scope.init();
