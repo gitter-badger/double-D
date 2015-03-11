@@ -80,10 +80,14 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     };
     $scope.disableAddedPrds=function(){
        $scope.cartPrds=$scope.storage.get('shopping_cart');
-       //angular.forEach($scope.cartPrds.data,function(item){
-       //  $('#'+item.id+'-prd').attr('disabled',''); //doesn't works!
-       //  $('#'+item.id+'').html('добавлено в корзину');
-       //});
+       angular.forEach($scope.cartPrds.data,function(item){
+         angular.forEach($scope.prd,function(data){
+           if(item.id===data.id){
+             data.added=true;
+             $scope.added(data);
+           }
+         });
+       });
     };
     $scope.init();
   });
