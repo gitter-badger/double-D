@@ -437,3 +437,6 @@ a:hover.tooltips span {
 a{
   cursor: pointer;
 }
+.main-canBuy{
+      margin-top: 2em;
+}
