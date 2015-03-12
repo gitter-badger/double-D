@@ -453,4 +453,10 @@ a {
 .row-img {
   width: 400px;
   height: 200px;
+  display: block;
+}
+.row-img>.img-container{
+  width: 400px;
+  height: 200px;
+  display:inline-block;
 }
