@@ -417,26 +417,44 @@ a:hover.tooltips span {
   margin-top: 1em;
 }
 
-.login-form  h1 {
+.login-form h1 {
   color: #3174af;
 }
-.login-form .input-group-addon{
+
+.login-form .input-group-addon {
   color: #3174af;
 }
-.button-href{
+
+.button-href {
   padding-left: 20px;
   padding-right: 20px;
   margin-left: 0.5em;
-  color:#008B8B;
+  color: #008B8B;
   border-color: #008B8B;
 }
-.button-href:hover{
+
+.button-href:hover {
   text-decoration: none;
   background-color: #008B8B;
 }
-a{
+
+a {
   cursor: pointer;
 }
-.main-canBuy{
-      margin-top: 2em;
+
+.main-canBuy {
+  margin-top: 2em;
+}
+
+.row-canBuy {
+  width: 100%;
+}
+
+.row-img {
+  width: 400px;
+  height: 200px;
+}
+
+.row-img#1 {
+  background-image: url("images/mebli.jpg");
 }
