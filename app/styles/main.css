@@ -466,7 +466,7 @@ a {
   margin-bottom: 0.5em;
 }
 .main-canBuy>h1:before,
-h1:after {
+.main-canBuy>h1:after {
   content: '';
   display: inline-block;
   position: relative;
@@ -493,6 +493,7 @@ h1:after {
 }
 .shadow-value{
   color: #ffffff;
-  margin-top: -1.35em;
+  margin-top: -1.355em;
+  margin-left: 7.5em;
   position: absolute;
 }
