@@ -489,8 +489,10 @@ h1:after {
   opacity: 0.5;
   width: 100%;
   margin-top: -1.35em;
+  height: 20px;
 }
-.shadow>.shadow-value{
+.shadow-value{
   color: #ffffff;
-  opacity: 1;
+  margin-top: -1.35em;
+  position: absolute;
 }
