@@ -134,7 +134,26 @@
   <div class="int-products">
     <h1 class="with-line" style="margin-top: 0.5em">Новое в DIKEA</h1>
     <div class="int-prd-row">
-      
+      <ul class="thumbnails">
+        <li class="span4" ng-repeat="item in prd">
+          <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
+            <a ng-href="#/product/{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.title}}">
+              <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
+              <h4 class="price">{{item.price}} грн</h4>
+            </a>
+
+            <div class="info check-element animate-show" ng-show="info">
+              <p>{{item.more_info}}</p>
+              <button style="font-weight: bold" class="btn btn-mini btn-info" id="{{item.id}}-prd" type="button"
+                      ng-click="buy(item)">
+                <i class="glyphicon glyphicon-shopping-cart"></i> Buy
+              </button>
+              <em id="{{item.id}}">{{added(item)}}</em>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
   <footer style="height: 100px">
