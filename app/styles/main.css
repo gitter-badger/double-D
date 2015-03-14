@@ -498,6 +498,6 @@ h1.with-line:after {
   position: absolute;
 }
 .int-prd-row{
-  width: 100%;
-  display: block;
+  display: inline-block;
+  margin:0 auto;
 }
