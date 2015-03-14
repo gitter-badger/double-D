@@ -136,21 +136,17 @@
     <div class="int-prd-row products">
       <ul class="thumbnails" id="int-t">
         <li class="span4" ng-repeat="item in prd">
-          <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
+          <div class="thumbnail">
             <a ng-href="#/product/{{item.id}}">
               <img src="{{item.img}}" alt="{{item.title}}">
               <h5><strong>{{item.title}}</strong> {{item.desp}}</h5>
               <h4 class="price">{{item.price}} грн</h4>
             </a>
-
-            <div class="info check-element animate-show" ng-show="info">
-              <p>{{item.more_info}}</p>
-              <button style="font-weight: bold" class="btn btn-mini btn-info" id="{{item.id}}-prd" type="button"
-                      ng-click="buy(item)">
-                <i class="glyphicon glyphicon-shopping-cart"></i> Buy
-              </button>
-              <em id="{{item.id}}">{{added(item)}}</em>
-            </div>
+            <button style="font-weight: bold" class="btn btn-mini btn-info int-but" id="{{item.id}}-prd" type="button"
+                    ng-click="buy(item)">
+              <i class="glyphicon glyphicon-shopping-cart"></i> Buy
+            </button>
+            <em id="{{item.id}}">{{added(item)}}</em>
           </div>
         </li>
       </ul>
@@ -161,21 +157,17 @@
     <div class="int-prd-row products">
       <ul class="thumbnails" id="int-t-1">
         <li class="span4" ng-repeat="item1 in slidli_prd">
-          <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
+          <div class="thumbnail">
             <a ng-href="#/product/{{item1.id}}">
               <img src="{{item1.img}}" alt="{{item1.title}}">
-              <h5><strong>{{item.title}}</strong> {{item1.desp}}</h5>
+              <h5><strong>{{item1.title}}</strong> {{item1.desp}}</h5>
               <h4 class="price">{{item1.price}} грн</h4>
             </a>
-
-            <div class="info check-element animate-show" ng-show="info">
-              <p>{{item1.more_info}}</p>
-              <button style="font-weight: bold" class="btn btn-mini btn-info" id="{{item1.id}}-prd" type="button"
-                      ng-click="buy(item1)">
-                <i class="glyphicon glyphicon-shopping-cart"></i> Buy
-              </button>
-              <em id="{{item1.id}}">{{added(item1)}}</em>
-            </div>
+            <button style="font-weight: bold" class="btn btn-mini btn-info int-but" id="{{item1.id}}-prd" type="button"
+                    ng-click="buy(item1)">
+              <i class="glyphicon glyphicon-shopping-cart"></i> Buy
+            </button>
+            <em id="{{item1.id}}">{{added(item1)}}</em>
           </div>
         </li>
       </ul>

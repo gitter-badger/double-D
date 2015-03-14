@@ -506,3 +506,8 @@ h1.with-line:after {
 #int-t>li, #int-t-1>li{
   margin: 2em;
 }
+.int-but{
+  float: left;
+  margin-top: -2.7em;
+  margin-left: 1em;
+}
