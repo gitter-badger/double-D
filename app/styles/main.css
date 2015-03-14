@@ -457,7 +457,7 @@ a {
   width: 300px;
   height: 150px;
 }
-.main-canBuy>h1 {
+h1.with-line {
   overflow: hidden;
   position: relative;
   margin: 0;
@@ -465,8 +465,8 @@ a {
   white-space: nowrap;
   margin-bottom: 0.5em;
 }
-.main-canBuy>h1:before,
-.main-canBuy>h1:after {
+h1.with-line:before,
+h1.with-line:after {
   content: '';
   display: inline-block;
   position: relative;
@@ -476,11 +476,11 @@ a {
   vertical-align: middle;
   background: black;
 }
-.main-canBuy>h1:before {
+h1.with-line:before {
   left: -10px;
   margin-left: -50%;
 }
-.main-canBuy>h1:after {
+h1.with-line:after {
   left: 10px;
   margin-right: -50%;
 }
