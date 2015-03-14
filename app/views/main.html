@@ -156,6 +156,31 @@
       </ul>
     </div>
   </div>
+  <div class="int-products">
+    <h1 class="with-line" style="margin-top: 1em">Скидки в DIKEA</h1>
+    <div class="int-prd-row products">
+      <ul class="thumbnails" id="int-t-1">
+        <li class="span4" ng-repeat="item1 in slidli_prd">
+          <div class="thumbnail" ng-mouseenter="info=true" ng-mouseleave="info=false">
+            <a ng-href="#/product/{{item1.id}}">
+              <img src="{{item1.img}}" alt="{{item1.title}}">
+              <h5><strong>{{item.title}}</strong> {{item1.desp}}</h5>
+              <h4 class="price">{{item1.price}} грн</h4>
+            </a>
+
+            <div class="info check-element animate-show" ng-show="info">
+              <p>{{item1.more_info}}</p>
+              <button style="font-weight: bold" class="btn btn-mini btn-info" id="{{item1.id}}-prd" type="button"
+                      ng-click="buy(item1)">
+                <i class="glyphicon glyphicon-shopping-cart"></i> Buy
+              </button>
+              <em id="{{item1.id}}">{{added(item1)}}</em>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
   <footer style="height: 100px">
     <!--                <p>&copy; 2005 - --><!-- by Zend Technologies Ltd. --><!--</p>-->
   </footer>

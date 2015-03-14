@@ -8,19 +8,28 @@
  * Controller of the dikeaApp
  */
 angular.module('dikeaApp')//App Ctrl. View: 'main.html'
-  .controller('MainCtrl', function ($scope,$http) {
+  .controller('MainCtrl', function ($scope, $http) {
     $('title').html('Главная |DIKEA');
     $scope.storage = new LocalStorage();
     $scope.storage.getNumbers();
-    $scope.list_type='living_room';
-    $scope.list_id=16239;
-    $scope.init=function(){
-         $scope.getProducts();
+    $scope.init = function () {
+      $scope.list_type = 'living_room';
+      $scope.list_id = 16239;
+      $scope.getProducts();
+      $scope.list_type = 'workspaces';
+      $scope.list_id = 20649;
+      $scope.getProducts_skidki();
     };
     $scope.getProducts = function () {
       $http.post('/category/requests/' + $scope.list_type + '/' + $scope.list_id, {'action': 'getProducts'}).success(function (data) {
         $scope.prd = data;
-        $scope.prd=$scope.prd.slice(0,3);
+        $scope.prd = $scope.prd.slice(0, 3);
+      });
+    };
+    $scope.getProducts_skidki = function () {
+      $http.post('/category/requests/' + $scope.list_type + '/' + $scope.list_id, {'action': 'getProducts'}).success(function (data) {
+        $scope.skidki_prd = data;
+        $scope.slidli_prd = $scope.skidki_prd.slice(0, 3);
       });
     };
     $scope.buy = function (item) {
@@ -29,12 +38,12 @@ angular.module('dikeaApp')//App Ctrl. View: 'main.html'
     };
     $scope.added = function (item) {
       if (item.added) {
-        $('#'+item.id+'').html('добавлено в корзину');
-        $('#'+item.id+'-prd').attr('disabled','');
+        $('#' + item.id + '').html('добавлено в корзину');
+        $('#' + item.id + '-prd').attr('disabled', '');
         return 'добавлено в корзину';
       } else {
-        $('#'+item.id+'-prd').removeAttr('disabled');
-        $('#'+item.id+'').html('');
+        $('#' + item.id + '-prd').removeAttr('disabled');
+        $('#' + item.id + '').html('');
         return '';
       }
     };
