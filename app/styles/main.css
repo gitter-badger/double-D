@@ -497,7 +497,10 @@ h1.with-line:after {
   margin-left: 7.8em;
   position: absolute;
 }
-.int-products>.trumbnails{
-  display: block;
+.int-products{
+  width: 100%;
+}
+#int-t{
   text-align: center;
+  margin: 3em;
 }
