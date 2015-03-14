@@ -502,5 +502,7 @@ h1.with-line:after {
 }
 #int-t{
   text-align: center;
-  margin: 3em;
+}
+#int-t>li{
+  margin: 2em;
 }
