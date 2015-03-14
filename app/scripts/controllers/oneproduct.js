@@ -57,10 +57,10 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     };
     $scope.price = function () {
       var price=$scope.data.price * $scope.number;
-      if((!price)&&($scope.isBuyed)){
+      if(!price){
             $('.buy-one-prd').attr('disabled','');
       }
-      else{
+      else if(!$scope.isBuyed){
         $('.buy-one-prd').removeAttr('disabled');
       }
       return $scope.data.price * $scope.number;
@@ -69,6 +69,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
       if ($scope.price()) {
         $scope.storage.addToCart($scope.data, $scope.number);
         $('.buy-one-prd').attr('disabled','').html('Куплено!');
+        $('.nums').attr('disabled','');
         $scope.isBuyed=true;
       }
     };
