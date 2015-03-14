@@ -69,8 +69,7 @@ angular.module('dikeaApp')//Products in Category Ctrl. View: 'productslist.html'
     };
     $scope.added = function (item) {
       if (item.added) {
-        $('#'+item.id+'').html('добавлено в корзину');
-        $('#'+item.id+'-prd').attr('disabled','');
+        $('#' + item.id + '-prd').attr('disabled', '').html('Куплено!');
         return 'добавлено в корзину';
       } else {
         $('#'+item.id+'-prd').removeAttr('disabled');

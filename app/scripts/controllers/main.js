@@ -38,8 +38,7 @@ angular.module('dikeaApp')//App Ctrl. View: 'main.html'
     };
     $scope.added = function (item) {
       if (item.added) {
-        $('#' + item.id + '-prd').attr('disabled', '');
-        $('#' + item.id + '-prd').html('Куплено!');
+        $('#' + item.id + '-prd').attr('disabled', '').html('Куплено!');
         return 'добавлено в корзину';
       } else {
         $('#' + item.id + '-prd').removeAttr('disabled');

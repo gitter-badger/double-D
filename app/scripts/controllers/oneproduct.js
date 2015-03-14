@@ -14,7 +14,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.storage = new LocalStorage();
     $scope.data = {};
     $scope.prd1=[];
-
+    $scope.isBuyed=false;
     $scope.init = function () {
       $scope.id = $routeParams.Id;
       $scope.getData($scope.id);
@@ -57,7 +57,7 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     };
     $scope.price = function () {
       var price=$scope.data.price * $scope.number;
-      if(!price){
+      if((!price)&&($scope.isBuyed)){
             $('.buy-one-prd').attr('disabled','');
       }
       else{
@@ -68,7 +68,8 @@ angular.module('dikeaApp')//Product page Ctrl. View: 'oneproduct.html'
     $scope.buy = function () {
       if ($scope.price()) {
         $scope.storage.addToCart($scope.data, $scope.number);
-        $scope.added = 'добавлено в корзину';
+        $('.buy-one-prd').attr('disabled','').html('Куплено!');
+        $scope.isBuyed=true;
       }
     };
     $scope.init();
