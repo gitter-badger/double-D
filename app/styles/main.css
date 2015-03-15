@@ -373,6 +373,8 @@ a:hover.tooltips span {
   z-index: 999;
 }
 
+
+/*admin.html styles*/
 .login-form {
   width: 50%;
   height: 40em;
@@ -436,6 +438,8 @@ a:hover.tooltips span {
   text-decoration: none;
   background-color: #008B8B;
 }
+
+/*end admin.html styles*/
 
 /*global styles*/
 a {
