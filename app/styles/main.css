@@ -138,42 +138,7 @@
   transition: all .2s ease-in-out;
 }
 
-.card_product > div {
-  display: inline-block;
-  vertical-align: top;
-}
 
-.card_product .cart-img {
-  cursor: pointer;
-  margin-right: 10px;
-  height: 60px;
-}
-
-.cart_table .table td input[type="number"] {
-  width:88px;
-}
-
-.card_product .cart-info a {
-  color: #333;
-}
-
-.cart_table .table td .price {
-  padding-left: 10px;
-}
-
-.cart_table .table td {
-  vertical-align: middle;
-}
-
-.my-modal .modal-body {
-  text-align: center;
-}
-
-.sum {
-  text-align: right;
-  margin-left: 5%;
-  padding: 0.5% 12%;
-}
 
 footer {
   position: absolute;
@@ -305,7 +270,42 @@ input.ng-valid.ng-dirty {
 .btn-success:active, .btn-success.active {
   background-color: #57a900;
 }
+.card_product > div {
+  display: inline-block;
+  vertical-align: top;
+}
 
+.card_product .cart-img {
+  cursor: pointer;
+  margin-right: 10px;
+  height: 60px;
+}
+
+.cart_table .table td input[type="number"] {
+  width:88px;
+}
+
+.card_product .cart-info a {
+  color: #333;
+}
+
+.cart_table .table td .price {
+  padding-left: 10px;
+}
+
+.cart_table .table td {
+  vertical-align: middle;
+}
+
+.my-modal .modal-body {
+  text-align: center;
+}
+
+.sum {
+  text-align: right;
+  margin-left: 5%;
+  padding: 0.5% 12%;
+}
 /*end cart.html styles*/
 
 
