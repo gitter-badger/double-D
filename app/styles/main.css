@@ -510,7 +510,7 @@ h1.with-line:after {
   text-align: center;
 }
 #int-t>li, #int-t-1>li{
-  margin: 2em;
+  margin: 5%;
 }
 .int-but{
   float: left;
