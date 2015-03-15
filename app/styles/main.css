@@ -309,9 +309,13 @@ input.ng-valid.ng-dirty {
   cursor: pointer;
 }
 
+
+
+/*productlist.html styles*/
 .sort {
   cursor: pointer;
 }
+/*end productlist.html styles*/
 
 
 /*oneproduct.html styles*/
