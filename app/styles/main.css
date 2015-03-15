@@ -466,7 +466,7 @@ h1.with-line {
   position: relative;
   margin: 0;
   text-align: center;
-  white-space: nowrap;
+  word-wrap: break-word;
   margin-bottom: 0.5em;
 }
 h1.with-line:before,
