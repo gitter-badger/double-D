@@ -264,11 +264,15 @@ input.ng-valid.ng-dirty {
 /*end cart.html styles*/
 
 
+
+
 /*productlist.html styles*/
 .sort {
   cursor: pointer;
 }
 /*end productlist.html styles*/
+
+
 
 
 /*oneproduct.html styles*/
@@ -401,6 +405,9 @@ a:hover.tooltips span {
 }
 
 /*end admin.html styles*/
+
+
+
 
 /*global styles*/
 a {
@@ -544,3 +551,12 @@ footer {
   border-color: #3c3c3c;
 }
 /*end main.html styles*/
+
+
+
+/*about.html styles*/
+.aboutUs {
+  width: 90%;
+  margin: 0 auto;
+}
+/*end about.html styles*/
