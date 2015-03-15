@@ -114,9 +114,7 @@
 
 
 
-#big_img {
-  max-height: 420px;
-}
+
 
 .list-group-item {
   cursor: pointer;
@@ -376,6 +374,9 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
   overflow-y: scroll;
+}
+#big_img {
+  max-height: 420px;
 }
 /*end global styles*/
 
