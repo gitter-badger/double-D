@@ -146,6 +146,8 @@ div.container a.brand {
   margin-right: 20px;
   width: 500px;
   height: 500px;
+  min-width: 50%;
+  min-height: 100px;
 }
 
 .product_content > div {
@@ -464,15 +466,7 @@ a {
   max-width: 100%;
   height: auto;
 }
-.one-prd-img{
-  width: 500px;
-  max-width: 100%;
-  margin-right: 2%;
-}
-.one-prd-img>img{
-  max-width: 100%;
-  height: auto;
-}
+
 h1.with-line {
   overflow: hidden;
   position: relative;
