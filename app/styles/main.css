@@ -325,7 +325,7 @@ a:hover.tooltips span {
   margin: 0 auto;
 }
 
-.product_content > div img {
+.product_content > .one-prd-img img {
   margin-right: 20px;
   width: 500px;
   height: 500px;
