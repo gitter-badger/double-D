@@ -448,6 +448,7 @@ a {
 }
 .row-img {
   display: block;
+  margin-bottom: 2em;
 }
 .row-img>.img-container{
   display:inline-block;
