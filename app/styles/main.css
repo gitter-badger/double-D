@@ -118,24 +118,6 @@
   max-height: 420px;
 }
 
-
-
-
-
-.aboutUs {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.cart {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.active-header {
-  color: #ffff00;
-}
-
 .list-group-item {
   cursor: pointer;
 }
@@ -152,6 +134,10 @@
 
 
 /*cart.html styles*/
+.cart {
+  width: 90%;
+  margin: 0 auto;
+}
 .zf-green {
   color: #68b604;
 }
@@ -522,6 +508,9 @@ footer {
 
 .main-carousel.carousel .carousel-indicators li {
   border-color: #3c3c3c;
+}
+.active-header {
+  color: #ffff00;
 }
 /*end main.html styles*/
 
