@@ -161,6 +161,15 @@ footer {
 
 
 
+/*about.html styles*/
+.aboutUs {
+  width: 90%;
+  margin: 0 auto;
+}
+/*end about.html styles*/
+
+
+
 /*-------END MAIN BLOCK----------*/
 
 
@@ -561,12 +570,7 @@ input.ng-valid.ng-dirty {
 
 
 
-/*about.html styles*/
-.aboutUs {
-  width: 90%;
-  margin: 0 auto;
-}
-/*end about.html styles*/
+
 
 
 
