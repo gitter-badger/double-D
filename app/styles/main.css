@@ -464,6 +464,12 @@ a {
   max-width: 100%;
   height: auto;
 }
+.one-prd-img{
+
+}
+.one-prd-img>img{
+  
+}
 h1.with-line {
   overflow: hidden;
   position: relative;
