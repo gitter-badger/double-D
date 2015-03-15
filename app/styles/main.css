@@ -1,8 +1,4 @@
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-  overflow-y: scroll;
-}
+
 
 .zf-green {
   color: #68b604;
@@ -441,10 +437,19 @@ a:hover.tooltips span {
   background-color: #008B8B;
 }
 
+/*global styles*/
 a {
   cursor: pointer;
 }
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  overflow-y: scroll;
+}
+/*end global styles*/
 
+
+/*main.html styles*/
 .main-canBuy {
   margin-top: 3em;
   text-align: center;
@@ -519,3 +524,5 @@ h1.with-line:after {
   margin-top: -2.7em;
   margin-left: 1em;
 }
+
+/*end main.html styles*/
