@@ -140,34 +140,6 @@
 
 
 
-footer {
-  position: absolute;
-  bottom: 0;
-}
-
-.my-navbar .navbar-nav > li > a,
-.my-navbar .navbar-brand {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: 30px;
-}
-
-.navbar-brand {
-  cursor: pointer;
-}
-
-.my-navbar.navbar {
-  min-height: 41px;
-}
-
-.my-navbar .nav li a.shopping-cart {
-  padding: 7px 2px;
-}
-
-.shopping-cart .glyphicon-shopping-cart {
-  color: #ffffff;
-  font-size: 23px;
-}
 
 #big_img {
   max-height: 420px;
@@ -541,4 +513,33 @@ div.container a.brand {
 .back-arr, .next-arr {
   cursor: pointer;
 }
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.my-navbar .navbar-nav > li > a,
+.my-navbar .navbar-brand {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 30px;
+}
+
+.navbar-brand {
+  cursor: pointer;
+}
+
+.my-navbar.navbar {
+  min-height: 41px;
+}
+
+.my-navbar .nav li a.shopping-cart {
+  padding: 7px 2px;
+}
+
+.shopping-cart .glyphicon-shopping-cart {
+  color: #ffffff;
+  font-size: 23px;
+}
+
 /*end main.html styles*/
