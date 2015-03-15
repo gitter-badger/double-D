@@ -71,7 +71,8 @@ div.container a.brand {
 }
 
 .products .thumbnails img {
-  height: 240px;
+  width: 100%;
+  height: auto;
 }
 
 .products .thumbnails li:hover {
