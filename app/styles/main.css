@@ -10,51 +10,13 @@
 
 
 
-.product_content {
-  width: 85%;
-  margin: 0 auto;
-}
-
-.product_content > div img {
-  margin-right: 20px;
-  width: 500px;
-  height: 500px;
-}
-
-.product_content > div {
-  display: inline-block;
-  vertical-align: top;
-}
-
-
-
-.price_block .nums {
-  display: inline-block;
-  width: 100px;
-}
-
-.product_content .img-thumbnail {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
 
 
 
 
 
 
-.list-group-item {
-  cursor: pointer;
-}
 
-.list-group-item:hover {
-  background: #bbbbbb;
-}
-
-.products {
-  margin: 0 auto;
-  width: 90%;
-}
 
 
 
@@ -287,6 +249,33 @@ a:hover.tooltips span {
 
 .product_about .price {
   font-weight: bold;
+}
+.product_content {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.product_content > div img {
+  margin-right: 20px;
+  width: 500px;
+  height: 500px;
+}
+
+.product_content > div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+
+.price_block .nums {
+  display: inline-block;
+  width: 100px;
+}
+
+.product_content .img-thumbnail {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 /*end oneproduct.html styles*/
 
@@ -560,4 +549,17 @@ footer {
 .products-list .list-group {
   margin-bottom: 5px;
 }
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background: #bbbbbb;
+}
+
+.products {
+  margin: 0 auto;
+  width: 90%;
+}
+
 /*end products.html styles*/
