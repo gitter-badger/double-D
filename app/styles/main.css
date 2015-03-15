@@ -14,13 +14,13 @@ body {
   padding-bottom: 40px;
   overflow-y: scroll;
 }
-#big_img {  
+#big_img {
   max-height: 420px;
 }
 .thumbnail {
   border: none;
   box-shadow: none;
-}
+} 
 
 .thumbnail:hover {
   border: none;
