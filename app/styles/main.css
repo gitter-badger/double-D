@@ -204,7 +204,8 @@ div.container a.brand {
 
 .sum {
   text-align: right;
-  padding: 5px 150px;
+  margin-left: 5%;
+  padding: 0.5% 12%;
 }
 
 footer {
