@@ -5,30 +5,7 @@
 
 
 
-.products .thumbnails {
-  list-style: none;
-  text-align: justify;
-}
 
-.products .thumbnails img {
-  width: 100%;
-  height: auto;
-}
-
-.products .thumbnails li:hover {
-  margin-bottom: -100%;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.products .thumbnails li {
-  display: inline-block;
-  width: 200px;
-  max-width: 90%;
-  margin: 10px;
-  vertical-align: top;
-  position: relative;
-}
 
 .thumbnail {
   border: none;
@@ -39,43 +16,6 @@
   border: none;
 }
 
-.products .thumbnails li .info {
-  text-align: justify;
-  padding: 12px;
-  /*display: none;*/
-}
-
-.products .thumbnails li .thumbnail {
-  /*width: 250px;*/
-  /*margin:0 auto;*/
-}
-
-.products .thumbnails li .thumbnail:hover {
-  border-color: #5bc0de;
-  box-shadow: 0 0 6px rgba(42, 171, 210, 0.6);
-  border-radius: 0;
-  /*width: 300px;*/
-}
-
-.products .thumbnails h5 {
-  height: 30px;
-  color: #333;;
-  text-align: center;
-}
-
-.products .thumbnails h4.price {
-  text-align: right;
-  padding: 0 10px;
-  color: #333;
-}
-
-.products .thumbnails a:hover h5 {
-  text-decoration: underline;
-}
-
-.products .thumbnails a:hover {
-  text-decoration: none;
-}
 
 .product_content {
   width: 85%;
@@ -227,6 +167,68 @@ input.ng-valid.ng-dirty {
 .sort {
   cursor: pointer;
 }
+.products .thumbnails {
+  list-style: none;
+  text-align: justify;
+}
+
+.products .thumbnails img {
+  width: 100%;
+  height: auto;
+}
+
+.products .thumbnails li:hover {
+  margin-bottom: -100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.products .thumbnails li {
+  display: inline-block;
+  width: 200px;
+  max-width: 90%;
+  margin: 10px;
+  vertical-align: top;
+  position: relative;
+}
+.products .thumbnails li .info {
+  text-align: justify;
+  padding: 12px;
+  /*display: none;*/
+}
+
+.products .thumbnails li .thumbnail {
+  /*width: 250px;*/
+  /*margin:0 auto;*/
+}
+
+.products .thumbnails li .thumbnail:hover {
+  border-color: #5bc0de;
+  box-shadow: 0 0 6px rgba(42, 171, 210, 0.6);
+  border-radius: 0;
+  /*width: 300px;*/
+}
+
+.products .thumbnails h5 {
+  height: 30px;
+  color: #333;;
+  text-align: center;
+}
+
+.products .thumbnails h4.price {
+  text-align: right;
+  padding: 0 10px;
+  color: #333;
+}
+
+.products .thumbnails a:hover h5 {
+  text-decoration: underline;
+}
+
+.products .thumbnails a:hover {
+  text-decoration: none;
+}
+
 /*end productlist.html styles*/
 
 
