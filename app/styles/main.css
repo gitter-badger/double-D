@@ -313,6 +313,8 @@ input.ng-valid.ng-dirty {
   cursor: pointer;
 }
 
+
+/*oneproduct.html styles*/
 .panel {
 
   display: block;
@@ -372,6 +374,8 @@ a:hover.tooltips span {
   min-width: 100px;
   z-index: 999;
 }
+/*end oneproduct.html styles*/
+
 
 
 /*admin.html styles*/
