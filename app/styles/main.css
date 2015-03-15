@@ -84,6 +84,7 @@ div.container a.brand {
 .products .thumbnails li {
   display: inline-block;
   width: 250px;
+  max-width: 90%;
   margin: 10px;
   vertical-align: top;
   position: relative;
