@@ -7,14 +7,7 @@
 
 
 
-.thumbnail {
-  border: none;
-  box-shadow: none;
-}
 
-.thumbnail:hover {
-  border: none;
-}
 
 
 .product_content {
@@ -33,13 +26,7 @@
   vertical-align: top;
 }
 
-.product_about > div {
-  margin-bottom: 20px;
-}
 
-.product_about .price {
-  font-weight: bold;
-}
 
 .price_block .nums {
   display: inline-block;
@@ -294,6 +281,13 @@ a:hover.tooltips span {
   min-width: 100px;
   z-index: 999;
 }
+.product_about > div {
+  margin-bottom: 20px;
+}
+
+.product_about .price {
+  font-weight: bold;
+}
 /*end oneproduct.html styles*/
 
 
@@ -379,6 +373,14 @@ body {
 }
 #big_img {
   max-height: 420px;
+}
+.thumbnail {
+  border: none;
+  box-shadow: none;
+}
+
+.thumbnail:hover {
+  border: none;
 }
 /*end global styles*/
 
