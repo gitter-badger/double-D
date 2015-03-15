@@ -27,10 +27,7 @@
   background-color: #57a900;
 }
 
-div.container a.brand {
-  margin-left: 0;
-  padding: 8px 20px 12px 40px;
-}
+
 
 .products-list .panel {
   display: inline-block;
@@ -536,5 +533,8 @@ h1.with-line:after {
   margin-top: -2.7em;
   margin-left: 1em;
 }
-
+div.container a.brand {
+  margin-left: 0;
+  padding: 8px 20px 12px 40px;
+}
 /*end main.html styles*/
