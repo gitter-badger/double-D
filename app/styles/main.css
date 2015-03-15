@@ -465,12 +465,12 @@ a {
   height: auto;
 }
 .one-prd-img{
-  width: 50%;
+  width: 500px;
   max-width: 100%;
-  height: auto;
+  margin-right: 2%;
 }
 .one-prd-img>img{
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 h1.with-line {
