@@ -201,8 +201,12 @@ footer {
   border-width: 2px;
   display: inline-block;
   cursor: pointer;
+  transition: all 0.1s;
 }
-
+.radio-button:hover {
+  background-color: #ffffff;
+  transition: all 0.1s;
+}
 .radio-button.active-radio {
   background-color: #000000;
   transform: scale(1.1);
