@@ -201,6 +201,7 @@ footer {
   border-color: #000000;
   border-width: 2px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .radio-button.active-radio {
