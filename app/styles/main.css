@@ -203,7 +203,7 @@ footer {
   display: inline-block;
 }
 
-.radio-button.active {
+.radio-button.active-radio {
   background-color: #000000;
   transform: scale(1.1);
 }
