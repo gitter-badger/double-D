@@ -165,7 +165,22 @@ footer {
 
 
 /*CAROUSEL BLOCK*/
-
+.main-page-carousel{
+  width:100%;
+  height: 400px;
+  display: block;
+}
+.radio-buttons{
+  width: 20%;
+  display: block;
+}
+.radio-button{
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  color: #000000;
+  display: inline-block;
+}
 /*END CAROUSEL BLOCK*/
 
 
