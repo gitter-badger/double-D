@@ -172,13 +172,18 @@ footer {
 }
 .radio-buttons{
   width: 20%;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 40%;
   display: block;
 }
 .radio-button{
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   border-radius: 20px;
-  color: #000000;
+  border-color: #000000;
+  border-width: 5px;
+  
   display: inline-block;
 }
 /*END CAROUSEL BLOCK*/
