@@ -205,11 +205,12 @@ footer {
 }
 .radio-button:hover {
   background-color: #ffffff;
-  transition: all 0.1s;
+  transition: all 0.2s;
 }
 .radio-button.active-radio {
   background-color: #000000;
   transform: scale(1.1);
+  transition: all 0.2s;
 }
 .slide{
   display: none;
