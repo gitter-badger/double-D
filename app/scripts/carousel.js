@@ -13,6 +13,11 @@ $(document).ready(function () {
 
   });
   $('.right-arrow').click(function () {
+    var slides = $('.slides');
+    var current=0;
+    var setSlide=function(){
 
+    };
+    return setSlide;
   });
 });
