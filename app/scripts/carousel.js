@@ -13,11 +13,12 @@ $(document).ready(function () {
 
   });
   $('.right-arrow').click(function () {
-    var slides = $('.slides');
-    var current=0;
-    var setSlide=function(){
-
+    var current = 0;
+    var setSlide = function () {
+      current++;
+      $('.slide-active').removeClass('slide-active');
+      $('.slides')[current].addClass('.slide-active');
     };
-    return setSlide;
+    return setSlide();
   });
 });
