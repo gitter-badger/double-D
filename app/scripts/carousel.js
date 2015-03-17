@@ -1,6 +1,7 @@
 /**
  * Created by mohsom on 16.03.2015.
  */
+'use strict';
 $(document).ready(function () {
   var currentSlide=1;
   var INTERVAL;
