@@ -2,6 +2,7 @@
  * Created by mohsom on 16.03.2015.
  */
 $(document).ready(function () {
+  var currentSlide=1;
   $('.radio-button').click(function () {
     var id = $(this).attr('id');
     $('.active-radio').removeClass('active-radio');
@@ -13,15 +14,13 @@ $(document).ready(function () {
 
   });
   $('.right-arrow').click(function () {
-    var current = 1;
-    var setSlide = function () {
-      current++;
-      if(current>4){
-        current=1;
+      currentSlide++;
+      if(currentSlide>4) {
+        currentSlide = 1;
       }
       $('.slide-active').removeClass('slide-active');
-      $('#slide'+current).addClass('.slide-active');
-    };
-    return setSlide();
+      $('#slide'+currentSlide).addClass('slide-active');
+      $('.active-radio').removeClass('active-radio');
+      $('#radio-slide'+currentSlide).addClass('active-radio');
   });
 });
