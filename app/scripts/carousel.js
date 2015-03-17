@@ -11,7 +11,14 @@ $(document).ready(function () {
     $('[data-slide=' + id + ']').addClass('slide-active');
   });
   $('.left-arrow').click(function () {
-
+    currentSlide--;
+    if(currentSlide<1) {
+      currentSlide = 4;
+    }
+    $('.slide-active').removeClass('slide-active');
+    $('#slide'+currentSlide).addClass('slide-active');
+    $('.active-radio').removeClass('active-radio');
+    $('#radio-slide'+currentSlide).addClass('active-radio');
   });
   $('.right-arrow').click(function () {
       currentSlide++;
