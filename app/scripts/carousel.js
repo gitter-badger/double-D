@@ -3,6 +3,7 @@
  */
 $(document).ready(function () {
   var currentSlide=1;
+  var INTERVAL;
   $('.radio-button').click(function () {
     var id = $(this).attr('id');
     var num=$(this).attr('set-data-slide');
@@ -11,6 +12,8 @@ $(document).ready(function () {
     $('#' + id).addClass('active-radio');
     $('.slide-active').removeClass('slide-active');
     $('[data-slide=' + id + ']').addClass('slide-active');
+    deleteInterval();
+    interval();
   });
   $('.left-arrow').click(function () {
     prevSlide();
@@ -38,5 +41,11 @@ $(document).ready(function () {
     $('.active-radio').removeClass('active-radio');
     $('#radio-slide'+currentSlide).addClass('active-radio');
   };
-  setInterval(nextSlide,10000);
+  var interval=function(){
+    INTERVAL=setInterval(nextSlide,10000);
+  };
+  var deleteInterval=function(){
+    clearInterval(INTERVAL);
+  };
+  interval();
 });
