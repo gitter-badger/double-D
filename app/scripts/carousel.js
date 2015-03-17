@@ -6,5 +6,7 @@ $(document).ready(function(){
         var id=$(this).attr('id');
         $('.active-radio').removeClass('active-radio');
         $('#'+id).addClass('active-radio');
+        $('.slide-active').removeClass('slide-active');
+       $('[data-slide='+id+']').addClass('slide-active');
      });
 });
