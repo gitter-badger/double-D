@@ -2,8 +2,9 @@
  * Created by mohsom on 16.03.2015.
  */
 $(document).ready(function(){
-     $('#radio-slide2').click(function(){
+     $('.radio-button').click(function(){
+        var id=$(this).attr('id');
         $('.active-radio').removeClass('active-radio');
-        $('#radio-slide2').addClass('active-radio');
+        $('#'+id).addClass('active-radio');
      });
 });
