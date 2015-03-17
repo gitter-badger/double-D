@@ -5,6 +5,8 @@ $(document).ready(function () {
   var currentSlide=1;
   $('.radio-button').click(function () {
     var id = $(this).attr('id');
+    var num=$(this).attr('set-data-slide');
+    currentSlide=num;
     $('.active-radio').removeClass('active-radio');
     $('#' + id).addClass('active-radio');
     $('.slide-active').removeClass('slide-active');
