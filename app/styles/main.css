@@ -198,7 +198,7 @@ footer {
   border-radius: 20px;
   border-style: solid;
   border-color: #000000;
-  border-width: 2px;
+  border-width: 1px;
   display: inline-block;
   cursor: pointer;
   transition: all 0.1s;
@@ -225,7 +225,7 @@ footer {
   height: 65%;
 }
 .left-arrow{
-   transform: rotateX(-90deg);
+
 }
 .right-arrow{
 
