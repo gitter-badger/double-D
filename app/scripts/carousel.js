@@ -30,6 +30,8 @@ $(document).ready(function () {
     $('#slide'+currentSlide).addClass('slide-active');
     $('.active-radio').removeClass('active-radio');
     $('#radio-slide'+currentSlide).addClass('active-radio');
+    deleteInterval();
+    interval();
   };
   var nextSlide=function(){
     currentSlide++;
@@ -40,6 +42,8 @@ $(document).ready(function () {
     $('#slide'+currentSlide).addClass('slide-active');
     $('.active-radio').removeClass('active-radio');
     $('#radio-slide'+currentSlide).addClass('active-radio');
+    deleteInterval();
+    interval();
   };
   var interval=function(){
     INTERVAL=setInterval(nextSlide,10000);
