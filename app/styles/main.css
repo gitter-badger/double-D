@@ -190,7 +190,7 @@ footer {
 .radio-buttons {
   min-width: 20%;
   max-width: 50%;
-  position: relative;
+  position: absolute;
   left: 47%;
   margin-top: -2%;
   display: block;
